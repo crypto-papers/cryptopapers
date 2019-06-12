@@ -3,18 +3,32 @@
 import React from 'react'
 import Link from 'next/link'
 
-const linkStyle = {
-  marginRight: 15
+import { colors, gradients } from '../styles/colors';
+import Plume from '../static/plume.svg';
+
+const headerStyle = {
+  alignItems: 'center',
+  background: colors.darkBlue,
+  background: gradients.darkLightBlue,
+  display: 'flex',
+  justifyContent: 'space-between',
+}
+
+const titleStyle = {
+  color: colors.white,
+}
+
+const plumeStyle = {
+  width: '150px',
+  padding: '1rem',
 }
 
 const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
+  <div style={ headerStyle }>
+    <h1 style={ titleStyle }>
+      Cryptopapers.info
+    </h1>
+    <Plume style={ plumeStyle } />
   </div>
 )
 
