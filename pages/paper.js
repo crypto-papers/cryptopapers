@@ -1,6 +1,10 @@
-import {withRouter} from 'next/router'
-import Layout from '../components/Layout'
+// @flow
+
+import React from 'react'
 import Markdown from 'react-markdown'
+import { withRouter } from 'next/router'
+
+import Layout from '../components/Layout'
 
 export default withRouter((props) => (
   <Layout>
