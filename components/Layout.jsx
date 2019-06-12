@@ -2,7 +2,9 @@
 
 import * as React from 'react'
 
-import Header from './Header'
+import Footer from './Footer';
+import Header from './Header';
+import Meta from './Meta';
 
 type Props = {
   children: React.Node,
@@ -15,10 +17,14 @@ const layoutStyle = {
 }
 
 const Layout = ( props: Props ) => (
-  <div style={layoutStyle}>
+  <React.Fragment>
+    <Meta />
     <Header />
-    {props.children}
-  </div>
+    <div style={layoutStyle}>
+      {props.children}
+    </div>
+    <Footer />
+  </React.Fragment>
 )
 
 export default Layout
