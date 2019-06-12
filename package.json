@@ -7,12 +7,14 @@
     "build": "next build",
     "dev": "node server.js",
     "flow": "flow",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx",
     "start": "next start -p 8000"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "graphql": "^14.3.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
@@ -22,6 +24,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-plugin-relay": "^5.0.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-flow": "^6.23.0",
     "flow-bin": "^0.101.0"
