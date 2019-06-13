@@ -2,8 +2,8 @@
 
 import React from 'react';
 
-const BottomNavigation = () => (
+const BottomNav = () => (
   <div>Footer Nav</div>
 );
 
-export default BottomNavigation;
+export default BottomNav;

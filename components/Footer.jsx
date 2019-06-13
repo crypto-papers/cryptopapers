@@ -3,12 +3,16 @@
 import React from 'react'
 import Link from 'next/link'
 
-import BottomNavigation from './BottomNavigation';
+import BottomNav from './navigation/BottomNav';
 import SocialLinks from './SocialLinks';
 import ReferralTag from './ReferralTag';
 
+import { colors, gradients } from '../styles/colors';
+
 const footerStyle = {
-  backgroundColor: '#0f4385',
+  background: colors.darkBlue,
+  background: gradients.darkLightBlue,
+  padding: '1rem',
 }
 
 const footerNavStyle = {
@@ -20,7 +24,7 @@ const footerNavStyle = {
 const Footer = () => (
   <footer className='site_footer' style={ footerStyle}>
     <div className='footer_nav_container' style={ footerNavStyle }>
-      <BottomNavigation />
+      <BottomNav />
       <SocialLinks />
       <ReferralTag />
     </div>

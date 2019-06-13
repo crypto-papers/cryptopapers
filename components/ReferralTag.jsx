@@ -2,11 +2,29 @@
 
 import React from 'react';
 
-import Brave from '../static/icons/brave_partnership.svg'
+import { colors } from '../styles/colors';
+
+import Brave from '../static/icons/brave-logo.svg'
+
+const tagStyle = {
+  alignItems: 'center',
+  display: 'flex',
+  flexDirection: 'column',
+}
+
+const tagTextStyle = {
+  color: colors.white,
+}
+
+const braveStyle = {
+  maxHeight: '50px',
+  width: '100px',
+}
 
 const ReferralTag = () => (
-  <a className='brave_link' href='https://brave.com/' target='_blank'>
-    <p className='brave_text'>Supported by:</p> <Brave />
+  <a href='https://brave.com/cry736' style={ tagStyle } target='_blank'>
+    <span style={ tagTextStyle}>Supported by:</span>
+    <Brave style={ braveStyle } />
   </a>
 );
 
