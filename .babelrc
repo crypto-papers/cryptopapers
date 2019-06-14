@@ -1,7 +1,6 @@
 {
-  "presets": ["next/babel"],
   "plugins": [
-    "babel-plugin-inline-react-svg",
+    "babel-plugin-relay",
     [
       "babel-plugin-module-resolver",
       {
@@ -9,12 +8,13 @@
         "alias": {
           "components": "./components",
           "pages": "./pages",
+          "schema": "./schema",
+          "server": "./server",
           "static": "./static",
           "styles": "./styles"
         }
       }
     ],
-    "babel-plugin-relay",
     "babel-plugin-transform-flow-strip-types",
     [
       "babel-plugin-react-css-modules",
@@ -26,6 +26,8 @@
         },
         "generateScopedName": "[local]_[hash:base64:5]"
       }
-    ]
-  ]
+    ],
+    "babel-plugin-inline-react-svg"
+  ],
+  "presets": ["next/babel"]
 }
