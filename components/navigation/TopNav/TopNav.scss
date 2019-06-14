@@ -2,11 +2,15 @@
 
 .top-nav {
   background-color: var(--black);
-  padding: 0.5rem;
+  padding: 0.75rem;
+  position: fixed;
+  opacity: 0.9;
   text-align: center;
+  width: 100%;
 }
 
 .nav-link {
   color: var(--white);
+  font-weight: 500;
   margin-right: 1rem;
 }

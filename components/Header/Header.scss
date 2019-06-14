@@ -6,11 +6,12 @@
   background: var(--darkLightBlue);
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 3.5rem 2rem 1rem; // extra top padding to account for sticky top nav
 }
 
 .title {
   color: var(--white);
+  text-transform: uppercase;
 }
 
 .plume {
