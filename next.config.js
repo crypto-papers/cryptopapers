@@ -1,4 +1,11 @@
-module.exports = {
+const withSASS = require('@zeit/next-sass')
+
+module.exports = withSASS({
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: '[local]_[hash:base64:5]',
+  },
   exportPathMap: function () {
     return {
       '/': { page: '/' },
@@ -9,4 +16,4 @@ module.exports = {
       '/p/exporting-pages': { page: '/post', query: { title: 'Learn to Export HTML Pages' } }
     }
   }
-}
+});

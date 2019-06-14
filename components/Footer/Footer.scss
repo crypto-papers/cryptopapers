@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+
+.footer {
+  background: var(--darkBlue);
+  background: var(--darkLightBlue);
+  padding: 1rem;
+}
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}

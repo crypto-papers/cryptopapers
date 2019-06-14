@@ -1,9 +1,9 @@
 // @flow
 
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/Layout';
 
 function getPosts () {
   return [

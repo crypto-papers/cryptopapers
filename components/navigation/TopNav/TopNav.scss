@@ -1,0 +1,12 @@
+@import '../../../styles/colors.scss';
+
+.top-nav {
+  background-color: var(--black);
+  padding: .5rem;
+  text-align: center;
+}
+
+.nav-link {
+  color: var(--white);
+  margin-right: 1rem;
+}

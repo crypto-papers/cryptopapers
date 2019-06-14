@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+
+.tag {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.tag-text {
+  color: var(--white);
+}
+
+.brave-logo {
+  max-height: 50px;
+  width: 100px;
+}

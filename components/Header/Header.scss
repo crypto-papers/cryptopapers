@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+
+.header {
+  align-items: center;
+  background: var(--darkBlue);
+  background: var(--darkLightBlue);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.title {
+  color: var(--white);
+}
+
+.plume {
+  width: 150px;
+  padding: 1rem;
+}

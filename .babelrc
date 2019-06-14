@@ -5,6 +5,17 @@
   "plugins": [
     "relay",
     "transform-flow-strip-types",
-    "babel-plugin-inline-react-svg"
+    [
+      "babel-plugin-react-css-modules",
+      {
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss"
+          }
+        },
+        "generateScopedName":	"[local]_[hash:base64:5]",
+      }
+    ],
+    "babel-plugin-inline-react-svg",
   ]
 }

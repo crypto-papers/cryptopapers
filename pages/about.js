@@ -3,7 +3,7 @@
 import React from 'react'
 import Markdown from 'react-markdown'
 
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 
 const about = `
 ## About Us
