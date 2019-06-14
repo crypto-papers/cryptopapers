@@ -11,14 +11,20 @@ import './Layout.scss';
 
 type Props = {
   children: React.Node,
+  title?: string,
 };
 
-const Layout = (props: Props) => (
+const Layout = ({ children, title }: Props) => (
   <React.Fragment>
-    <Meta />
-    <TopNav />
-    <Header />
-    <div styleName='layout'>{props.children}</div>
+    <Meta title={title} />
+    <div styleName='content'>
+      <TopNav />
+      <Header />
+      <div styleName='layout'>
+        <h2>{title}</h2>
+        {children}
+      </div>
+    </div>
     <Footer />
   </React.Fragment>
 );
