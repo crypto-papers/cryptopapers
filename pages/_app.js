@@ -3,6 +3,8 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 
+import 'styles/global.scss';
+
 class CryptoPapers extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};

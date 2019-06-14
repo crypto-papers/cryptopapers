@@ -24,6 +24,7 @@ module.exports = {
   },
   plugins: ['eslint-plugin-babel', 'eslint-plugin-react', 'eslint-plugin-jsx-a11y', 'eslint-plugin-flowtype'],
   rules: {
+    'jsx-a11y/anchor-is-valid': ['warn'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
   },
 };
