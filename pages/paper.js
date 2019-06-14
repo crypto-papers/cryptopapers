@@ -4,7 +4,7 @@ import React from 'react';
 import Markdown from 'react-markdown';
 import { withRouter } from 'next/router';
 
-import Layout from '../components/Layout/Layout';
+import Layout from 'components/Layout/Layout';
 
 export default withRouter(props => (
   <Layout>

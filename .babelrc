@@ -1,7 +1,20 @@
 {
   "presets": ["next/babel"],
   "plugins": [
-    "-babel-pluginrelay",
+    "babel-plugin-inline-react-svg",
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "components": "./components",
+          "pages": "./pages",
+          "static": "./static",
+          "styles": "./styles"
+        }
+      }
+    ],
+    "babel-plugin-relay",
     "babel-plugin-transform-flow-strip-types",
     [
       "babel-plugin-react-css-modules",
@@ -13,7 +26,6 @@
         },
         "generateScopedName": "[local]_[hash:base64:5]"
       }
-    ],
-    "babel-plugin-inline-react-svg"
+    ]
   ]
 }

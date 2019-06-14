@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import BottomNav from '../navigation/BottomNav';
-import SocialLinks from '../SocialLinks/SocialLinks';
-import ReferralTag from '../ReferralTag/ReferralTag';
+import BottomNav from 'components/navigation/BottomNav';
+import SocialLinks from 'components/SocialLinks/SocialLinks';
+import ReferralTag from 'components/ReferralTag/ReferralTag';
 
 import './Footer.scss';
 

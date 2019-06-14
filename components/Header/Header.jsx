@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Plume from '../../static/plume.svg';
+import Plume from 'static/plume.svg';
 
 import './Header.scss';
 

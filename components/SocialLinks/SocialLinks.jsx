@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import Twitter from '../../static/icons/twitter.svg';
-import Github from '../../static/icons/github.svg';
-import Mail from '../../static/icons/mail.svg';
+import Twitter from 'static/icons/twitter.svg';
+import Github from 'static/icons/github.svg';
+import Mail from 'static/icons/mail.svg';
 
 const SocialLinks = () => (
   <div className='social_icons'>
