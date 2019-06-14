@@ -1,10 +1,8 @@
 {
-  "presets": [
-    "next/babel"
-  ],
+  "presets": ["next/babel"],
   "plugins": [
-    "relay",
-    "transform-flow-strip-types",
+    "-babel-pluginrelay",
+    "babel-plugin-transform-flow-strip-types",
     [
       "babel-plugin-react-css-modules",
       {
@@ -13,9 +11,9 @@
             "syntax": "postcss-scss"
           }
         },
-        "generateScopedName":	"[local]_[hash:base64:5]",
+        "generateScopedName": "[local]_[hash:base64:5]"
       }
     ],
-    "babel-plugin-inline-react-svg",
+    "babel-plugin-inline-react-svg"
   ]
 }

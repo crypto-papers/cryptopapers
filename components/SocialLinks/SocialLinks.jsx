@@ -18,6 +18,6 @@ const SocialLinks = () => (
       <Mail />
     </a>
   </div>
-)
+);
 
-export default SocialLinks
+export default SocialLinks;

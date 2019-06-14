@@ -1,7 +1,6 @@
 // @flow
 
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
 
 import BottomNav from '../navigation/BottomNav';
 import SocialLinks from '../SocialLinks/SocialLinks';
@@ -16,7 +15,7 @@ const Footer = () => (
       <SocialLinks />
       <ReferralTag />
     </div>
-</footer>
+  </footer>
 );
 
 export default Footer;

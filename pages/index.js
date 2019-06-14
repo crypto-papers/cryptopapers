@@ -5,12 +5,12 @@ import Link from 'next/link';
 
 import Layout from '../components/Layout/Layout';
 
-function getPosts () {
+function getPosts() {
   return [
-    { id: 'hello-nextjs', title: 'Hello Next.js'},
-    { id: 'learn-nextjs', title: 'Learn Next.js is awesome'},
-    { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT'},
-  ]
+    { id: 'hello-nextjs', title: 'Hello Next.js' },
+    { id: 'learn-nextjs', title: 'Learn Next.js is awesome' },
+    { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT' },
+  ];
 }
 
 const PostLink = ({ post }) => (
@@ -34,19 +34,20 @@ const PostLink = ({ post }) => (
       }
     `}</style>
   </li>
-)
+);
 
 export default () => (
   <Layout>
     <h1>My Blog</h1>
     <ul>
-      {getPosts().map((post) => (
-        <PostLink key={post.id} post={post}/>
+      {getPosts().map(post => (
+        <PostLink key={post.id} post={post} />
       ))}
     </ul>
     <style jsx>{`
-      h1, a {
-        font-family: "Arial";
+      h1,
+      a {
+        font-family: 'Arial';
       }
 
       ul {
@@ -54,4 +55,4 @@ export default () => (
       }
     `}</style>
   </Layout>
-)
+);

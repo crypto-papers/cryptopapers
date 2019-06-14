@@ -1,6 +1,6 @@
 // @flow
 
-import * as React from 'react'
+import * as React from 'react';
 
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
@@ -13,16 +13,14 @@ type Props = {
   children: React.Node,
 };
 
-const Layout = ( props: Props ) => (
+const Layout = (props: Props) => (
   <React.Fragment>
     <Meta />
     <TopNav />
     <Header />
-      <div styleName='layout'>
-        {props.children}
-      </div>
+    <div styleName='layout'>{props.children}</div>
     <Footer />
   </React.Fragment>
-)
+);
 
-export default Layout
+export default Layout;
