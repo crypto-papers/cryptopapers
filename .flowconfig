@@ -1,9 +1,9 @@
 [ignore]
-.*/node_modules/*
 
 [include]
 
 [libs]
+flow-typed/
 
 [lints]
 
@@ -13,5 +13,12 @@ module.file_ext=.json
 module.file_ext=.jsx
 module.file_ext=.css
 module.file_ext=.scss
+
+module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/components/\1'
+module.name_mapper='^pages\/\(.*\)$' -> '<PROJECT_ROOT>/pages/\1'
+module.name_mapper='^schema\/\(.*\)$' -> '<PROJECT_ROOT>/schema/\1'
+module.name_mapper='^server\/\(.*\)$' -> '<PROJECT_ROOT>/server/\1'
+module.name_mapper='^static\/\(.*\)$' -> '<PROJECT_ROOT>/static/\1'
+module.name_mapper='^styles\/\(.*\)$' -> '<PROJECT_ROOT>/styles/\1'
 
 [strict]
