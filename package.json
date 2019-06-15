@@ -5,16 +5,17 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "dev": "node server.js",
+    "dev": "node ./server/server.js",
     "flow": "flow",
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx",
+    "lint": "eslint --ext .js,.jsx ./components/** ./pages/** ./server/**",
+    "pre-flight": "npm run lint && npm run flow",
+    "relay": "relay-compiler --src ./ --exclude '**/.next/**' '**/docs/**' '**/__generated__/**' '**/node_modules/**' '**/schema/**' '**/server/**' --schema ./schema.graphql --extensions js jsx",
     "start": "next start -p 8000"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "graphql": "^14.3.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
@@ -39,10 +40,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "flow-bin": "^0.101.0",
+    "graphql": "^14.3.1",
     "node-sass": "^4.12.0",
     "postcss-css-variables": "^0.12.0",
     "postcss-nested": "^4.1.2",
     "postcss-scss": "^2.0.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "relay-compiler": "^5.0.0"
   }
 }
