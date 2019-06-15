@@ -10,7 +10,8 @@
     "lint": "eslint --ext .js,.jsx ./components/** ./pages/** ./server/**",
     "pre-flight": "npm run lint && npm run flow",
     "relay": "relay-compiler --src ./ --exclude '**/.next/**' '**/docs/**' '**/__generated__/**' '**/node_modules/**' '**/schema/**' '**/server/**' --schema ./schema.graphql --extensions js jsx",
-    "start": "next start -p 8000"
+    "start": "next start -p 8000",
+    "storybook": "start-storybook"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +25,7 @@
     "react-relay": "^5.0.0"
   },
   "devDependencies": {
+    "@storybook/react": "^5.1.8",
     "@zeit/next-sass": "^1.0.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
