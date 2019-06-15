@@ -16,7 +16,7 @@ function getPosts() {
 type Props = {
   post: {
     id: string,
-    title?: string,
+    title: string,
   },
 };
 

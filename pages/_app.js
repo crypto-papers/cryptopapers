@@ -5,8 +5,13 @@ import App, { Container } from 'next/app';
 
 import 'styles/global.scss';
 
+type Props = {
+  Component: any,
+  ctx: any,
+};
+
 class CryptoPapers extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx }: Props) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
