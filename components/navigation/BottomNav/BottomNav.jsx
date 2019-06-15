@@ -5,12 +5,12 @@ import React from 'react';
 import NavList from 'components/navigation/NavList';
 import { navLinks } from 'utils/navLinks';
 
-import css from './TopNav.scss';
+import css from './BottomNav.scss';
 
-const TopNav = () => (
-  <div styleName='top-nav'>
+const BottomNav = () => (
+  <div styleName='bottom-nav'>
     <NavList list={navLinks} classes={css.nav_link} />
   </div>
 );
 
-export default TopNav;
+export default BottomNav;

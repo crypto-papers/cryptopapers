@@ -1,17 +1,12 @@
 @import 'styles/colors.scss';
 
-.top-nav {
-  background-color: var(--black);
-  padding: 0.75rem;
-  position: fixed;
-  opacity: 0.9;
-  text-align: center;
-  width: 100%;
+.bottom-nav {
+  display: flex;
+  flex-direction: column;
 }
 
 // Underscore required rather than hyphen to import as classes attribute
 .nav_link {
   color: var(--white);
   font-weight: 500;
-  margin-right: 1rem;
 }

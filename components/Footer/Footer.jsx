@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import BottomNav from 'components/navigation/BottomNav';
+import BottomNav from 'components/navigation/BottomNav/BottomNav';
 import SocialLinks from 'components/SocialLinks/SocialLinks';
 import ReferralTag from 'components/ReferralTag/ReferralTag';
 
