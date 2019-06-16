@@ -19,6 +19,7 @@ module.name_mapper='^pages\/\(.*\)$' -> '<PROJECT_ROOT>/pages/\1'
 module.name_mapper='^schema\/\(.*\)$' -> '<PROJECT_ROOT>/schema/\1'
 module.name_mapper='^server\/\(.*\)$' -> '<PROJECT_ROOT>/server/\1'
 module.name_mapper='^static\/\(.*\)$' -> '<PROJECT_ROOT>/static/\1'
+module.name_mapper='^storybook\/\(.*\)$' -> '<PROJECT_ROOT>/.storybook/\1'
 module.name_mapper='^styles\/\(.*\)$' -> '<PROJECT_ROOT>/styles/\1'
 module.name_mapper='^utils\/\(.*\)$' -> '<PROJECT_ROOT>/utils/\1'
 
