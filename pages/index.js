@@ -3,7 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 
+import Latest from 'components/Latest/Latest';
 import Layout from 'components/Layout/Layout';
+
+import { mockPost } from '../mockdata/mockdata';
 
 function getPosts() {
   return [
@@ -45,8 +48,9 @@ const PostLink = ({ post }: PostLinkProps) => (
 
 const Page = () => (
   <Layout>
-    <h2>My Blog</h2>
+    <h2>My Site</h2>
     <code>Test code item</code>
+    <Latest postData={mockPost} />
     <ul>
       {getPosts().map(post => (
         <PostLink key={post.id} post={post} />

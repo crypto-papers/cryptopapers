@@ -1,0 +1,29 @@
+@import 'styles/colors.scss';
+
+.latest-container {
+  border: var(--lightGreyBorder);
+  border-radius: 3px;
+  box-shadow: var(--boxShadow);
+  display: flex;
+  padding: 1rem;
+}
+
+.latest-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 300px;
+}
+
+.latest-img {
+  max-height: 300px;
+  padding-right: 2rem;
+}
+
+.latest-meta > p {
+  margin: 0;
+}
+
+.latest-title {
+  margin: 0;
+}
