@@ -5,8 +5,6 @@ import Featured from './Featured';
 import { mockPost } from '../../mockdata/mockdata';
 import { setBackground } from 'storybook/sharedStyles';
 
-import 'styles/global.scss';
-
 storiesOf('Featured', module)
   .addDecorator(wrapInDiv => <div style={setBackground()}>{wrapInDiv()}</div>)
   .add('Homepage View', () => <Featured postData={mockPost} />);
