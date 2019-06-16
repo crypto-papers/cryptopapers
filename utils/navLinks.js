@@ -1,6 +1,7 @@
 // @flow
 
 /**
+ * Title of and link to a page.
  * @typedef NavItem
  * @type {object}
  * @property {string} title - Page title
@@ -12,7 +13,7 @@ export type NavItem = {
 };
 
 /**
- * Returns a list of pages (of type NavItem)
+ * Returns a list of pages (of type NavItem).
  * @param {NavItem[]} obj - The list of all available pages
  * @param {...string} rest - A list of strings to be checked agains obj's keys
  * @returns {array} - A list of pages
@@ -30,7 +31,11 @@ const pullOffPages = (obj, ...rest) => {
   return list;
 };
 
-// List of available pages
+/**
+ * List of pages available to add to nav menu.
+ * @constant {Object} pageList
+ * @default
+ */
 const pageList = {
   about: { title: 'About', href: '/about' },
   contrib: { title: 'Contribute', href: '/contribute' },

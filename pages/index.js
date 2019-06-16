@@ -13,14 +13,22 @@ function getPosts() {
   ];
 }
 
-type Props = {
+/**
+ * Post information used to dynamically set link to post.
+ * @typedef PostLinkProps
+ * @type {Object}
+ * @property {Object} post - Post information
+ * @property {string} post.id - The post id
+ * @property {string} post.title - The post title
+ */
+type PostLinkProps = {
   post: {
     id: string,
     title: string,
   },
 };
 
-const PostLink = ({ post }: Props) => (
+const PostLink = ({ post }: PostLinkProps) => (
   <li>
     <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

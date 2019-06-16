@@ -3,11 +3,17 @@
 import React from 'react';
 import Head from 'next/head';
 
-type Props = {
+/**
+ * Values passed to dynamically update page metadata.
+ * @typedef MetaProps
+ * @type {Object}
+ * @property {string=} title - The page title
+ */
+type MetaProps = {
   title?: string,
 };
 
-const Meta = ({ title }: Props) => {
+const Meta = ({ title }: MetaProps) => {
   const subPage = title ? ` | ${title}` : '';
   return (
     <Head>

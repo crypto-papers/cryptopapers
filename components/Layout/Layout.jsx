@@ -9,19 +9,26 @@ import TopNav from 'components/navigation/TopNav/TopNav';
 
 import './Layout.scss';
 
-type Props = {
+/**
+ * Contents of the page passed in to render the view.
+ * @typedef LayoutProps
+ * @type {Object}
+ * @property {Object[]} children - Child elements to be wrapped by the layout
+ * @property {string} title - The page title
+ */
+type LayoutProps = {
   children: React.Node,
   title?: string,
 };
 
-const Layout = ({ children, title }: Props) => (
+const Layout = ({ children, title }: LayoutProps) => (
   <React.Fragment>
     <Meta title={title} />
     <div styleName='content'>
       <TopNav />
       <Header />
       <div styleName='layout'>
-        <h2>{title}</h2>
+        {title && <h2>{title}</h2>}
         {children}
       </div>
     </div>
