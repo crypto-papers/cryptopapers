@@ -1,11 +1,14 @@
 // @flow
 
+/** @module navLinks */
+
 /**
  * Title of and link to a page.
  * @typedef NavItem
  * @type {object}
  * @property {string} title - Page title
  * @property {string} href - Page url
+ * @memberof navLinks
  */
 export type NavItem = {
   title: string,
@@ -13,12 +16,14 @@ export type NavItem = {
 };
 
 /**
- * Returns a list of pages (of type NavItem).
- * @param {NavItem[]} obj - The list of all available pages
- * @param {...string} rest - A list of strings to be checked agains obj's keys
- * @returns {array} - A list of pages
+ * Returns a list of pages (expressed as type NavItem).
+ * @function pullOffPages
+ * @param {Object} obj - The list of all available pages (expressed as type NavItem)
+ * @param {string[]} rest - A list of strings to be checked agains obj's keys
+ * @returns {NavItem[]} - A list of pages
+ * @memberof navLinks
  */
-const pullOffPages = (obj, ...rest) => {
+const pullOffPages = (obj: { [key: string]: NavItem }, ...rest: Array<string>) => {
   const list = [];
   const keys = Object.keys(obj);
 
@@ -35,6 +40,7 @@ const pullOffPages = (obj, ...rest) => {
  * List of pages available to add to nav menu.
  * @constant {Object} pageList
  * @default
+ * @memberof navLinks
  */
 const pageList = {
   about: { title: 'About', href: '/about' },
@@ -43,5 +49,5 @@ const pageList = {
   resources: { title: 'Resources', href: '/' },
 };
 
-// Lost of pages selected for navigation
+// List of pages selected for navigation
 export const navLinks = pullOffPages(pageList, 'home', 'about', 'contrib');

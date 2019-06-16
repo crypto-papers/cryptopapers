@@ -8,11 +8,15 @@ import ReferralTag from 'components/ReferralTag/ReferralTag';
 
 import './Footer.scss';
 
+/**
+ * JSX component that renders the page footer
+ * @namespace Footer
+ */
 const Footer = () => (
   <footer styleName='footer'>
     <div styleName='footer-container'>
       <BottomNav />
-      <SocialLinks />
+      <SocialLinks style='light' />
       <ReferralTag />
     </div>
   </footer>

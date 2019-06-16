@@ -1,6 +1,11 @@
 @import 'styles/colors.scss';
 
-.nav-link {
+.nav-link-dark {
+  color: var(--midnightBlue);
+  margin-right: 1rem;
+}
+
+.nav-link-light {
   color: var(--white);
   margin-right: 1rem;
 }

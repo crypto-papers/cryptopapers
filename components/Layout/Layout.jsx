@@ -15,12 +15,18 @@ import './Layout.scss';
  * @type {Object}
  * @property {Object[]} children - Child elements to be wrapped by the layout
  * @property {string} title - The page title
+ * @memberof Layout
  */
 type LayoutProps = {
   children: React.Node,
   title?: string,
 };
 
+/**
+ * JSX component that renders the page content.
+ * @namespace Layout
+ * @param {LayoutProps} props - A post data object
+ */
 const Layout = ({ children, title }: LayoutProps) => (
   <React.Fragment>
     <Meta title={title} />

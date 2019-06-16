@@ -6,6 +6,10 @@ import Plume from 'static/plume.svg';
 
 import './Header.scss';
 
+/**
+ * JSX component that renders the page header
+ * @namespace Header
+ */
 const Header = () => (
   <div styleName='header'>
     <h1 styleName='title'>Cryptopapers.info</h1>

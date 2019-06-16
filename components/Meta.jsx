@@ -8,11 +8,17 @@ import Head from 'next/head';
  * @typedef MetaProps
  * @type {Object}
  * @property {string=} title - The page title
+ * @memberof Meta
  */
 type MetaProps = {
   title?: string,
 };
 
+/**
+ * JSX component that renders the page head tags.
+ * @namespace Meta
+ * @param {MetaProps} props - Values to dynamically generate meta fields
+ */
 const Meta = ({ title }: MetaProps) => {
   const subPage = title ? ` | ${title}` : '';
   return (
