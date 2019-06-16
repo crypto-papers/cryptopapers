@@ -1,12 +1,12 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import Latest from './Latest';
+import Featured from './Featured';
 import { mockPost } from '../../mockdata/mockdata';
 import { setBackground } from 'storybook/sharedStyles';
 
 import 'styles/global.scss';
 
-storiesOf('Latest', module)
+storiesOf('Featured', module)
   .addDecorator(wrapInDiv => <div style={setBackground()}>{wrapInDiv()}</div>)
-  .add('Homepage View', () => <Latest postData={mockPost} />);
+  .add('Homepage View', () => <Featured postData={mockPost} />);

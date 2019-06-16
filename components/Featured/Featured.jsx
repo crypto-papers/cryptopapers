@@ -4,10 +4,10 @@ import React from 'react';
 
 import { concatDate, dateToLocale } from 'utils/conversions';
 
-import './Latest.scss';
+import './Featured.scss';
 
 /**
- * @typedef LatestProps
+ * @typedef FeaturedProps
  * @type {Object}
  * @property {Object} postData - A post data object
  * @property {Date} postData.added - JavaScript date object for date on which paper uploaded
@@ -15,9 +15,9 @@ import './Latest.scss';
  * @property {Object} postData.image - Image data (with properties url and alt)
  * @property {Object} postData.pubDate - Publication date info (with properties day, month, and year)
  * @property {string} postData.title - The title of a paper
- * @memberof Latest
+ * @memberof Featured
  */
-type LatestProps = {
+type FeaturedProps = {
   postData: {
     added: Date,
     author?: string,
@@ -35,20 +35,21 @@ type LatestProps = {
 };
 
 /**
- * @namespace Latest
- * @param {LatestProps} props - A post data object
+ * JSX component that renders information from a featured paper.
+ * @namespace Featured
+ * @param {FeaturedProps} props - A post data object
  */
-const Latest = ({ postData }: LatestProps) => {
+const Featured = ({ postData }: FeaturedProps) => {
   const { added, author, image, pubDate, title } = postData;
 
   return (
-    <div styleName='latest-container'>
+    <div styleName='featured-container'>
       <figure style={{ margin: '0' }}>
-        <img styleName='latest-img' src={image.url} alt={image.alt || ''} />
+        <img styleName='featured-img' src={image.url} alt={image.alt || ''} />
       </figure>
-      <div styleName='latest-data'>
-        <h4 styleName='latest-title'>{title}</h4>
-        <div styleName='latest-meta'>
+      <div styleName='featured-data'>
+        <h4 styleName='featured-title'>{title}</h4>
+        <div styleName='featured-meta'>
           {author && <p>{author}</p>}
           <p>Published on: {concatDate(pubDate)}</p>
         </div>
@@ -58,4 +59,4 @@ const Latest = ({ postData }: LatestProps) => {
   );
 };
 
-export default Latest;
+export default Featured;

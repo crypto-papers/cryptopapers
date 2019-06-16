@@ -1,6 +1,6 @@
 @import 'styles/colors.scss';
 
-.latest-container {
+.featured-container {
   border: var(--lightGreyBorder);
   border-radius: 3px;
   box-shadow: var(--boxShadow);
@@ -8,22 +8,22 @@
   padding: 1rem;
 }
 
-.latest-data {
+.featured-data {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-height: 300px;
 }
 
-.latest-img {
+.featured-img {
   max-height: 300px;
   padding-right: 2rem;
 }
 
-.latest-meta > p {
+.featured-meta > p {
   margin: 0;
 }
 
-.latest-title {
+.featured-title {
   margin: 0;
 }
