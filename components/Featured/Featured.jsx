@@ -12,6 +12,7 @@ import './Featured.scss';
  * @property {Object} postData - A post data object
  * @property {Date} postData.added - JavaScript date object for date on which paper uploaded
  * @property {string=} postData.author - Name of paper's author
+ * @property {string=} postData.description - Brief paper description
  * @property {Object} postData.image - Image data (with properties url and alt)
  * @property {Object} postData.pubDate - Publication date info (with properties day, month, and year)
  * @property {string} postData.title - The title of a paper
@@ -21,6 +22,7 @@ type FeaturedProps = {
   postData: {
     added: Date,
     author?: string,
+    description?: string,
     image: {
       url: string,
       alt?: string,
@@ -40,7 +42,7 @@ type FeaturedProps = {
  * @param {FeaturedProps} props - A post data object
  */
 const Featured = ({ postData }: FeaturedProps) => {
-  const { added, author, image, pubDate, title } = postData;
+  const { added, author, description, image, pubDate, title } = postData;
 
   return (
     <div styleName='featured-container'>
@@ -50,10 +52,23 @@ const Featured = ({ postData }: FeaturedProps) => {
       <div styleName='featured-data'>
         <h4 styleName='featured-title'>{title}</h4>
         <div styleName='featured-meta'>
-          {author && <p>{author}</p>}
-          <p>Published on: {concatDate(pubDate)}</p>
+          {author && (
+            <p>
+              <strong>Author: </strong>
+              {author}
+            </p>
+          )}
+          {description && (
+            <p>
+              <strong>Description: </strong>
+              {description}
+            </p>
+          )}
+          <p>
+            <strong>Published on:</strong> {concatDate(pubDate)}
+          </p>
         </div>
-        <small>Added on: {dateToLocale(added)}</small>
+        <small styleName='featured-added'>Added on: {dateToLocale(added)}</small>
       </div>
     </div>
   );

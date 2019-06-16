@@ -1,5 +1,9 @@
 @import 'styles/colors.scss';
 
+.featured-added {
+  color: var(--mediumGrey);
+}
+
 .featured-container {
   border: var(--lightGreyBorder);
   border-radius: 3px;
