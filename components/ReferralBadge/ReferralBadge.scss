@@ -1,12 +1,12 @@
 @import 'styles/colors.scss';
 
-.tag {
+.badge {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.tag-text {
+.badge-text {
   color: var(--white);
   font-weight: 500;
 }

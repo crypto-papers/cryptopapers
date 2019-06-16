@@ -4,7 +4,7 @@ import React from 'react';
 
 import BottomNav from 'components/navigation/BottomNav/BottomNav';
 import SocialLinks from 'components/SocialLinks/SocialLinks';
-import ReferralTag from 'components/ReferralTag/ReferralTag';
+import ReferralBadge from 'components/ReferralBadge/ReferralBadge';
 
 import './Footer.scss';
 
@@ -17,7 +17,7 @@ const Footer = () => (
     <div styleName='footer-container'>
       <BottomNav />
       <SocialLinks style='light' />
-      <ReferralTag />
+      <ReferralBadge />
     </div>
   </footer>
 );
