@@ -1,0 +1,28 @@
+@import 'styles/colors.scss';
+
+.result {
+  border: var(--lightGreyBorder);
+  border-radius: 3px;
+  box-shadow: var(--boxGreyShadow);
+  width: 100%;
+  padding: 1rem;
+}
+
+.result:hover {
+  cursor: pointer;
+  box-shadow: var(--boxBlackShadow);
+}
+
+.result-download {
+  color: var(--black25);
+}
+
+.result-download:hover {
+  color: var(--black);
+}
+
+.result-meta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}

@@ -52,7 +52,7 @@ const Featured = ({ postData }: FeaturedProps) => {
         <img styleName='featured-img' src={coverImage} alt={coverAlt} />
       </figure>
       <div styleName='featured-data'>
-        <h4 styleName='featured-title'>{title}</h4>
+        <h3 styleName='featured-title'>{title}</h3>
         <div styleName='featured-meta'>
           {author && (
             <p>
