@@ -14,4 +14,11 @@ export const mockPost = {
   title: 'Verge Black Paper',
 };
 
-export const mockResults = [mockPost, mockPost, mockPost, mockPost];
+export const mockPostMissingData = {
+  id: 1,
+  added: new Date(),
+  downloadUrl: 'https://cryptopapers.info/assets/pdf/verge.pdf',
+  title: 'Ghost Protocol',
+};
+
+export const mockResults = [mockPost, mockPostMissingData, mockPost, mockPostMissingData];

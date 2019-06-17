@@ -205,11 +205,67 @@
               
                 
                 <li><a
-                  href='#referraltag'
+                  href='#referralbadge'
                   class="">
-                  ReferralTag
+                  ReferralBadge
                   
                 </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#result'
+                  class=" toggle-sibling">
+                  Result
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#resultresultprop'
+                        class='regular pre-open'>
+                        .ResultProp
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#resultsgrid'
+                  class=" toggle-sibling">
+                  ResultsGrid
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#resultsgridresultsgridprops'
+                        class='regular pre-open'>
+                        .ResultsGridProps
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
                 
                 </li>
               
@@ -490,7 +546,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>props</span> <code class='quiet'>(FeaturedProps)</code>
-	    A post data object
+	    A paper data object
 
           </div>
           
@@ -523,7 +579,8 @@
 
   
 
-  
+  <p>Data required to populated the featured paper</p>
+
     <div class='pre p1 fill-light mt0'>FeaturedProps</div>
   
     <p>
@@ -547,33 +604,38 @@
     <div>
       
         <div class='space-bottom0'>
-          <span class='code bold'>postData</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          <span class='code bold'>paperData</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
           : A post data object
 
           
             <ul>
               
-                <li><code>postData.added</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>
+                <li><code>paperData.added</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>
                   
                   <p>JavaScript date object for date on which paper uploaded</p>
 </li>
               
-                <li><code>postData.author</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
+                <li><code>paperData.author</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
                   
                   <p>Name of paper's author</p>
 </li>
               
-                <li><code>postData.image</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+                <li><code>paperData.description</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?
+                  
+                  <p>Brief paper description</p>
+</li>
+              
+                <li><code>paperData.image</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
                   
                   <p>Image data (with properties url and alt)</p>
 </li>
               
-                <li><code>postData.pubDate</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+                <li><code>paperData.pubDate</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
                   
                   <p>Publication date info (with properties day, month, and year)</p>
 </li>
               
-                <li><code>postData.title</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                <li><code>paperData.title</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
                   
                   <p>The title of a paper</p>
 </li>
@@ -1224,27 +1286,25 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='referraltag'>
-      ReferralTag
+    <h3 class='fl m0' id='referralbadge'>
+      ReferralBadge
     </h3>
     
     
   </div>
   
 
-  <p>JSX component that renders the Brave referral tag</p>
+  <p>JSX component that renders the Brave referral badge</p>
 
-    <div class='pre p1 fill-light mt0'>ReferralTag</div>
-  
-  
-
-  
-  
-  
-  
+    <div class='pre p1 fill-light mt0'>ReferralBadge</div>
   
   
 
+  
+  
+  
+  
+  
   
 
   
@@ -1254,6 +1314,294 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='result'>
+      Result
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>JSX component that renders a single paper result.</p>
+
+    <div class='pre p1 fill-light mt0'>Result</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>props</span> <code class='quiet'>(ResultProp)</code>
+	    A paper data object
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='resultresultprop'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>ResultProp</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  
+    <div class='pre p1 fill-light mt0'>ResultProp</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          : A paper data object
+
+          
+            <ul>
+              
+                <li><code>result.downloadUrl</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>Source for a downloadable PDF of the paper</p>
+</li>
+              
+                <li><code>result.image</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
+                  
+                  <p>Image data (with properties url and alt)</p>
+</li>
+              
+                <li><code>result.pubDate</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+                  
+                  <p>Publication date info (with properties day, month, and year)</p>
+</li>
+              
+                <li><code>result.title</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>The title of a paper</p>
+</li>
+              
+            </ul>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='resultsgrid'>
+      ResultsGrid
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>JSX component that renders a grids of paper results.</p>
+
+    <div class='pre p1 fill-light mt0'>ResultsGrid</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>props</span> <code class='quiet'>(ResultGridProps)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='resultsgridresultsgridprops'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>ResultsGridProps</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Collection of papers and their relevant data</p>
+
+    <div class='pre p1 fill-light mt0'>ResultsGridProps</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>results</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ResultProp>)</code>
+          : List of paper data objects
+
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
 
   
 

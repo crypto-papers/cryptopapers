@@ -50,7 +50,7 @@ const PostLink = ({ post }: PostLinkProps) => (
 const Page = () => (
   <Layout>
     <h2>Featured Paper:</h2>
-    <Featured postData={mockPost} />
+    <Featured paperData={mockPost} />
     <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
     <ResultsGrid results={mockResults} />
     <ul>
