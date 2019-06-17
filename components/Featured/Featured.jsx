@@ -24,7 +24,7 @@ type FeaturedProps = {
     author?: string,
     description?: string,
     image: {
-      url: string,
+      url?: string,
       alt?: string,
     },
     pubDate: {
@@ -43,11 +43,13 @@ type FeaturedProps = {
  */
 const Featured = ({ postData }: FeaturedProps) => {
   const { added, author, description, image, pubDate, title } = postData;
+  const coverImage = image && image.url ? image.url : '/static/placeholder.svg';
+  const coverAlt = image && image.alt ? image.alt : `cover of ${title}`;
 
   return (
     <div styleName='featured-container'>
       <figure style={{ margin: '0' }}>
-        <img styleName='featured-img' src={image.url} alt={image.alt || ''} />
+        <img styleName='featured-img' src={coverImage} alt={coverAlt} />
       </figure>
       <div styleName='featured-data'>
         <h4 styleName='featured-title'>{title}</h4>

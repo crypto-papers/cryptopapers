@@ -1,18 +1,19 @@
 :root {
-  --darkBlue: #053782; // rgba(5, 55, 130, 1)
-  --lightBlue: #1d88e0; // rgba(29, 136, 224, 1)
-  --midnightBlue: #11013b; // rgba(17, 1, 59, 1)
+  --darkBlue: rgba(5, 55, 130, 1); // #053782
+  --lightBlue: rgba(29, 136, 224, 1); // #1d88e0
+  --midnightBlue: rgba(17, 1, 59, 1); // #11013b
 
   // Monochromes
-  --black: #1c1d23; // rgba(28, 29, 35, 1)
-  --lightGrey: #e0e0e0; // rgba(224, 224, 224, 1)
-  --mediumGrey: #bdbdbd; // rgba(189, 189, 189, 1)
-  --white: #ffffff; // rgba(255, 255, 255, 1)
+  --black: rgba(28, 29, 35, 1); // #1c1d23
+  --lightGrey: rgba(224, 224, 224, 1); // #e0e0e0
+  --lightGrey50: rgba(224, 224, 224, 0.5); // #e0e0e0 w/ 50% opacity
+  --mediumGrey: rgba(189, 189, 189, 1); // #bdbdbd
+  --white: rgba(255, 255, 255, 1); // #ffffff
 
   // Gradients
   --darkLightBlue: linear-gradient(27deg, var(--darkBlue) 0%, var(--lightBlue) 100%); // darkBlue to lightBlue
 
   // Borders
   --lightGreyBorder: 1px solid var(--lightGrey);
-  --boxShadow: 1px 1px 1px 1px var(--lightGrey);
+  --boxShadow: 2px 1px 3px 2px var(--lightGrey50);
 }
