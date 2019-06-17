@@ -32,9 +32,9 @@ export const dateToLocale = (date: Date) => {
  * @memberof conversions
  */
 export const concatDate = (obj: { day?: number, month?: string, year?: number }) => {
-  const day = obj.day ? obj.day : null;
-  const month = obj.month ? obj.month : null;
-  const year = obj.year ? obj.year : null;
+  const day = obj && obj.day ? obj.day : null;
+  const month = obj && obj.month ? obj.month : null;
+  const year = obj && obj.year ? obj.year : null;
 
   let date;
   if (day && month && year) {
