@@ -53,6 +53,34 @@
               
                 
                 <li><a
+                  href='#errormessage'
+                  class=" toggle-sibling">
+                  ErrorMessage
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#errormessageerrormessageprops'
+                        class='regular pre-open'>
+                        .ErrorMessageProps
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#featured'
                   class=" toggle-sibling">
                   Featured
@@ -205,6 +233,16 @@
               
                 
                 <li><a
+                  href='#postlinkprops'
+                  class="">
+                  PostLinkProps
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#referralbadge'
                   class="">
                   ReferralBadge
@@ -299,9 +337,9 @@
               
                 
                 <li><a
-                  href='#postlinkprops'
+                  href='#'
                   class="">
-                  PostLinkProps
+                  
                   
                 </a>
                 
@@ -481,6 +519,158 @@
 
       
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='errormessage'>
+      ErrorMessage
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>JSX component that renders an error message</p>
+
+    <div class='pre p1 fill-light mt0'>ErrorMessage</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>props</span> <code class='quiet'>(ErrorMessageProps)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='errormessageerrormessageprops'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>ErrorMessageProps</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Information on the nature of the error encountered</p>
+
+    <div class='pre p1 fill-light mt0'>ErrorMessageProps</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>error</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          : A standard error object
+
+          
+            <ul>
+              
+                <li><code>error.message</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>A brief description of the error</p>
+</li>
+              
+                <li><code>error.name</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>The type of error</p>
+</li>
+              
+            </ul>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>customMessage</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
+          : An optional custom message added as a header
+
+          
+        </div>
+      
+    </div>
+  
+
   
 
   
@@ -1286,6 +1476,85 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='postlinkprops'>
+      PostLinkProps
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Post information used to dynamically set link to post.</p>
+
+    <div class='pre p1 fill-light mt0'>PostLinkProps</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>post</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          : Post information
+
+          
+            <ul>
+              
+                <li><code>post.id</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>The post id</p>
+</li>
+              
+                <li><code>post.title</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+                  
+                  <p>The post title</p>
+</li>
+              
+            </ul>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='referralbadge'>
       ReferralBadge
     </h3>
@@ -1428,6 +1697,11 @@
                 <li><code>result.downloadUrl</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
                   
                   <p>Source for a downloadable PDF of the paper</p>
+</li>
+              
+                <li><code>result.id</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+                  
+                  <p>Unique identifier</p>
 </li>
               
                 <li><code>result.image</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
@@ -1737,22 +2011,16 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='postlinkprops'>
-      PostLinkProps
+    <h3 class='fl m0' id=''>
+      
     </h3>
     
     
   </div>
   
 
-  <p>Post information used to dynamically set link to post.</p>
-
-    <div class='pre p1 fill-light mt0'>PostLinkProps</div>
   
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-    </p>
+    <div class='pre p1 fill-light mt0'></div>
   
   
 
@@ -1765,32 +2033,6 @@
 
   
 
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>post</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-          : Post information
-
-          
-            <ul>
-              
-                <li><code>post.id</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-                  
-                  <p>The post id</p>
-</li>
-              
-                <li><code>post.title</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-                  
-                  <p>The post title</p>
-</li>
-              
-            </ul>
-          
-        </div>
-      
-    </div>
   
 
   

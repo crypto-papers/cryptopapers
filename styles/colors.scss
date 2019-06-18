@@ -1,7 +1,10 @@
 :root {
   --darkBlue: rgba(5, 55, 130, 1); // #053782
+  --deepRed: rgba(162, 18, 18, 18); // #A21212
   --lightBlue: rgba(29, 136, 224, 1); // #1d88e0
   --midnightBlue: rgba(17, 1, 59, 1); // #11013b
+  --red: rgba(229, 75, 75, 1); // #E54B4B
+  --red15: rgba(229, 75, 75, 0.15); // #E54B4B w/ 15% opacity
 
   // Monochromes
   --black: rgba(28, 29, 35, 1); // #1c1d23
@@ -15,7 +18,8 @@
   --darkLightBlue: linear-gradient(27deg, var(--darkBlue) 0%, var(--lightBlue) 100%); // darkBlue to lightBlue
 
   // Borders
-  --lightGreyBorder: 1px solid var(--lightGrey);
-  --boxGreyShadow: 2px 1px 3px 2px var(--lightGrey50);
-  --boxBlackShadow: 2px 1px 3px 2px var(--black25);
+  --borderLightGrey: 1px solid var(--lightGrey);
+  --borderDeepRed: 1px solid var(--deepRed);
+  --boxShadowGrey: 2px 1px 3px 2px var(--lightGrey50);
+  --boxShadowBlack: 2px 1px 3px 2px var(--black25);
 }
