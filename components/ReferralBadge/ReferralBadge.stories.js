@@ -8,4 +8,4 @@ import { setBackground } from 'storybook/sharedStyles';
 
 storiesOf('ReferralBadge', module)
   .addDecorator(wrapInDiv => <div style={setBackground('dark', 'center')}>{wrapInDiv()}</div>)
-  .add('Brave', () => <ReferralBadge style='light' />);
+  .add('Brave', () => <ReferralBadge />);

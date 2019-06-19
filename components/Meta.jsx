@@ -4,22 +4,11 @@ import React from 'react';
 import Head from 'next/head';
 
 /**
- * Values passed to dynamically update page metadata.
- * @typedef MetaProps
- * @type {Object}
- * @property {string=} title - The page title
- * @memberof Meta
- */
-type MetaProps = {
-  title?: string,
-};
-
-/**
- * JSX component that renders the page head tags.
+ * JSX component that dynamically generate meta fields and renders the page head tags.
  * @namespace Meta
- * @param {MetaProps} props - Values to dynamically generate meta fields
+ * @param {string=} title - The page title
  */
-const Meta = ({ title }: MetaProps) => {
+const Meta = ({ title }: { title?: string }) => {
   const subPage = title ? ` | ${title}` : '';
   return (
     <Head>

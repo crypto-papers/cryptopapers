@@ -8,41 +8,38 @@ import './Featured.scss';
 
 /**
  * Data required to populated the featured paper
- * @typedef FeaturedProps
+ * @typedef PaperData
  * @type {Object}
- * @property {Object} paperData - A post data object
- * @property {Date} paperData.added - JavaScript date object for date on which paper uploaded
- * @property {string=} paperData.author - Name of paper's author
- * @property {string=} paperData.description - Brief paper description
- * @property {Object=} paperData.image - Image data (with properties url and alt)
- * @property {Object} paperData.pubDate - Publication date info (with properties day, month, and year)
- * @property {string} paperData.title - The title of a paper
+ * @property {Date} added - JavaScript date object for date on which paper uploaded
+ * @property {string=} author - Name of paper's author
+ * @property {string=} description - Brief paper description
+ * @property {Object=} image - Image data (with properties url and alt)
+ * @property {Object} pubDate - Publication date info (with properties day, month, and year)
+ * @property {string} title - The title of a paper
  * @memberof Featured
  */
-type FeaturedProps = {
-  paperData: {
-    added: Date,
-    author?: string,
-    description?: string,
-    image?: {
-      url?: string,
-      alt?: string,
-    },
-    pubDate: {
-      day?: number,
-      month?: string,
-      year?: number,
-    },
-    title: string,
+type PaperData = {
+  added: Date,
+  author?: string,
+  description?: string,
+  image?: {
+    url?: string,
+    alt?: string,
   },
+  pubDate: {
+    day?: number,
+    month?: string,
+    year?: number,
+  },
+  title: string,
 };
 
 /**
  * JSX component that renders information from a featured paper.
  * @namespace Featured
- * @param {FeaturedProps} props - A paper data object
+ * @param {PaperData} paperData - A paper data object
  */
-const Featured = ({ paperData }: FeaturedProps) => {
+const Featured = ({ paperData }: { paperData: PaperData }) => {
   const { added, author, description, image, pubDate, title } = paperData;
   const authorName = author ? author : 'Unknown';
   const coverImage = image && image.url ? image.url : '/static/placeholder.svg';

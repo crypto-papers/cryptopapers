@@ -1,9 +1,9 @@
 @import 'styles/colors.scss';
 
 .result {
-  border: var(--lightGreyBorder);
+  border: var(--borderLightGrey);
   border-radius: 3px;
-  box-shadow: var(--boxGreyShadow);
+  box-shadow: var(--boxShadowGrey);
   width: 100%;
   max-width: 30vw;
   padding: 1rem;
@@ -11,7 +11,7 @@
 
 .result:hover {
   cursor: pointer;
-  box-shadow: var(--boxBlackShadow);
+  box-shadow: var(--boxShadowBlack);
 }
 
 .result-download {

@@ -8,37 +8,37 @@ import { concatDate } from 'utils/conversions';
 import './Result.scss';
 
 /**
+ * A paper data object
  * @typedef ResultProp
  * @type {Object}
- * @property {Object} result - A paper data object
- * @property {string} result.downloadUrl - Source for a downloadable PDF of the paper
- * @property {Object=} result.image - Image data (with properties url and alt)
- * @property {Object} result.pubDate - Publication date info (with properties day, month, and year)
- * @property {string} result.title - The title of a paper
+ * @property {string} downloadUrl - Source for a downloadable PDF of the paper
+ * @property {number} id - Unique identifier
+ * @property {Object=} image - Image data (with properties url and alt)
+ * @property {Object} pubDate - Publication date info (with properties day, month, and year)
+ * @property {string} title - The title of a paper
  * @memberof Result
  */
-type ResultProp = {
-  result: {
-    downloadUrl: string,
-    image?: {
-      url?: string,
-      alt?: string,
-    },
-    pubDate: {
-      day?: number,
-      month?: string,
-      year?: number,
-    },
-    title: string,
+export type ResultProp = {
+  downloadUrl: string,
+  id: number,
+  image?: {
+    url?: string,
+    alt?: string,
   },
+  pubDate: {
+    day?: number,
+    month?: string,
+    year?: number,
+  },
+  title: string,
 };
 
 /**
  * JSX component that renders a single paper result.
  * @namespace Result
- * @param {ResultProp} props - A paper data object
+ * @param {ResultProp} result - A paper data object
  */
-const Result = ({ result }: ResultProp) => {
+const Result = ({ result }: { result: ResultProp }) => {
   const { downloadUrl, image, pubDate, title } = result;
   const coverImage = image && image.url ? image.url : '/static/placeholder.svg';
   const coverAlt = image && image.alt ? image.alt : `cover of ${title}`;

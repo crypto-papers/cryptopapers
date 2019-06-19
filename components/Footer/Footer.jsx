@@ -16,7 +16,7 @@ const Footer = () => (
   <footer styleName='footer'>
     <div styleName='footer-container'>
       <BottomNav />
-      <SocialLinks style='light' />
+      <SocialLinks mode='light' />
       <ReferralBadge />
     </div>
   </footer>
