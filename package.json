@@ -11,7 +11,7 @@
     "jsdocs": "documentation build ./components/** ./pages/** ./server/** ./.storybook/** ./utils/** -f html -o docs/jsdocs",
     "lint": "eslint --ext .js,.jsx ./components/** ./pages/** ./server/**",
     "pre-flight": "npm run lint && npm run flow",
-    "relay": "relay-compiler --src ./ --exclude '**/.next/**' '**/docs/**' '**/__generated__/**' '**/node_modules/**' '**/schema/**' '**/server/**' --schema ./schema.graphql --extensions js jsx",
+    "relay": "relay-compiler --src ./ --exclude '**/.next/**' '**/docs/**' '**/__generated__/**' '**/node_modules/**' '**/schema/**' '**/server/**' --schema ./schema/schema.graphql --extensions js jsx",
     "start": "next start -p 8000",
     "storybook": "start-storybook -s ./.storybook/assets"
   },

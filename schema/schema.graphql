@@ -1,0 +1,21 @@
+interface Node {
+  id: ID!
+}
+
+type Query {
+  paper: Paper!
+
+  node(id: ID!): Node
+}
+
+type Paper {
+  id: ID!
+  # author: [Author]
+  # currency: [Currency]
+  description: String
+  # excerpt: String
+  # file: [File]
+  # pageNum: Int
+  title: String!
+  # createAt: Time
+}
