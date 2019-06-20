@@ -12,7 +12,7 @@ The site's codebase, as well as the project itself are open-sourced and contribu
 `;
 
 const Contribute = () => (
-  <Layout title={'Contribute'}>
+  <Layout background={'geometric'} title={'Contribute'}>
     <Markdown source={contribute} />
   </Layout>
 );

@@ -1,7 +1,28 @@
+@import 'styles/colors.scss';
+
+.content.geo {
+  background: var(--backgroundGeometricGrey);
+}
+
+.content.geo-blue {
+  background: var(--backgroundGeometricBlue);
+}
+
+.content.plain {
+  background-color: var(--white);
+}
+
 .layout {
+  background-color: var(--white);
   margin: 0 auto;
   max-width: 1300px;
   padding: 2rem;
+}
+
+.layout.geo,
+.layout.geo-blue {
+  background-color: var(--white);
+  border: var(--borderLightGrey);
 }
 
 /*

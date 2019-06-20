@@ -16,4 +16,4 @@ const error = {
 storiesOf('Error Message', module)
   .addDecorator(wrapInDiv => <div style={setBackground('center')}>{wrapInDiv()}</div>)
   .add('With custom message', () => <ErrorMessage customMessage={customMessage} error={error} />)
-  .add('Without custom message', () => <ErrorMessage error={error} />);
+  .add('Plain', () => <ErrorMessage error={error} />);

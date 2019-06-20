@@ -15,7 +15,11 @@
   --white: rgba(255, 255, 255, 1); // #ffffff
 
   // Gradients
-  --darkLightBlue: linear-gradient(27deg, var(--darkBlue) 0%, var(--lightBlue) 100%); // darkBlue to lightBlue
+  --gradientDarkLightBlue: linear-gradient(27deg, var(--darkBlue) 0%, var(--lightBlue) 100%); // darkBlue to lightBlue
+
+  // Background
+  --backgroundGeometricBlue: url('/static/background/geometric-blue.png') repeat;
+  --backgroundGeometricGrey: url('/static/background/geometric-grey.png') repeat;
 
   // Borders
   --borderLightGrey: 1px solid var(--lightGrey);

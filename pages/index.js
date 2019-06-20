@@ -6,6 +6,7 @@ import { graphql, QueryRenderer } from 'react-relay';
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import Featured from 'components/Featured/Featured';
 import Layout from 'components/Layout/Layout';
+import Loader from 'components/Loader/Loader';
 import ResultsGrid from 'components/ResultsGrid/ResultsGrid';
 
 import environment from 'schema/environment';
@@ -36,7 +37,7 @@ const Homepage = () => (
         } else if (props) {
           <ResultsGrid results={mockResults} />;
         }
-        return <div>Loading</div>;
+        return <Loader />;
       }}
     />
   </Layout>

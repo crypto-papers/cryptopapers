@@ -5,6 +5,12 @@
   justify-content: center;
 }
 
+.bouncing-loader-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .bouncing-loader-ellipse {
   animation: bounce-fade 0.8s infinite alternate;
   border-radius: 50%;
@@ -24,8 +30,18 @@
   background-color: var(--darkBlue);
 }
 
+.dark-message {
+  color: var(--darkBlue);
+  margin-bottom: 0;
+}
+
 .light {
   background-color: var(--lightGrey);
+}
+
+.light-message {
+  color: var(--lightGrey);
+  margin-bottom: 0;
 }
 
 // Keyframes
