@@ -1,12 +1,21 @@
 @import 'styles/colors.scss';
 
 .result {
+  background-color: var(--lightGrey50);
   border: var(--borderLightGrey);
   border-radius: 3px;
   box-shadow: var(--boxShadowGrey);
   width: 100%;
   max-width: 30vw;
   padding: 1rem;
+
+  @media screen and (max-width: 900px) {
+    max-width: 45vw;
+  }
+
+  @media screen and (max-width: 620px) {
+    max-width: 80vw;
+  }
 }
 
 .result:hover {
@@ -22,8 +31,27 @@
   color: var(--black);
 }
 
+.result-figure {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.result-image {
+  background-color: var(--lightGrey);
+  border: var(--borderLightGrey);
+  box-shadow: var(--boxShadowGrey);
+  height: 300px;
+  margin: 0;
+  max-width: 100%;
+  object-fit: cover;
+}
+
 .result-meta {
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
+
+.result-text {
+  max-width: 85%;
 }

@@ -45,13 +45,13 @@ const Result = ({ result }: { result: ResultProp }) => {
 
   return (
     <div styleName='result'>
-      <figure style={{ textAlign: 'center' }}>
-        <img style={{ height: '250px' }} src={coverImage} alt={coverAlt} />
+      <figure styleName='result-figure'>
+        <img styleName='result-image' src={coverImage} alt={coverAlt} />
       </figure>
       <div styleName='result-meta'>
-        <div>
+        <div styleName='result-text'>
           <h4 style={{ margin: '0' }}>{title}</h4>
-          <small>Published on {concatDate(pubDate)}</small>
+          {pubDate && <small>Published on {concatDate(pubDate)}</small>}
         </div>
         <a download href={downloadUrl} styleName='result-download'>
           <Download />

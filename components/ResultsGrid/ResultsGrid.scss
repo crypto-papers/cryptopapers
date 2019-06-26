@@ -8,4 +8,12 @@
   justify-items: center;
   margin-top: 1rem;
   padding: 1rem 0;
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
 }
