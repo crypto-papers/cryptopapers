@@ -14,7 +14,7 @@ The site's codebase, as well as the project itself are open-sourced and contribu
 `;
 
 const About = () => (
-  <Layout background={'geometric-blue'} title={'About Us'}>
+  <Layout background={'herringbone-blue'} title={'About Us'}>
     <Markdown source={about} />
     <ResultsGrid results={mockResults} />
   </Layout>

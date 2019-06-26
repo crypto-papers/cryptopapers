@@ -38,6 +38,9 @@ const Layout = ({ background, children, title }: LayoutProps) => {
     case 'geometric-blue':
       bg = 'geo-blue';
       break;
+    case 'herringbone-blue':
+      bg = 'hbblue';
+      break;
     default:
       bg = 'plain';
   }

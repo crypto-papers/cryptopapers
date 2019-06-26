@@ -8,6 +8,10 @@
   background: var(--backgroundGeometricBlue);
 }
 
+.content.hbblue {
+  background: var(--backgroundHerringboneBlue);
+}
+
 .content.plain {
   background-color: var(--white);
 }
@@ -20,7 +24,8 @@
 }
 
 .layout.geo,
-.layout.geo-blue {
+.layout.geo-blue,
+.layout.hbblue {
   background-color: var(--white);
   border: var(--borderLightGrey);
 }
