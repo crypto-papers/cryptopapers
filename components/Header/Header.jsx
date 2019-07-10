@@ -12,7 +12,7 @@ import './Header.scss';
  */
 const Header = () => (
   <div styleName='header'>
-    <h1 styleName='title'>Cryptopapers.info</h1>
+    <h1 styleName='title'>CryptoPapers.info</h1>
     <Plume styleName='plume' />
   </div>
 );
