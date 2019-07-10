@@ -1,0 +1,23 @@
+@import 'styles/colors.scss';
+
+.paper-result-added {
+  color: var(--mediumGrey);
+  margin-top: 0.8rem;
+}
+
+.paper-result-byline {
+  margin: 0 0 1rem;
+}
+.paper-result-header {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.paper-result-viewer {
+  border: var(--borderLightGrey);
+  box-shadow: var(--boxShadowGrey);
+}
