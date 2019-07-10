@@ -7,6 +7,7 @@
     "analyze": "ANALYZE=true next build && cp ./.next/analyze/* ./docs/analysis/",
     "build": "next build",
     "dev": "node ./server/server.js",
+    "export": "npm run build && next export",
     "flow": "flow",
     "jsdocs": "documentation build ./components/** ./pages/** ./server/** ./.storybook/** ./utils/** -f html -o docs/jsdocs",
     "lint": "eslint --ext .js,.jsx ./components/** ./pages/** ./server/**",
