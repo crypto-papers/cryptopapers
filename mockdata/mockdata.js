@@ -1,5 +1,5 @@
 export const mockPost = {
-  id: 1,
+  id: '1',
   added: new Date(),
   author: 'Hingle McCringleberry',
   description:
@@ -15,7 +15,7 @@ export const mockPost = {
 };
 
 export const mockPost1 = {
-  id: 2,
+  id: '2',
   added: new Date(),
   author: 'Nicolas van Saberhagen',
   description:
@@ -31,7 +31,7 @@ export const mockPost1 = {
 };
 
 export const mockPost2 = {
-  id: 3,
+  id: '3',
   added: new Date(),
   description:
     'This paper introduces Stox, "an open source, Ethereum based platform for prediction markets." It starts with an overview of prediction markets and their challenges. It then goes on to describe the Stox token (a Bancor ERC20 smart token), ecosystem (a global decentralized network), platform (where users can create and participate in prediction events), and app. The authors also provide a competitive analysis, roadmap, details on the token issuance, a list of team members, and an enumeration of some risk and technical considerations.',
@@ -41,7 +41,7 @@ export const mockPost2 = {
 };
 
 export const mockPostMissingData = {
-  id: 4,
+  id: '4',
   added: new Date(),
   downloadUrl: 'https://cryptopapers.info/assets/pdf/verge.pdf',
   title: 'Ghost Protocol',
