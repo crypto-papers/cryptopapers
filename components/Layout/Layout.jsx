@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
-import Meta from 'components/Meta';
+import Meta from 'components/Meta/Meta';
 import TopNav from 'components/navigation/TopNav/TopNav';
 
 import './Layout.scss';

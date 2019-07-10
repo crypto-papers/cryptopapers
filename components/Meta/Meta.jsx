@@ -14,10 +14,15 @@ const Meta = ({ title }: { title?: string }) => {
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta charSet='utf-8' />
+      <link rel='shortcut icon' href='/static/favicon.ico' />
+
+      <title>{`CryptoPapers${subPage}`}</title>
+
       <meta property='og:site_name' content='Cryptopapers.info' />
       <meta property='og:type' content='website' />
-      <link rel='shortcut icon' href='/static/favicon.ico' />
-      <title>{`Cryptopapers${subPage}`}</title>
+
+      <meta name='twitter:card' content='summary' />
+      <meta name='twitter:site' content='@crypto_papers' />
     </Head>
   );
 };
