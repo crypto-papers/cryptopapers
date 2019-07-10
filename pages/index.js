@@ -1,24 +1,34 @@
 // @flow
 
 import React from 'react';
-import { graphql, QueryRenderer } from 'react-relay';
+import dynamic from 'next/dynamic';
+import { QueryRenderer } from 'react-relay';
 
-import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
 import Featured from 'components/Featured/Featured';
 import Layout from 'components/Layout/Layout';
-import Loader from 'components/Loader/Loader';
-import ResultsGrid from 'components/ResultsGrid/ResultsGrid';
 
 import environment from 'schema/environment';
 import { mockPost, mockResults } from '../mockdata/mockdata';
+import { pagesQuery } from 'lib/queries/pages';
 
-const pagesQuery = graphql`
-  query pagesQuery {
-    paper {
-      id
-    }
-  }
-`;
+const ErrorMessage = dynamic(() =>
+  import(
+    /* webpackChunkName: "errorMessage" */
+    'components/ErrorMessage/ErrorMessage'
+  )
+);
+const Loader = dynamic(() =>
+  import(
+    /* webpackChunkName: "loader" */
+    'components/Loader/Loader'
+  )
+);
+const ResultsGrid = dynamic(() =>
+  import(
+    /* webpackChunkName: "resultsGrid" */
+    'components/ResultsGrid/ResultsGrid'
+  )
+);
 
 const Homepage = () => (
   <Layout>
