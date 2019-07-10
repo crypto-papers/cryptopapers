@@ -15,6 +15,7 @@ module.file_ext=.css
 module.file_ext=.scss
 
 module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/components/\1'
+module.name_mapper='^lib\/\(.*\)$' -> '<PROJECT_ROOT>/lib/\1'
 module.name_mapper='^pages\/\(.*\)$' -> '<PROJECT_ROOT>/pages/\1'
 module.name_mapper='^schema\/\(.*\)$' -> '<PROJECT_ROOT>/schema/\1'
 module.name_mapper='^server\/\(.*\)$' -> '<PROJECT_ROOT>/server/\1'
