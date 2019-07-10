@@ -2,37 +2,10 @@
 
 import React from 'react';
 
-import { concatDate, dateToLocale } from 'utils/conversions';
+import { concatDate, dateToLocale } from '_utils/conversions';
+import type { PaperData } from '_types/customTypes';
 
 import './Featured.scss';
-
-/**
- * Data required to populated the featured paper
- * @typedef PaperData
- * @type {Object}
- * @property {Date} added - JavaScript date object for date on which paper uploaded
- * @property {string=} author - Name of paper's author
- * @property {string=} description - Brief paper description
- * @property {Object=} image - Image data (with properties url and alt)
- * @property {Object} pubDate - Publication date info (with properties day, month, and year)
- * @property {string} title - The title of a paper
- * @memberof Featured
- */
-type PaperData = {
-  added: Date,
-  author?: string,
-  description?: string,
-  image?: {
-    url?: string,
-    alt?: string,
-  },
-  pubDate: {
-    day?: number,
-    month?: string,
-    year?: number,
-  },
-  title: string,
-};
 
 /**
  * JSX component that renders information from a featured paper.

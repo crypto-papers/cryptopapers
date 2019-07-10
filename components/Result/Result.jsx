@@ -3,7 +3,7 @@
 import React from 'react';
 
 import Download from 'static/icons/download.svg';
-import { concatDate } from 'utils/conversions';
+import { concatDate } from '_utils/conversions';
 
 import './Result.scss';
 

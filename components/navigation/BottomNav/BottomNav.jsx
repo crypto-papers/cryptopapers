@@ -3,7 +3,7 @@
 import React from 'react';
 
 import NavList from 'components/navigation/NavList';
-import { navLinks } from 'utils/navLinks';
+import { navLinks } from '_utils/navLinks';
 
 import css from './BottomNav.scss';
 
