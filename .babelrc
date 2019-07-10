@@ -14,7 +14,8 @@
           "static": "./static",
           "storybook": "./.storybook",
           "styles": "./styles",
-          "utils": "./utils"
+          "_types": "./types",
+          "_utils": "./utils"
         }
       }
     ],
