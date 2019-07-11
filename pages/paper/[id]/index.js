@@ -3,8 +3,8 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import Layout from 'components/Layout/Layout';
-import PaperResult from 'components/PaperResult/PaperResult';
+import Layout from '_components/Layout/Layout';
+import PaperResult from '_components/PaperResult/PaperResult';
 
 import { mockResults } from '../../../mockdata/mockdata';
 

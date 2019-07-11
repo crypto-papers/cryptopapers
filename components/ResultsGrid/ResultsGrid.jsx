@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Result, { type ResultProp } from 'components/Result/Result';
+import Result, { type ResultProp } from '_components/Result/Result';
 
 import './ResultsGrid.scss';
 

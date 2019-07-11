@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 
 import Result from './Result';
 import { mockPost, mockPostMissingData } from '../../mockdata/mockdata';
-import { setBackground } from 'storybook/sharedStyles';
+import { setBackground } from '_storybook/sharedStyles';
 
 storiesOf('Result', module)
   .addDecorator(wrapInDiv => <div style={setBackground('center')}>{wrapInDiv()}</div>)

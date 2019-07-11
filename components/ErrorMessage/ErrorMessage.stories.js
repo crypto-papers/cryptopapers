@@ -4,7 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import ErrorMessage from './ErrorMessage';
-import { setBackground } from 'storybook/sharedStyles';
+import { setBackground } from '_storybook/sharedStyles';
 
 const customMessage = 'Whoops!';
 

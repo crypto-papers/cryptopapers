@@ -4,12 +4,12 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 
-import Featured from 'components/Featured/Featured';
-import Layout from 'components/Layout/Layout';
+import Featured from '_components/Featured/Featured';
+import Layout from '_components/Layout/Layout';
 
-import environment from 'schema/environment';
+import environment from '_schema/environment';
 import { mockPost, mockResults } from '../mockdata/mockdata';
-import { pagesQuery } from 'lib/queries/pages';
+import { pagesQuery } from '_lib/queries/pages';
 
 const ErrorMessage = dynamic(() =>
   import(

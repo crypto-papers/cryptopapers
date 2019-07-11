@@ -27,4 +27,10 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': ['warn'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
   },
+  settings: {
+    react: {
+      pragma: 'React',
+      version: 'detect',
+    },
+  },
 };

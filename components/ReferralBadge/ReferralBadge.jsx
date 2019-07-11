@@ -4,7 +4,7 @@ import React from 'react';
 
 import './ReferralBadge.scss';
 
-import Brave from 'static/icons/brave-logo.svg';
+import Brave from '_static/icons/brave-logo.svg';
 
 /**
  * JSX component that renders the Brave referral badge

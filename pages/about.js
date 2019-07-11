@@ -3,8 +3,8 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 
-import Layout from 'components/Layout/Layout';
-import ResultsGrid from 'components/ResultsGrid/ResultsGrid';
+import Layout from '_components/Layout/Layout';
+import ResultsGrid from '_components/ResultsGrid/ResultsGrid';
 import { mockResults } from '../mockdata/mockdata';
 
 const about = `

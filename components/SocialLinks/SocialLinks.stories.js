@@ -4,7 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import SocialLinks from './SocialLinks';
-import { setBackground } from 'storybook/sharedStyles';
+import { setBackground } from '_storybook/sharedStyles';
 
 storiesOf('SocialLinks', module)
   .addDecorator(wrapInDiv => <div style={setBackground('dark', 'center')}>{wrapInDiv()}</div>)

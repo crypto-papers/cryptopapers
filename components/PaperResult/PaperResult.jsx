@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react';
 
-import Loader from 'components/Loader/Loader';
+import Loader from '_components/Loader/Loader';
 import { concatDate, dateToLocale } from '_utils/conversions';
 import type { PaperData } from '_types/customTypes';
 

@@ -6,13 +6,13 @@
       {
         "root": ["./"],
         "alias": {
-          "components": "./components",
-          "lib": "./lib",
-          "pages": "./pages",
-          "schema": "./schema",
-          "server": "./server",
-          "static": "./static",
-          "storybook": "./.storybook",
+          "_components": "./components",
+          "_lib": "./lib",
+          "_pages": "./pages",
+          "_schema": "./schema",
+          "_server": "./server",
+          "_static": "./static",
+          "_storybook": "./.storybook",
           "styles": "./styles",
           "_types": "./types",
           "_utils": "./utils"

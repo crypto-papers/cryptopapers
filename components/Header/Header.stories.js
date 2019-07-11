@@ -4,7 +4,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Header from './Header';
-import { setBackground } from 'storybook/sharedStyles';
+import { setBackground } from '_storybook/sharedStyles';
 
 storiesOf('Site Header', module)
   .addDecorator(wrapInDiv => <div style={setBackground()}>{wrapInDiv()}</div>)

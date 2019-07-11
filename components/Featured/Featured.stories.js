@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import Featured from './Featured';
 import { mockPost, mockPostMissingData } from '../../mockdata/mockdata';
-import { setBackground } from 'storybook/sharedStyles';
+import { setBackground } from '_storybook/sharedStyles';
 
 storiesOf('Featured', module)
   .addDecorator(wrapInDiv => <div style={setBackground()}>{wrapInDiv()}</div>)

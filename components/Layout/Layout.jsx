@@ -2,10 +2,10 @@
 
 import * as React from 'react';
 
-import Footer from 'components/Footer/Footer';
-import Header from 'components/Header/Header';
-import Meta from 'components/Meta/Meta';
-import TopNav from 'components/navigation/TopNav/TopNav';
+import Footer from '_components/Footer/Footer';
+import Header from '_components/Header/Header';
+import Meta from '_components/Meta/Meta';
+import TopNav from '_components/navigation/TopNav/TopNav';
 
 import './Layout.scss';
 
