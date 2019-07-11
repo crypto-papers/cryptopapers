@@ -1,6 +1,12 @@
+require('dotenv').config();
+
+const Dotenv = require('dotenv-webpack');
+const path = require('path');
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
+
 const withSASS = require('@zeit/next-sass');
 
 module.exports = withBundleAnalyzer(
@@ -17,6 +23,19 @@ module.exports = withBundleAnalyzer(
         '/contribute': { page: '/contribute' },
         '/resources': { page: '/resources' },
       };
+    },
+    webpack: config => {
+      config.plugins = config.plugins || [];
+
+      config.plugins = [
+        ...config.plugins,
+        new Dotenv({
+          path: path.join(__dirname, '.env'),
+          systemvars: true,
+        }),
+      ];
+
+      return config;
     },
   })
 );

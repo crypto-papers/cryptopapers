@@ -1,6 +1,9 @@
-# Dependencies
-node_modules/
-
 # Builds
 .next/
 out
+
+# Dependencies
+node_modules/
+
+# Environmental variables
+.env
