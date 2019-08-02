@@ -2,20 +2,29 @@ require('dotenv').config();
 
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
+const compose = require('next-compose');
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+const withBundleAnalyzer = require('@next/bundle-analyzer');
+const withMDX = require('@zeit/next-mdx')({
+  extension: /\.md|mdx?$/,
 });
-
 const withSASS = require('@zeit/next-sass');
 
-module.exports = withBundleAnalyzer(
-  withSASS({
-    cssModules: true,
-    cssLoaderOptions: {
-      importLoaders: 1,
-      localIdentName: '[local]_[hash:base64:5]',
-    },
+const analyzerConfig = { enabled: process.env.ANALYZE === 'true' };
+const mdxConfig = {};
+const sassConfig = {
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: '[local]_[hash:base64:5]',
+  },
+};
+
+module.exports = compose([
+  [withBundleAnalyzer, analyzerConfig],
+  [withSASS, sassConfig],
+  [withMDX, mdxConfig],
+  {
     exportPathMap: function() {
       return {
         '/': { page: '/' },
@@ -37,5 +46,5 @@ module.exports = withBundleAnalyzer(
 
       return config;
     },
-  })
-);
+  },
+]);
