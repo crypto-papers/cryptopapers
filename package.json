@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^7.13.0",
     "flow-bin": "^0.101.0",
     "graphql": "^14.3.1",
-    "jsdoc": "^3.6.2",
+    "jsdoc": "^3.6.3",
     "node-sass": "^4.12.0",
     "postcss-css-variables": "^0.12.0",
     "postcss-nested": "^4.1.2",
