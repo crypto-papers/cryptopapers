@@ -7,7 +7,7 @@ import './Addresses.scss';
 /**
  * JSX component that generates a list of cryptocurrency addresses
  * @namespace Addresses
- * @param {Array<string>} props - List of pages to add to a navigation menu.
+ * @param {Array<string>} currencies - List of cryptocurrency addresses.
  */
 const Addresses = ({ currencies }: { currencies: Array<string> }) => {
   if (!currencies || !Array.isArray(currencies)) return null;
