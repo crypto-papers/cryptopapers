@@ -3,9 +3,18 @@ interface Node {
 }
 
 type Query {
+  currencies: [Currency!]!
+  papers: [Paper!]!
   paper: Paper!
 
   node(id: ID!): Node
+}
+
+type Currency {
+  id: ID!
+  name: String!
+  ticker: String!
+  # createAt: Time!
 }
 
 type Paper {
