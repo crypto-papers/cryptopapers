@@ -30,6 +30,7 @@ module.exports = compose([
         '/': { page: '/' },
         '/about': { page: '/about' },
         '/contribute': { page: '/contribute' },
+        '/currencies': { page: '/currencies' },
         '/resources': { page: '/resources' },
       };
     },
