@@ -6,7 +6,7 @@ import { QueryRenderer } from 'react-relay';
 
 import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
-import { currenciesQuery } from '_lib/queries/currencies';
+import { assetsQuery } from '_lib/queries/assets';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -27,11 +27,11 @@ const Asset = dynamic(() =>
   )
 );
 
-const Currencies = () => (
+const Assets = () => (
   <Layout>
     <QueryRenderer
       environment={environment}
-      query={currenciesQuery}
+      query={assetsQuery}
       render={({ error, props }) => {
         if (error) {
           return (
@@ -47,8 +47,8 @@ const Currencies = () => (
 
         return (
           <div>
-            {currencies.map(currency => {
-              return <Asset key={currency.id} data={currency} />;
+            {currencies.map(asset => {
+              return <Asset key={asset.id} data={asset} />;
             })}
           </div>
         );
@@ -57,4 +57,4 @@ const Currencies = () => (
   </Layout>
 );
 
-export default Currencies;
+export default Assets;
