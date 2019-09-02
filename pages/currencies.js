@@ -20,10 +20,10 @@ const Loader = dynamic(() =>
     '_components/Loader/Loader'
   )
 );
-const ResultsGrid = dynamic(() =>
+const Asset = dynamic(() =>
   import(
-    /* webpackChunkName: "resultsGrid" */
-    '_components/ResultsGrid/ResultsGrid'
+    /* webpackChunkName: "asset" */
+    '_components/Asset/Asset'
   )
 );
 
@@ -40,11 +40,18 @@ const Currencies = () => (
               error={error}
             />
           );
-        } else if (props) {
-          console.log(props);
-          <ResultsGrid results={''} />;
         }
-        return <Loader />;
+
+        if (!props) return <Loader />;
+        const { currencies }: { currencies: Array } = props;
+
+        return (
+          <div>
+            {currencies.map(currency => {
+              return <Asset key={currency.id} data={currency} />;
+            })}
+          </div>
+        );
       }}
     />
   </Layout>
