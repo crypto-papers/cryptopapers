@@ -14,8 +14,16 @@ const Addresses = ({ currencies }: { currencies: Array<string> }) => {
 
   return (
     <ul styleName='address-list'>
-      {currencies.includes('eth') && <li>ETH: {process.env.ETH_ADDRESS}</li>}
-      {currencies.includes('btc') && <li>BTC: {process.env.BTC_ADDRESS}</li>}
+      {currencies.includes('eth') && (
+        <li>
+          <strong>ETH:</strong> {process.env.ETH_ADDRESS}
+        </li>
+      )}
+      {currencies.includes('btc') && (
+        <li>
+          <strong>BTC:</strong> {process.env.BTC_ADDRESS}
+        </li>
+      )}
     </ul>
   );
 };
