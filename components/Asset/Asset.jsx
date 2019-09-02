@@ -6,11 +6,13 @@ import React from 'react';
  * An asset data object
  * @typedef AssetProp
  * @type {Object}
+ * @property {string} id - Unique identifier
  * @property {string} name - The name of the asset
  * @property {string} ticker - The trading ticker for the asset
  * @memberof Asset
  */
 export type AssetProp = {
+  id: string,
   name: string,
   ticker: string,
 };

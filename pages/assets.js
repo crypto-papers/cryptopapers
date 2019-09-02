@@ -6,6 +6,7 @@ import { QueryRenderer } from 'react-relay';
 
 import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
+import type { AssetProp } from '_components/Asset/Asset';
 import { assetsQuery } from '_lib/queries/assets';
 
 const ErrorMessage = dynamic(() =>
@@ -43,7 +44,7 @@ const Assets = () => (
         }
 
         if (!props) return <Loader />;
-        const { currencies }: { currencies: Array } = props;
+        const { currencies }: { currencies: AssetProp } = props;
 
         return (
           <div>

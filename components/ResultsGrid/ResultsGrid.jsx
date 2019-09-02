@@ -10,10 +10,10 @@ import './ResultsGrid.scss';
 /**
  * An asset data object
  * @typedef ResultsGridProp
- * @type {ResultProp | AssetProp} - An array of results or assets
+ * @type {Array<ResultProp> | Array<AssetProp>} - An array of results or assets
  * @memberof ResultsGrid
  */
-export type ResultsGridProp = ResultProp | AssetProp;
+export type ResultsGridProp = Array<ResultProp> | Array<AssetProp>;
 
 /**
  * JSX component that renders a grids of paper results.
@@ -21,7 +21,7 @@ export type ResultsGridProp = ResultProp | AssetProp;
  * @param {ResultsGridProp} results - A list of results with their data
  * @param {string} type - Identifies what type of component to display in grid
  */
-const ResultsGrid = ({ results, type }: { results: ResultGridProp, type: string }) => {
+const ResultsGrid = ({ results, type }: { results: ResultsGridProp, type: string }) => {
   return (
     <div styleName='results-grid'>
       {results.map(result => {

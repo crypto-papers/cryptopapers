@@ -12,7 +12,7 @@ import './Result.scss';
  * @typedef ResultProp
  * @type {Object}
  * @property {string} downloadUrl - Source for a downloadable PDF of the paper
- * @property {number} id - Unique identifier
+ * @property {string} id - Unique identifier
  * @property {Object=} image - Image data (with properties url and alt)
  * @property {Object} pubDate - Publication date info (with properties day, month, and year)
  * @property {string} title - The title of a paper
@@ -20,7 +20,7 @@ import './Result.scss';
  */
 export type ResultProp = {
   downloadUrl: string,
-  id: number,
+  id: string,
   image?: {
     url?: string,
     alt?: string,
