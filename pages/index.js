@@ -14,19 +14,19 @@ import { pagesQuery } from '_lib/queries/pages';
 const ErrorMessage = dynamic(() =>
   import(
     /* webpackChunkName: "errorMessage" */
-    'components/ErrorMessage/ErrorMessage'
+    '_components/ErrorMessage/ErrorMessage'
   )
 );
 const Loader = dynamic(() =>
   import(
     /* webpackChunkName: "loader" */
-    'components/Loader/Loader'
+    '_components/Loader/Loader'
   )
 );
 const ResultsGrid = dynamic(() =>
   import(
     /* webpackChunkName: "resultsGrid" */
-    'components/ResultsGrid/ResultsGrid'
+    '_components/ResultsGrid/ResultsGrid'
   )
 );
 
@@ -42,7 +42,10 @@ const Homepage = () => (
       render={({ error, props }) => {
         if (error) {
           return (
-            <ErrorMessage customMessage={'Apologies, we seem to be having trouble with that request'} error={error} />
+            <ErrorMessage
+              customMessage={'Apologies, we seem to be having trouble with that request'}
+              error={error}
+            />
           );
         } else if (props) {
           <ResultsGrid results={mockResults} />;
