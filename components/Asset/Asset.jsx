@@ -3,15 +3,27 @@
 import React from 'react';
 
 /**
+ * An asset data object
+ * @typedef AssetProp
+ * @type {Object}
+ * @property {string} name - The name of the asset
+ * @property {string} ticker - The trading ticker for the asset
+ * @memberof Asset
+ */
+export type AssetProp = {
+  name: string,
+  ticker: string,
+};
+
+/**
  * JSX component that renders the data for a specified asset.
  * @namespace Asset
- * @param {AssetData} data - A asset data object
+ * @param {AssetProp} result - A asset data object
  */
-const Asset = ({ data }: { data: AssetData }) => {
-  console.log(data);
+const Asset = ({ result }: { result: AssetProp }) => {
   return (
     <div>
-      <p>{`${data.name} - ${data.ticker}`}</p>
+      <p>{`${result.name} - ${result.ticker}`}</p>
     </div>
   );
 };

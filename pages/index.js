@@ -48,7 +48,7 @@ const Homepage = () => (
             />
           );
         } else if (props) {
-          <ResultsGrid results={mockResults} />;
+          <ResultsGrid results={mockResults} type='results' />;
         }
         return <Loader />;
       }}

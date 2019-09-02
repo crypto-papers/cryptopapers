@@ -2,20 +2,34 @@
 
 import React from 'react';
 
+import Asset, { type AssetProp } from '_components/Asset/Asset';
 import Result, { type ResultProp } from '_components/Result/Result';
 
 import './ResultsGrid.scss';
 
 /**
+ * An asset data object
+ * @typedef ResultsGridProp
+ * @type {ResultProp | AssetProp} - An array of results or assets
+ * @memberof ResultsGrid
+ */
+export type ResultsGridProp = ResultProp | AssetProp;
+
+/**
  * JSX component that renders a grids of paper results.
  * @namespace ResultsGrid
- * @param {Array<ResultProp>} results - A list of results with their data
+ * @param {ResultsGridProp} results - A list of results with their data
+ * @param {string} type - Identifies what type of component to display in grid
  */
-const ResultsGrid = ({ results }: { results: Array<ResultProp> }) => {
+const ResultsGrid = ({ results, type }: { results: ResultGridProp, type: string }) => {
   return (
     <div styleName='results-grid'>
       {results.map(result => {
-        return <Result key={result.id} result={result} />;
+        if (type === 'assets') {
+          return <Asset key={result.id} result={result} />;
+        } else if (type === 'results') {
+          return <Result key={result.id} result={result} />;
+        }
       })}
     </div>
   );

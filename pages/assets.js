@@ -20,10 +20,10 @@ const Loader = dynamic(() =>
     '_components/Loader/Loader'
   )
 );
-const Asset = dynamic(() =>
+const ResultsGrid = dynamic(() =>
   import(
-    /* webpackChunkName: "asset" */
-    '_components/Asset/Asset'
+    /* webpackChunkName: "resultsGrid" */
+    '_components/ResultsGrid/ResultsGrid'
   )
 );
 
@@ -47,9 +47,7 @@ const Assets = () => (
 
         return (
           <div>
-            {currencies.map(asset => {
-              return <Asset key={asset.id} data={asset} />;
-            })}
+            <ResultsGrid results={currencies} type='assets' />
           </div>
         );
       }}
