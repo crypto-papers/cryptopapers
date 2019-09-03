@@ -5,9 +5,7 @@ interface Node {
 type Query {
   currencies: [Currency!]!
   papers: [Paper!]!
-  paper: Paper!
-
-  node(id: ID!): Node
+  paper(id: ID!): Paper
 }
 
 type Currency {
@@ -22,9 +20,11 @@ type Paper {
   # author: [Author]
   # currency: [Currency]
   description: String
-  # excerpt: String
+  excerpt: String
   # file: [File]
   # pageNum: Int
   title: String!
-  # createAt: Time
+  createAt: Time!
 }
+
+scalar Time
