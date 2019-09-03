@@ -6,7 +6,7 @@ import { QueryRenderer } from 'react-relay';
 
 import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
-import type { AssetProp } from '_components/Asset/Asset';
+import { type AssetProp } from '_components/Asset/Asset';
 import { assetsQuery } from '_lib/queries/assets';
 
 const ErrorMessage = dynamic(() =>
@@ -43,14 +43,14 @@ const Assets = () => (
           );
         }
 
-        if (!props) return <Loader />;
-        const { currencies }: { currencies: AssetProp } = props;
+        /* eslint-disable react/prop-types */
+        if (props && props.currencies) {
+          const { currencies }: { currencies: AssetProp } = props;
+          return <ResultsGrid results={currencies} type='assets' />;
+        }
+        /* eslint-enable react/prop-types */
 
-        return (
-          <div>
-            <ResultsGrid results={currencies} type='assets' />
-          </div>
-        );
+        return <Loader />;
       }}
     />
   </Layout>

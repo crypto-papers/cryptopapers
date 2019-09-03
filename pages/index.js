@@ -8,8 +8,8 @@ import Featured from '_components/Featured/Featured';
 import Layout from '_components/Layout/Layout';
 
 import environment from '_schema/environment';
-import { mockPost, mockResults } from '../mockdata/mockdata';
-import { pagesQuery } from '_lib/queries/pages';
+import { papersQuery } from '_lib/queries/papers';
+import { type ResultProp } from '_components/Result/Result';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -33,12 +33,12 @@ const ResultsGrid = dynamic(() =>
 const Homepage = () => (
   <Layout>
     <h2>Featured Paper:</h2>
-    <Featured paperData={mockPost} />
+    <Featured paperId='df33420d-8cf6-4102-a14f-e83a3ba23b24' />
     <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
     <QueryRenderer
       environment={environment}
       // variables={{ count: 6 }}
-      query={pagesQuery}
+      query={papersQuery}
       render={({ error, props }) => {
         if (error) {
           return (
@@ -47,9 +47,15 @@ const Homepage = () => (
               error={error}
             />
           );
-        } else if (props) {
-          <ResultsGrid results={mockResults} type='results' />;
         }
+
+        /* eslint-disable react/prop-types */
+        if (props && props.papers) {
+          const { papers }: { papers: Array<ResultProp> } = props;
+          return <ResultsGrid results={papers} type='results' />;
+        }
+        /* eslint-enable react/prop-types */
+
         return <Loader />;
       }}
     />
