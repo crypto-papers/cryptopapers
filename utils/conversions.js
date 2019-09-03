@@ -3,7 +3,7 @@
 /** @module conversions  */
 
 /**
- * Convert a JS date object into a en-US locale string
+ * Convert a JS date object into an en-US locale string
  * @function dateToLocale
  * @param {Date} date - A JavaScript date object
  * @returns {string} - A locale date string formatted to en-US
@@ -17,6 +17,33 @@ export const dateToLocale = (date: Date) => {
   };
 
   const localeStr = date.toLocaleDateString('en-US', options);
+
+  return localeStr;
+};
+
+/**
+ * Convert an ISO date string into a JS date object
+ * @function isoToDateObj
+ * @param {string} date - An ISO date string
+ * @returns {Date} - A JavaScript date object
+ * @memberof conversions
+ */
+export const isoToDateObj = (date: string) => {
+  const dateObj = new Date(date);
+
+  return dateObj;
+};
+
+/**
+ * Convert an ISO date string into an en-US locale string
+ * @function isoToLocale
+ * @param {string} date - An ISO date string
+ * @returns {string} - A locale date string formatted to en-US
+ * @memberof conversions
+ */
+export const isoToLocale = (date: string) => {
+  const dateObj = isoToDateObj(date);
+  const localeStr = dateToLocale(dateObj);
 
   return localeStr;
 };
