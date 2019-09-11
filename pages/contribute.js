@@ -6,7 +6,7 @@ import Layout from '_components/Layout/Layout';
 import ContributeMdx from '_static/mdx/contribute.mdx';
 
 const Contribute = () => (
-  <Layout background={'geometric'} title={'We Need Your Help'}>
+  <Layout background={'herringbone-blue'} title={'We Need Your Help'}>
     <ContributeMdx />
   </Layout>
 );
