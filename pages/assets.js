@@ -44,9 +44,9 @@ const Assets = () => (
         }
 
         /* eslint-disable react/prop-types */
-        if (props && props.currencies) {
-          const { currencies }: { currencies: AssetProp } = props;
-          return <ResultsGrid results={currencies} type='assets' />;
+        if (props && props.assets) {
+          const { assets }: { assets: AssetProp } = props;
+          return <ResultsGrid results={assets} type='assets' />;
         }
         /* eslint-enable react/prop-types */
 

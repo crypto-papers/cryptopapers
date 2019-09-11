@@ -1,28 +1,52 @@
-interface Node {
-  id: ID!
-}
-
+# List of available queries
 type Query {
-  currencies: [Currency!]!
-  papers: [Paper!]!
+  asset(id: ID!): Asset
+  assets: [Asset!]!
+  author(id: ID!): Author
+  authors: [Author!]!
+  file(id: ID!): File
+  files: [File!]!
   paper(id: ID!): Paper
+  papers: [Paper!]!
 }
 
-type Currency {
+type Asset {
   id: ID!
   name: String!
   ticker: String!
-  # createAt: Time!
+  createAt: Time!
+}
+
+type Author {
+  id: ID!
+  bio: String
+  name: String!
+  papers: [Paper]
+  photo: String
+  psuedonym: Boolean
+  createAt: Time!
+}
+
+type File {
+  id: ID!
+  coverImage: String
+  latest: Boolean
+  pubDate: Time
+  source: String
+  url: String!
+  version: Float
+  createAt: Time!
 }
 
 type Paper {
   id: ID!
-  # author: [Author]
-  # currency: [Currency]
+  author: [Author]
+  asset: [Asset]
   description: String
   excerpt: String
-  # file: [File]
-  # pageNum: Int
+  file: [File]
+  pageNum: Int
+  prettyId: Int
   title: String!
   createAt: Time!
 }
