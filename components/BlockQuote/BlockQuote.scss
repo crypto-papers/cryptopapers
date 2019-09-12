@@ -1,0 +1,10 @@
+@import 'styles/colors.scss';
+@import 'styles/typography.scss';
+
+.blockquote-text {
+  border-left: var(--borderLightBlueThick);
+  font-family: var(--secondaryHeaderFont);
+  font-size: var(--mediumFont);
+  margin: 1rem 1.5rem 1rem 0.5rem;
+  padding-left: 0.8rem;
+}

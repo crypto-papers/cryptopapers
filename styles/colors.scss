@@ -1,4 +1,5 @@
 :root {
+  // Colors
   --darkBlue: rgba(5, 55, 130, 1); // #053782
   --deepRed: rgba(162, 18, 18, 18); // #A21212
   --lightBlue: rgba(29, 136, 224, 1); // #1d88e0
@@ -15,7 +16,11 @@
   --white: rgba(255, 255, 255, 1); // #ffffff
 
   // Gradients
-  --gradientDarkLightBlue: linear-gradient(27deg, var(--darkBlue) 0%, var(--lightBlue) 100%); // darkBlue to lightBlue
+  --gradientDarkLightBlue: linear-gradient(
+    27deg,
+    var(--darkBlue) 0%,
+    var(--lightBlue) 100%
+  ); // darkBlue to lightBlue
 
   // Background
   --backgroundGeometricBlue: url('/static/background/geometric-blue.png') repeat;
@@ -24,6 +29,7 @@
 
   // Borders
   --borderLightGrey: 1px solid var(--lightGrey);
+  --borderLightBlueThick: 0.4rem solid var(--lightBlue);
   --borderDeepRed: 1px solid var(--deepRed);
   --boxShadowGrey: 2px 1px 3px 2px var(--lightGrey50);
   --boxShadowBlack: 2px 1px 3px 2px var(--black25);
