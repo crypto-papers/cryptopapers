@@ -25,6 +25,7 @@ export type ResultProp = {
     url?: string,
     alt?: string,
   },
+  prettyId: number,
   pubDate: {
     day?: number,
     month?: string,
@@ -39,20 +40,24 @@ export type ResultProp = {
  * @param {ResultProp} result - A paper data object
  */
 const Result = ({ result }: { result: ResultProp }) => {
-  const { downloadUrl, image, pubDate, title } = result;
+  const { downloadUrl, image, prettyId, pubDate, title } = result;
   const coverImage = image && image.url ? image.url : '/static/placeholder.svg';
   const coverAlt = image && image.alt ? image.alt : `cover of ${title}`;
 
   return (
     <div styleName='result'>
-      <figure styleName='result-figure'>
-        <img styleName='result-image' src={coverImage} alt={coverAlt} />
-      </figure>
+      <a href={`/paper/${prettyId}`}>
+        <figure styleName='result-figure'>
+          <img styleName='result-image' src={coverImage} alt={coverAlt} />
+        </figure>
+      </a>
       <div styleName='result-meta'>
-        <div styleName='result-text'>
-          <h4 style={{ margin: '0' }}>{title}</h4>
-          {pubDate && <small>Published on {concatDate(pubDate)}</small>}
-        </div>
+        <a href={`/paper/${prettyId}`}>
+          <div styleName='result-text'>
+            <h4 style={{ margin: '0' }}>{title}</h4>
+            {pubDate && <small>Published on {concatDate(pubDate)}</small>}
+          </div>
+        </a>
         <a download href={downloadUrl} styleName='result-download'>
           <Download />
         </a>
