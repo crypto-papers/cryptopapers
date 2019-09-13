@@ -5,9 +5,10 @@ import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 
 import environment from '_schema/environment';
+import BlockQuote from '_components/BlockQuote/BlockQuote';
 import { concatDate, isoToLocale } from '_utils/conversions';
 import { paperQuery } from '_lib/queries/paper';
-import { type PaperData } from '_types/customTypes';
+import type { PaperData } from '_types/customTypes';
 
 import './Featured.scss';
 
@@ -62,6 +63,7 @@ const Featured = ({ paperId }: { paperId: string }) => {
               </figure>
               <div styleName='featured-data'>
                 <h3 styleName='featured-title'>{paper.title}</h3>
+                {paper.excerpt && <BlockQuote quote={paper.excerpt} />}
                 <div styleName='featured-meta'>
                   <p>
                     <strong>Author: </strong>
@@ -78,8 +80,8 @@ const Featured = ({ paperId }: { paperId: string }) => {
                       <strong>Published on:</strong> {concatDate(paper.pubDate)}
                     </p>
                   )}
+                  <small styleName='featured-added'>Added on: {isoToLocale(paper.added)}</small>
                 </div>
-                <small styleName='featured-added'>Added on: {isoToLocale(paper.createAt)}</small>
               </div>
             </div>
           );
