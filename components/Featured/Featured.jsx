@@ -31,7 +31,7 @@ const Loader = dynamic(() =>
  * @namespace Featured
  * @param {string} paperId - A paper id value
  */
-const Featured = ({ paperId }: { paperId: string }) => {
+const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean }) => {
   return (
     <QueryRenderer
       environment={environment}
@@ -73,6 +73,7 @@ const Featured = ({ paperId }: { paperId: string }) => {
                       <div styleName='featured-data'>
                         <div styleName='featured-header'>
                           <h3 styleName='featured-title'>{paper.title}</h3>
+                          {promoted && <small styleName='featured-promoted'>Promoted</small>}
                         </div>
                         {paper.excerpt && <BlockQuote quote={paper.excerpt} />}
                         <div styleName='featured-meta'>

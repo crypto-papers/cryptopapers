@@ -24,13 +24,27 @@
   min-width: 260px;
 }
 
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .featured-img {
   height: 300px;
   padding-right: 2rem;
 }
 
+.featured-link {
+  font-weight: inherit;
+}
+
 .featured-meta > p {
   margin: 0;
+}
+
+.featured-promoted {
+  color: var(--red);
+  font-weight: 700;
 }
 
 .featured-title {

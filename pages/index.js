@@ -33,7 +33,7 @@ const ResultsGrid = dynamic(() =>
 const Homepage = () => (
   <Layout>
     <h2>Featured Paper:</h2>
-    <Featured paperId='df33420d-8cf6-4102-a14f-e83a3ba23b24' />
+    <Featured paperId='10a217a0-a281-4241-a058-f97baf012565' promoted />
     <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
     <QueryRenderer
       environment={environment}

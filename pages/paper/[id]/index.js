@@ -46,7 +46,7 @@ const Paper = () => {
 
             /* eslint-disable react/prop-types */
             if (props && props.paperByPid) {
-              return <PaperResult data={props.paperByPid} />;
+              return <PaperResult paper={props.paperByPid} />;
             }
             /* eslint-enable react/prop-types */
 
