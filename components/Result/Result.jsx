@@ -1,9 +1,12 @@
 // @flow
 
 import React from 'react';
+import { QueryRenderer } from 'react-relay';
 
 import Download from '_static/icons/download.svg';
-import { concatDate } from '_utils/conversions';
+import environment from '_schema/environment';
+import { isoToLocale } from '_utils/conversions';
+import { fileQuery } from '_lib/queries/file';
 
 import './Result.scss';
 
@@ -40,29 +43,45 @@ export type ResultProp = {
  * @param {ResultProp} result - A paper data object
  */
 const Result = ({ result }: { result: ResultProp }) => {
-  const { downloadUrl, image, prettyId, pubDate, title } = result;
-  const coverImage = image && image.url ? image.url : '/static/placeholder.svg';
-  const coverAlt = image && image.alt ? image.alt : `cover of ${title}`;
+  const { latestVersion, prettyId, title } = result;
 
   return (
-    <div styleName='result'>
-      <a href={`/paper/${prettyId}`}>
-        <figure styleName='result-figure'>
-          <img styleName='result-image' src={coverImage} alt={coverAlt} />
-        </figure>
-      </a>
-      <div styleName='result-meta'>
-        <a href={`/paper/${prettyId}`}>
-          <div styleName='result-text'>
-            <h4 style={{ margin: '0' }}>{title}</h4>
-            {pubDate && <small>Published on {concatDate(pubDate)}</small>}
+    <QueryRenderer
+      environment={environment}
+      query={fileQuery}
+      variables={{ id: latestVersion }}
+      render={({ error, props }) => {
+        const hasFile = !error && props && props.file;
+        const file = hasFile ? props.file : {};
+
+        const coverImage = file.coverImage ? file.coverImage : '/static/placeholder.svg';
+        const coverAlt = `cover of ${title}`;
+        const pubDate = file.pubDate ? isoToLocale(file.pubDate) : null;
+
+        return (
+          <div styleName='result'>
+            <a href={`/paper/${prettyId}`}>
+              <figure styleName='result-figure'>
+                <img styleName='result-image' src={coverImage} alt={coverAlt} />
+              </figure>
+            </a>
+            <div styleName='result-meta'>
+              <a href={`/paper/${prettyId}`}>
+                <div styleName='result-text'>
+                  <h4 style={{ margin: '0' }}>{title}</h4>
+                  {pubDate && <small>Published on {pubDate}</small>}
+                </div>
+              </a>
+              {file.url && (
+                <a download href={file.url} styleName='result-download'>
+                  <Download />
+                </a>
+              )}
+            </div>
           </div>
-        </a>
-        <a download href={downloadUrl} styleName='result-download'>
-          <Download />
-        </a>
-      </div>
-    </div>
+        );
+      }}
+    />
   );
 };
 
