@@ -1,9 +1,12 @@
 # List of available queries
 type Query {
   asset(id: ID!): Asset
+  assetByTicker(ticker: String!): Asset
   assets: [Asset!]!
   author(id: ID!): Author
   authors: [Author!]!
+  feature(id: ID!): Feature
+  features: [Feature!]
   file(id: ID!): File
   files: [File!]!
   paper(id: ID!): Paper
@@ -13,6 +16,7 @@ type Query {
 
 type Asset {
   id: ID!
+  logo: String
   name: String!
   ticker: String!
   createAt: Time!
@@ -21,33 +25,39 @@ type Asset {
 type Author {
   id: ID!
   bio: String
-  name: String!
-  papers: [Paper]
+  name: String
   photo: String
   psuedonym: Boolean
+  createAt: Time!
+}
+
+type Feature {
+  id: ID!
+  paper: ID!
+  promoted: Boolean
+  sponsor: String
   createAt: Time!
 }
 
 type File {
   id: ID!
   coverImage: String
+  filename: String!
   latest: Boolean
   pageNum: Int
   pubDate: Time
   source: String
-  url: String!
-  version: Float
+  version: String
   createAt: Time!
 }
 
 type Paper {
   id: ID!
-  author: [Author]
-  asset: [Asset]
   description: String
   excerpt: String
   latestVersion: ID
   prettyId: Int
+  subTitle: String
   title: String!
   createAt: Time!
 }
