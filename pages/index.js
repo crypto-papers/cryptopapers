@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 
@@ -17,12 +17,6 @@ const ErrorMessage = dynamic(() =>
     '_components/ErrorMessage/ErrorMessage'
   )
 );
-const Loader = dynamic(() =>
-  import(
-    /* webpackChunkName: "loader" */
-    '_components/Loader/Loader'
-  )
-);
 const ResultsGrid = dynamic(() =>
   import(
     /* webpackChunkName: "resultsGrid" */
@@ -33,13 +27,24 @@ const ResultsGrid = dynamic(() =>
 const Homepage = () => (
   <Layout>
     <h2>Featured Paper:</h2>
-    <Featured paperId='10a217a0-a281-4241-a058-f97baf012565' promoted />
-    <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
+    <Featured paperId='435c76bd-aae6-48ba-a259-ed4115e10a05' promoted />
     <QueryRenderer
       environment={environment}
       // variables={{ count: 6 }}
       query={papersQuery}
       render={({ error, props }) => {
+        /* eslint-disable react/prop-types */
+        if (props && props.papers && props.papers.length > 0) {
+          const { papers }: { papers: Array<ResultProp> } = props;
+          return (
+            <Fragment>
+              <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
+              <ResultsGrid results={papers} type='results' />
+            </Fragment>
+          );
+        }
+        /* eslint-enable react/prop-types */
+
         if (error) {
           return (
             <ErrorMessage
@@ -49,14 +54,7 @@ const Homepage = () => (
           );
         }
 
-        /* eslint-disable react/prop-types */
-        if (props && props.papers) {
-          const { papers }: { papers: Array<ResultProp> } = props;
-          return <ResultsGrid results={papers} type='results' />;
-        }
-        /* eslint-enable react/prop-types */
-
-        return <Loader />;
+        return null;
       }}
     />
   </Layout>
