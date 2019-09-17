@@ -69,6 +69,7 @@ const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean })
 
                 const coverImage = file.coverImage ? file.coverImage : '/static/placeholder.svg';
                 const coverAlt = `cover of ${paper.title}`;
+                const title = paper.subTitle ? `${paper.title}: ${paper.subTitle}` : paper.title;
 
                 return (
                   <a styleName='featured-link' href={`/paper/${paper.prettyId}`}>
@@ -78,7 +79,7 @@ const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean })
                       </figure>
                       <div styleName='featured-data'>
                         <div styleName='featured-header'>
-                          <h3 styleName='featured-title'>{paper.title}</h3>
+                          <h3 styleName='featured-title'>{title}</h3>
                           {promoted && <Promoted />}
                         </div>
                         {paper.excerpt && <BlockQuote quote={paper.excerpt} />}

@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
 import AssetResult from '_components/PaperResult/PaperResult';
-import { assetByTicker } from '_lib/queries/assetByTicker';
+import { assetByTickerQuery } from '_lib/queries/assetByTicker';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -29,10 +29,10 @@ const Asset = () => {
 
   if (ticker) {
     return (
-      <Layout>
+      <Layout title={ticker.toUpperCase()}>
         <QueryRenderer
           environment={environment}
-          query={assetByTicker}
+          query={assetByTickerQuery}
           variables={{ ticker }}
           render={({ error, props }) => {
             if (error) {

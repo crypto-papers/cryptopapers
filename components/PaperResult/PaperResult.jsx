@@ -32,6 +32,7 @@ const PaperResult = ({ paper }: { paper: PaperData }) => {
 
         const author = paper.author ? `by ${paper.author}` : '';
         const pubDate = file.pubDate ? isoToLocale(file.pubDate) : null;
+        const title = paper.subTitle ? `${paper.title}: ${paper.subTitle}` : paper.title;
         const url = file.url ? file.url : '';
 
         let byline;
@@ -46,7 +47,7 @@ const PaperResult = ({ paper }: { paper: PaperData }) => {
         return (
           <div>
             <div styleName='paper-result-header'>
-              <h2>{paper.title}</h2>
+              <h2>{title}</h2>
               <small styleName='paper-result-added'>Added: {isoToLocale(paper.createAt)}</small>
             </div>
             {byline && <p styleName='paper-result-byline'>{byline}</p>}

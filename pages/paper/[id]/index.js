@@ -1,7 +1,8 @@
 // @flow
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 import { QueryRenderer } from 'react-relay';
 import { useRouter } from 'next/router';
 
@@ -46,7 +47,16 @@ const Paper = () => {
 
             /* eslint-disable react/prop-types */
             if (props && props.paperByPid) {
-              return <PaperResult paper={props.paperByPid} />;
+              return (
+                <Fragment>
+                  {props.paperByPid.title && (
+                    <Head>
+                      <title>{`CryptoPapers | ${props.paperByPid.title}`}</title>
+                    </Head>
+                  )}
+                  <PaperResult paper={props.paperByPid} />
+                </Fragment>
+              );
             }
             /* eslint-enable react/prop-types */
 
