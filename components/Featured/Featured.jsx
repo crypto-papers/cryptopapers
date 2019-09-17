@@ -25,6 +25,12 @@ const Loader = dynamic(() =>
     '_components/Loader/Loader'
   )
 );
+const Promoted = dynamic(() =>
+  import(
+    /* webpackChunkName: "promoted" */
+    '_components/Promoted/Promoted'
+  )
+);
 
 /**
  * JSX component that renders information from a featured paper.
@@ -73,7 +79,7 @@ const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean })
                       <div styleName='featured-data'>
                         <div styleName='featured-header'>
                           <h3 styleName='featured-title'>{paper.title}</h3>
-                          {promoted && <small styleName='featured-promoted'>Promoted</small>}
+                          {promoted && <Promoted />}
                         </div>
                         {paper.excerpt && <BlockQuote quote={paper.excerpt} />}
                         <div styleName='featured-meta'>

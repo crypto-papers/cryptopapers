@@ -25,6 +25,7 @@
 }
 
 .featured-header {
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
@@ -40,11 +41,6 @@
 
 .featured-meta > p {
   margin: 0;
-}
-
-.featured-promoted {
-  color: var(--red);
-  font-weight: 700;
 }
 
 .featured-title {

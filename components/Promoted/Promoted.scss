@@ -1,0 +1,11 @@
+@import 'styles/colors.scss';
+
+.promoted-tag {
+  align-self: flex-start;
+  background-color: var(--red);
+  border-radius: 3px;
+  box-shadow: var(--boxShadowGrey);
+  color: var(--white);
+  font-weight: 700;
+  padding: 0.25rem;
+}
