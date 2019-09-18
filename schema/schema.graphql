@@ -3,12 +3,17 @@ type Query {
   asset(id: ID!): Asset
   assetByTicker(ticker: String!): Asset
   assets: [Asset!]!
+
   author(id: ID!): Author
   authors: [Author!]!
+
   feature(id: ID!): Feature
+  featureLatest: Feature
   features: [Feature!]
+
   file(id: ID!): File
   files: [File!]!
+
   paper(id: ID!): Paper
   paperByPid(prettyId: Int!): Paper
   papers: [Paper!]!
