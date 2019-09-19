@@ -6,8 +6,8 @@ import { QueryRenderer } from 'react-relay';
 
 import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
-import { type AssetProp } from '_components/Asset/Asset';
 import { assetsQuery } from '_lib/queries/assets';
+import type { AssetData } from '_types/customTypes';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -43,12 +43,10 @@ const Assets = () => (
           );
         }
 
-        /* eslint-disable react/prop-types */
         if (props && props.assets) {
-          const { assets }: { assets: AssetProp } = props;
+          const { assets }: { assets: AssetData } = props;
           return <ResultsGrid results={assets} type='assets' />;
         }
-        /* eslint-enable react/prop-types */
 
         return <Loader />;
       }}

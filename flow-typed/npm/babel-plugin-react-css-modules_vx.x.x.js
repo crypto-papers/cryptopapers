@@ -1,4 +1,4 @@
-// flow-typed signature: 5c087ff5839573a9670bec8ee9b774cd
+// flow-typed signature: 440c6e902c3bac02cb908a65eccb8a01
 // flow-typed version: <<STUB>>/babel-plugin-react-css-modules_v^5.2.6/flow_v0.101.0
 
 /**
@@ -62,7 +62,7 @@ declare module 'babel-plugin-react-css-modules/dist/handleSpreadClassName' {
   declare module.exports: any;
 }
 
-declare module 'babel-plugin-react-css-modules/dist/index' {
+declare module 'babel-plugin-react-css-modules/dist' {
   declare module.exports: any;
 }
 
@@ -117,8 +117,11 @@ declare module 'babel-plugin-react-css-modules/dist/getClassName.js' {
 declare module 'babel-plugin-react-css-modules/dist/handleSpreadClassName.js' {
   declare module.exports: $Exports<'babel-plugin-react-css-modules/dist/handleSpreadClassName'>;
 }
+declare module 'babel-plugin-react-css-modules/dist/index' {
+  declare module.exports: $Exports<'babel-plugin-react-css-modules/dist'>;
+}
 declare module 'babel-plugin-react-css-modules/dist/index.js' {
-  declare module.exports: $Exports<'babel-plugin-react-css-modules/dist/index'>;
+  declare module.exports: $Exports<'babel-plugin-react-css-modules/dist'>;
 }
 declare module 'babel-plugin-react-css-modules/dist/replaceJsxExpressionContainer.js' {
   declare module.exports: $Exports<'babel-plugin-react-css-modules/dist/replaceJsxExpressionContainer'>;

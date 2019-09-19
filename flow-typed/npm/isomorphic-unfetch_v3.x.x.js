@@ -1,5 +1,5 @@
-// flow-typed signature: c8b35e1c406f19526e58ca04e20953fc
-// flow-typed version: c610e4a32c/isomorphic-unfetch_v3.x.x/flow_>=v0.25.x
+// flow-typed signature: cd01ca1f931da3c3fe3a70ea04b8f203
+// flow-typed version: c6154227d1/isomorphic-unfetch_v3.x.x/flow_>=v0.25.x <=v0.103.x
 
 
 declare module 'isomorphic-unfetch' {

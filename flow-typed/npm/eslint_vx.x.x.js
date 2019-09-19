@@ -1,4 +1,4 @@
-// flow-typed signature: e62b09a4c2474f1bbe8d8a402f583d44
+// flow-typed signature: 17b3c80d96ba836b62cf7c82ad28e7b7
 // flow-typed version: <<STUB>>/eslint_v^5.16.0/flow_v0.101.0
 
 /**
@@ -1298,7 +1298,7 @@ declare module 'eslint/lib/token-store/forward-token-cursor' {
   declare module.exports: any;
 }
 
-declare module 'eslint/lib/token-store/index' {
+declare module 'eslint/lib/token-store' {
   declare module.exports: any;
 }
 
@@ -1430,7 +1430,7 @@ declare module 'eslint/lib/util/traverser' {
   declare module.exports: any;
 }
 
-declare module 'eslint/lib/util/unicode/index' {
+declare module 'eslint/lib/util/unicode' {
   declare module.exports: any;
 }
 
@@ -2412,8 +2412,11 @@ declare module 'eslint/lib/token-store/forward-token-comment-cursor.js' {
 declare module 'eslint/lib/token-store/forward-token-cursor.js' {
   declare module.exports: $Exports<'eslint/lib/token-store/forward-token-cursor'>;
 }
+declare module 'eslint/lib/token-store/index' {
+  declare module.exports: $Exports<'eslint/lib/token-store'>;
+}
 declare module 'eslint/lib/token-store/index.js' {
-  declare module.exports: $Exports<'eslint/lib/token-store/index'>;
+  declare module.exports: $Exports<'eslint/lib/token-store'>;
 }
 declare module 'eslint/lib/token-store/limit-cursor.js' {
   declare module.exports: $Exports<'eslint/lib/token-store/limit-cursor'>;
@@ -2511,8 +2514,11 @@ declare module 'eslint/lib/util/timing.js' {
 declare module 'eslint/lib/util/traverser.js' {
   declare module.exports: $Exports<'eslint/lib/util/traverser'>;
 }
+declare module 'eslint/lib/util/unicode/index' {
+  declare module.exports: $Exports<'eslint/lib/util/unicode'>;
+}
 declare module 'eslint/lib/util/unicode/index.js' {
-  declare module.exports: $Exports<'eslint/lib/util/unicode/index'>;
+  declare module.exports: $Exports<'eslint/lib/util/unicode'>;
 }
 declare module 'eslint/lib/util/unicode/is-combining-character.js' {
   declare module.exports: $Exports<'eslint/lib/util/unicode/is-combining-character'>;

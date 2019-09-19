@@ -3,7 +3,7 @@
 const path = require('path');
 
 // Export a function. Accept the base config as the only param.
-module.exports = async ({ config, mode }) => {
+module.exports = async ({ config, mode }: { config: Object, mode: string }) => {
   config.module.rules.push({
     test: /\.scss$/,
     use: [

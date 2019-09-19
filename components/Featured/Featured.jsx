@@ -9,7 +9,7 @@ import BlockQuote from '_components/BlockQuote/BlockQuote';
 import { isoToLocale } from '_utils/conversions';
 import { fileQuery } from '_lib/queries/file';
 import { paperQuery } from '_lib/queries/paper';
-import type { PaperData } from '_types/customTypes';
+import type { FileData, PaperData } from '_types/customTypes';
 
 import './Featured.scss';
 
@@ -36,8 +36,9 @@ const Promoted = dynamic(() =>
  * JSX component that renders information from a featured paper.
  * @namespace Featured
  * @param {string} paperId - A paper id value
+ * @param {boolean} promoted - Is the paper a promoted post
  */
-const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean }) => {
+const Featured = ({ paperId, promoted }: { paperId: string, promoted?: boolean }) => {
   return (
     <QueryRenderer
       environment={environment}
@@ -53,7 +54,6 @@ const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean })
           );
         }
 
-        /* eslint-disable react/prop-types */
         if (props && props.paper) {
           const { paper }: { paper: PaperData } = props;
           return (
@@ -62,56 +62,56 @@ const Featured = ({ paperId, promoted }: { paperId: string, promoted: boolean })
               query={fileQuery}
               variables={{ id: paper.latestVersion }}
               render={({ error, props }) => {
-                const authorName = paper.author ? paper.author : 'Unknown';
+                if (!error && props) {
+                  const file: FileData = props.file || {};
 
-                const hasFile = !error && props && props.file;
-                const file = hasFile ? props.file : {};
+                  const authorName = paper.author ? paper.author : 'Unknown';
+                  const coverImage = file.coverImage ? file.coverImage : '/static/placeholder.svg';
+                  const coverAlt = `cover of ${paper.title}`;
+                  const id = paper.prettyId ? paper.prettyId : '';
+                  const title = paper.subTitle ? `${paper.title}: ${paper.subTitle}` : paper.title;
 
-                const coverImage = file.coverImage ? file.coverImage : '/static/placeholder.svg';
-                const coverAlt = `cover of ${paper.title}`;
-                const title = paper.subTitle ? `${paper.title}: ${paper.subTitle}` : paper.title;
-
-                return (
-                  <a styleName='featured-link' href={`/paper/${paper.prettyId}`}>
-                    <div styleName='featured-container'>
-                      <figure styleName='featured-figure'>
-                        <img styleName='featured-img' src={coverImage} alt={coverAlt} />
-                      </figure>
-                      <div styleName='featured-data'>
-                        <div styleName='featured-header'>
-                          <h3 styleName='featured-title'>{title}</h3>
-                          {promoted && <Promoted />}
-                        </div>
-                        {paper.excerpt && <BlockQuote quote={paper.excerpt} />}
-                        <div styleName='featured-meta'>
-                          <p>
-                            <strong>Author: </strong>
-                            {authorName}
-                          </p>
-                          {paper.description && (
+                  return (
+                    <a styleName='featured-link' href={`/paper/${id}`}>
+                      <div styleName='featured-container'>
+                        <figure styleName='featured-figure'>
+                          <img styleName='featured-img' src={coverImage} alt={coverAlt} />
+                        </figure>
+                        <div styleName='featured-data'>
+                          <div styleName='featured-header'>
+                            <h3 styleName='featured-title'>{title}</h3>
+                            {promoted && <Promoted />}
+                          </div>
+                          {paper.excerpt && <BlockQuote quote={paper.excerpt} />}
+                          <div styleName='featured-meta'>
                             <p>
-                              <strong>Description: </strong>
-                              {paper.description}
+                              <strong>Author: </strong>
+                              {authorName}
                             </p>
-                          )}
-                          {paper.pubDate && (
-                            <p>
-                              <strong>Published on:</strong> {isoToLocale(paper.pubDate)}
-                            </p>
-                          )}
-                          <small styleName='featured-added'>
-                            Added on: {isoToLocale(paper.createAt)}
-                          </small>
+                            {paper.description && (
+                              <p>
+                                <strong>Description: </strong>
+                                {paper.description}
+                              </p>
+                            )}
+                            {file.pubDate && (
+                              <p>
+                                <strong>Published on:</strong> {isoToLocale(file.pubDate)}
+                              </p>
+                            )}
+                            <small styleName='featured-added'>
+                              Added on: {isoToLocale(paper.createAt)}
+                            </small>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </a>
-                );
+                    </a>
+                  );
+                }
               }}
             />
           );
         }
-        /* eslint-enable react/prop-types */
 
         return <Loader />;
       }}

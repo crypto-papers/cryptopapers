@@ -1,4 +1,4 @@
-// flow-typed signature: f360af16317546f172f91dbde6b389df
+// flow-typed signature: a1a1794dc4571bb6b4cdbc1b1ffcb6ad
 // flow-typed version: <<STUB>>/babel-plugin-inline-react-svg_v^1.1.0/flow_v0.101.0
 
 /**
@@ -38,7 +38,7 @@ declare module 'babel-plugin-inline-react-svg/lib/fileExistsWithCaseSync' {
   declare module.exports: any;
 }
 
-declare module 'babel-plugin-inline-react-svg/lib/index' {
+declare module 'babel-plugin-inline-react-svg/lib' {
   declare module.exports: any;
 }
 
@@ -107,8 +107,11 @@ declare module 'babel-plugin-inline-react-svg/lib/escapeBraces.js' {
 declare module 'babel-plugin-inline-react-svg/lib/fileExistsWithCaseSync.js' {
   declare module.exports: $Exports<'babel-plugin-inline-react-svg/lib/fileExistsWithCaseSync'>;
 }
+declare module 'babel-plugin-inline-react-svg/lib/index' {
+  declare module.exports: $Exports<'babel-plugin-inline-react-svg/lib'>;
+}
 declare module 'babel-plugin-inline-react-svg/lib/index.js' {
-  declare module.exports: $Exports<'babel-plugin-inline-react-svg/lib/index'>;
+  declare module.exports: $Exports<'babel-plugin-inline-react-svg/lib'>;
 }
 declare module 'babel-plugin-inline-react-svg/lib/optimize.js' {
   declare module.exports: $Exports<'babel-plugin-inline-react-svg/lib/optimize'>;

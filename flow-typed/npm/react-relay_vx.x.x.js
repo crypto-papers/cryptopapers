@@ -1,4 +1,4 @@
-// flow-typed signature: ca820fd15b829a009c9c8d268156842a
+// flow-typed signature: 35c40502e218873060342b3b28c16634
 // flow-typed version: <<STUB>>/react-relay_v^5.0.0/flow_v0.101.0
 
 /**
@@ -30,7 +30,7 @@ declare module 'react-relay/lib/buildReactRelayContainer' {
   declare module.exports: any;
 }
 
-declare module 'react-relay/lib/index' {
+declare module 'react-relay/lib' {
   declare module.exports: any;
 }
 
@@ -111,8 +111,11 @@ declare module 'react-relay/lib/assertFragmentMap.js' {
 declare module 'react-relay/lib/buildReactRelayContainer.js' {
   declare module.exports: $Exports<'react-relay/lib/buildReactRelayContainer'>;
 }
+declare module 'react-relay/lib/index' {
+  declare module.exports: $Exports<'react-relay/lib'>;
+}
 declare module 'react-relay/lib/index.js' {
-  declare module.exports: $Exports<'react-relay/lib/index'>;
+  declare module.exports: $Exports<'react-relay/lib'>;
 }
 declare module 'react-relay/lib/isRelayEnvironment.js' {
   declare module.exports: $Exports<'react-relay/lib/isRelayEnvironment'>;

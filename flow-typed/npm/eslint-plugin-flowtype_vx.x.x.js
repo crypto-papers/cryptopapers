@@ -1,4 +1,4 @@
-// flow-typed signature: 8479c5441e441f421adb280bcde4fadc
+// flow-typed signature: f9014e2922282aa13b4248f58ac416dc
 // flow-typed version: <<STUB>>/eslint-plugin-flowtype_v^3.10.3/flow_v0.101.0
 
 /**
@@ -38,11 +38,11 @@ declare module 'eslint-plugin-flowtype/dist/bin/utilities' {
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-flowtype/dist/index' {
+declare module 'eslint-plugin-flowtype/dist' {
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-flowtype/dist/rules/arrayStyle/index' {
+declare module 'eslint-plugin-flowtype/dist/rules/arrayStyle' {
   declare module.exports: any;
 }
 
@@ -210,7 +210,7 @@ declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/evaluateVaria
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/index' {
+declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing' {
   declare module.exports: any;
 }
 
@@ -258,7 +258,7 @@ declare module 'eslint-plugin-flowtype/dist/utilities/getTokenBeforeParens' {
   declare module.exports: any;
 }
 
-declare module 'eslint-plugin-flowtype/dist/utilities/index' {
+declare module 'eslint-plugin-flowtype/dist/utilities' {
   declare module.exports: any;
 }
 
@@ -295,11 +295,17 @@ declare module 'eslint-plugin-flowtype/dist/bin/checkTests.js' {
 declare module 'eslint-plugin-flowtype/dist/bin/utilities.js' {
   declare module.exports: $Exports<'eslint-plugin-flowtype/dist/bin/utilities'>;
 }
+declare module 'eslint-plugin-flowtype/dist/index' {
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist'>;
+}
 declare module 'eslint-plugin-flowtype/dist/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/index'>;
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist'>;
+}
+declare module 'eslint-plugin-flowtype/dist/rules/arrayStyle/index' {
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/arrayStyle'>;
 }
 declare module 'eslint-plugin-flowtype/dist/rules/arrayStyle/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/arrayStyle/index'>;
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/arrayStyle'>;
 }
 declare module 'eslint-plugin-flowtype/dist/rules/arrayStyle/isSimpleType.js' {
   declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/arrayStyle/isSimpleType'>;
@@ -424,8 +430,11 @@ declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/evaluateTypic
 declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/evaluateVariables.js' {
   declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/typeColonSpacing/evaluateVariables'>;
 }
+declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/index' {
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/typeColonSpacing'>;
+}
 declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/typeColonSpacing/index'>;
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/typeColonSpacing'>;
 }
 declare module 'eslint-plugin-flowtype/dist/rules/typeColonSpacing/reporter.js' {
   declare module.exports: $Exports<'eslint-plugin-flowtype/dist/rules/typeColonSpacing/reporter'>;
@@ -460,8 +469,11 @@ declare module 'eslint-plugin-flowtype/dist/utilities/getTokenAfterParens.js' {
 declare module 'eslint-plugin-flowtype/dist/utilities/getTokenBeforeParens.js' {
   declare module.exports: $Exports<'eslint-plugin-flowtype/dist/utilities/getTokenBeforeParens'>;
 }
+declare module 'eslint-plugin-flowtype/dist/utilities/index' {
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/utilities'>;
+}
 declare module 'eslint-plugin-flowtype/dist/utilities/index.js' {
-  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/utilities/index'>;
+  declare module.exports: $Exports<'eslint-plugin-flowtype/dist/utilities'>;
 }
 declare module 'eslint-plugin-flowtype/dist/utilities/isFlowFile.js' {
   declare module.exports: $Exports<'eslint-plugin-flowtype/dist/utilities/isFlowFile'>;

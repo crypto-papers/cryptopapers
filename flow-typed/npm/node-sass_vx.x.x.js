@@ -1,4 +1,4 @@
-// flow-typed signature: c309a789352b52fb9172acfe30c8361c
+// flow-typed signature: 174e692316864cfee4442b0489ae132b
 // flow-typed version: <<STUB>>/node-sass_v^4.12.0/flow_v0.101.0
 
 /**
@@ -34,7 +34,7 @@ declare module 'node-sass/lib/extensions' {
   declare module.exports: any;
 }
 
-declare module 'node-sass/lib/index' {
+declare module 'node-sass/lib' {
   declare module.exports: any;
 }
 
@@ -172,8 +172,11 @@ declare module 'node-sass/lib/errors.js' {
 declare module 'node-sass/lib/extensions.js' {
   declare module.exports: $Exports<'node-sass/lib/extensions'>;
 }
+declare module 'node-sass/lib/index' {
+  declare module.exports: $Exports<'node-sass/lib'>;
+}
 declare module 'node-sass/lib/index.js' {
-  declare module.exports: $Exports<'node-sass/lib/index'>;
+  declare module.exports: $Exports<'node-sass/lib'>;
 }
 declare module 'node-sass/lib/render.js' {
   declare module.exports: $Exports<'node-sass/lib/render'>;

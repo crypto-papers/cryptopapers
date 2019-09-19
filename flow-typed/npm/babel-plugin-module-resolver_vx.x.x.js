@@ -1,4 +1,4 @@
-// flow-typed signature: c2ab2dc564ac01cb2cd92c41bde539d6
+// flow-typed signature: 2ad2616844e71c45c0796d89d0853637
 // flow-typed version: <<STUB>>/babel-plugin-module-resolver_v^3.2.0/flow_v0.101.0
 
 /**
@@ -22,7 +22,7 @@ declare module 'babel-plugin-module-resolver' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'babel-plugin-module-resolver/lib/index' {
+declare module 'babel-plugin-module-resolver/lib' {
   declare module.exports: any;
 }
 
@@ -55,8 +55,11 @@ declare module 'babel-plugin-module-resolver/lib/utils' {
 }
 
 // Filename aliases
+declare module 'babel-plugin-module-resolver/lib/index' {
+  declare module.exports: $Exports<'babel-plugin-module-resolver/lib'>;
+}
 declare module 'babel-plugin-module-resolver/lib/index.js' {
-  declare module.exports: $Exports<'babel-plugin-module-resolver/lib/index'>;
+  declare module.exports: $Exports<'babel-plugin-module-resolver/lib'>;
 }
 declare module 'babel-plugin-module-resolver/lib/log.js' {
   declare module.exports: $Exports<'babel-plugin-module-resolver/lib/log'>;

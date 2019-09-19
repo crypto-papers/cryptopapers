@@ -31,7 +31,7 @@ module.exports = {
   rules: {
     'jsx-a11y/anchor-is-valid': ['warn'],
     'no-console': ['warn', { allow: ['warn', 'error'] }],
-    'react/prop-types': [1],
+    'react/prop-types': [0],
   },
   settings: {
     react: {

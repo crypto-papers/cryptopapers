@@ -5,10 +5,11 @@ import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 import { useRouter } from 'next/router';
 
+import AssetResult from '_components/AssetResult/AssetResult';
 import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
-import AssetResult from '_components/PaperResult/PaperResult';
 import { assetByTickerQuery } from '_lib/queries/assetByTicker';
+import type { AssetData } from '_types/customTypes';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -28,12 +29,13 @@ const Asset = () => {
   const { ticker } = router.query;
 
   if (ticker) {
+    const allCapsTicker = ticker.toUpperCase();
     return (
-      <Layout title={ticker.toUpperCase()}>
+      <Layout title={allCapsTicker}>
         <QueryRenderer
           environment={environment}
           query={assetByTickerQuery}
-          variables={{ ticker }}
+          variables={{ ticker: allCapsTicker }}
           render={({ error, props }) => {
             if (error) {
               return (
@@ -44,11 +46,10 @@ const Asset = () => {
               );
             }
 
-            /* eslint-disable react/prop-types */
             if (props && props.assetByTicker) {
-              return <AssetResult asset={props.assetByTicker} />;
+              const { assetByTicker }: { assetByTicker: AssetData } = props;
+              return <AssetResult asset={assetByTicker} />;
             }
-            /* eslint-enable react/prop-types */
 
             return <div>No such asset</div>;
           }}

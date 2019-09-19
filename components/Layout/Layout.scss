@@ -18,6 +18,7 @@
 
 .layout {
   background-color: var(--white);
+  flex-grow: 1;
   margin: 0 auto;
   max-width: 1300px;
   padding: 2rem;
@@ -35,7 +36,9 @@
  * styles/global.scss to set sticky footer 
  */
 .content {
+  display: flex;
   flex: 1 0 auto;
+  flex-direction: column;
 }
 
 footer {

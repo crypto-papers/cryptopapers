@@ -9,5 +9,5 @@ import { setBackground } from '_storybook/sharedStyles';
 
 storiesOf('Featured', module)
   .addDecorator(wrapInDiv => <div style={setBackground()}>{wrapInDiv()}</div>)
-  .add('With all fields', () => <Featured paperData={mockPost} />)
-  .add('Missing data', () => <Featured paperData={mockPostMissingData} />);
+  .add('With all fields', () => <Featured paperId={mockPost} promoted />)
+  .add('Missing data', () => <Featured paperId={mockPostMissingData} />);

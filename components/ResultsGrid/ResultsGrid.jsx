@@ -2,18 +2,19 @@
 
 import React from 'react';
 
-import Asset, { type AssetProp } from '_components/Asset/Asset';
-import Result, { type ResultProp } from '_components/Result/Result';
+import AssetResult from '_components/AssetResult/AssetResult';
+import Result from '_components/Result/Result';
+import type { AssetData, PaperData } from '_types/customTypes';
 
 import './ResultsGrid.scss';
 
 /**
  * An asset data object
  * @typedef ResultsGridProp
- * @type {Array<ResultProp> | Array<AssetProp>} - An array of results or assets
+ * @type {Array<PaperData> | Array<AssetData>} - An array of results or assets
  * @memberof ResultsGrid
  */
-export type ResultsGridProp = Array<ResultProp> | Array<AssetProp>;
+export type ResultsGridProp = Array<PaperData> | Array<AssetData>;
 
 /**
  * JSX component that renders a grids of paper results.
@@ -21,16 +22,14 @@ export type ResultsGridProp = Array<ResultProp> | Array<AssetProp>;
  * @param {ResultsGridProp} results - A list of results with their data
  * @param {string} type - Identifies what type of component to display in grid
  */
-const ResultsGrid = ({ results, type }: { results: ResultsGridProp, type: string }) => {
+const ResultsGrid = ({ results, type }: { results: Array<any>, type: string }) => {
   return (
     <div styleName='results-grid'>
-      {results.map(result => {
-        if (type === 'assets') {
-          return <Asset key={result.id} result={result} />;
-        } else if (type === 'results') {
-          return <Result key={result.id} result={result} />;
-        }
-      })}
+      {type === 'assets' &&
+        results.map((result: AssetData) => <AssetResult key={result.id} asset={result} />)}
+
+      {type === 'results' &&
+        results.map((result: PaperData) => <Result key={result.id} result={result} />)}
     </div>
   );
 };

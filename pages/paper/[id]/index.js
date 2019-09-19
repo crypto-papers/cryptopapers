@@ -10,6 +10,7 @@ import environment from '_schema/environment';
 import Layout from '_components/Layout/Layout';
 import PaperResult from '_components/PaperResult/PaperResult';
 import { paperByPidQuery } from '_lib/queries/paperByPid';
+import type { PaperData } from '_types/customTypes';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -45,20 +46,19 @@ const Paper = () => {
               );
             }
 
-            /* eslint-disable react/prop-types */
             if (props && props.paperByPid) {
+              const { paperByPid }: { paperByPid: PaperData } = props;
               return (
                 <Fragment>
-                  {props.paperByPid.title && (
+                  {paperByPid.title && (
                     <Head>
-                      <title>{`CryptoPapers | ${props.paperByPid.title}`}</title>
+                      <title>{`CryptoPapers | ${paperByPid.title}`}</title>
                     </Head>
                   )}
-                  <PaperResult paper={props.paperByPid} />
+                  <PaperResult paper={paperByPid} />
                 </Fragment>
               );
             }
-            /* eslint-enable react/prop-types */
 
             return <div>No such paper</div>;
           }}

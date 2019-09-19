@@ -10,7 +10,7 @@ import Layout from '_components/Layout/Layout';
 import environment from '_schema/environment';
 import { featureLatestQuery } from '_lib/queries/featureLatest';
 import { papersQuery } from '_lib/queries/papers';
-import type { ResultProp } from '_components/Result/Result';
+import type { FeatureData, PaperData } from '_types/customTypes';
 
 const ErrorMessage = dynamic(() =>
   import(
@@ -32,13 +32,11 @@ const Homepage = () => (
       query={featureLatestQuery}
       render={({ error, props }) => {
         if (props && props.featureLatest) {
+          const { featureLatest }: { featureLatest: FeatureData } = props;
           return (
             <Fragment>
               <h2>Featured Paper:</h2>
-              <Featured
-                paperId={props.featureLatest.paper}
-                promoted={props.featureLatest.promoted}
-              />
+              <Featured paperId={featureLatest.paper} promoted={featureLatest.promoted} />
             </Fragment>
           );
         }
@@ -60,9 +58,8 @@ const Homepage = () => (
       // variables={{ count: 6 }}
       query={papersQuery}
       render={({ error, props }) => {
-        /* eslint-disable react/prop-types */
         if (props && props.papers && props.papers.length > 0) {
-          const { papers }: { papers: Array<ResultProp> } = props;
+          const { papers }: { papers: Array<PaperData> } = props;
           return (
             <Fragment>
               <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
@@ -70,7 +67,6 @@ const Homepage = () => (
             </Fragment>
           );
         }
-        /* eslint-enable react/prop-types */
 
         if (error) {
           return (

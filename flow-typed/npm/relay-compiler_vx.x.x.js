@@ -1,4 +1,4 @@
-// flow-typed signature: 7dabc1a6025701c21dd2a967921f1caf
+// flow-typed signature: 7afb37a7517b3378395ab693fa62af0f
 // flow-typed version: <<STUB>>/relay-compiler_v^5.0.0/flow_v0.101.0
 
 /**
@@ -182,7 +182,7 @@ declare module 'relay-compiler/lib/GraphQLWatchmanClient' {
   declare module.exports: any;
 }
 
-declare module 'relay-compiler/lib/index' {
+declare module 'relay-compiler/lib' {
   declare module.exports: any;
 }
 
@@ -517,8 +517,11 @@ declare module 'relay-compiler/lib/GraphQLSchemaUtils.js' {
 declare module 'relay-compiler/lib/GraphQLWatchmanClient.js' {
   declare module.exports: $Exports<'relay-compiler/lib/GraphQLWatchmanClient'>;
 }
+declare module 'relay-compiler/lib/index' {
+  declare module.exports: $Exports<'relay-compiler/lib'>;
+}
 declare module 'relay-compiler/lib/index.js' {
-  declare module.exports: $Exports<'relay-compiler/lib/index'>;
+  declare module.exports: $Exports<'relay-compiler/lib'>;
 }
 declare module 'relay-compiler/lib/inferRootArgumentDefinitions.js' {
   declare module.exports: $Exports<'relay-compiler/lib/inferRootArgumentDefinitions'>;

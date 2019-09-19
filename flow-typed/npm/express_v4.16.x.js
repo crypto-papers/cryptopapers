@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 164dcf1c9105e51cb17a374a807146a7
 // flow-typed version: c7f4cf7a4d/express_v4.16.x/flow_>=v0.93.x
 
@@ -90,7 +91,11 @@ declare class express$Response extends http$ServerResponse mixins express$Reques
   redirect(status: number, url: string, ...args: Array<void>): this;
   render(view: string, locals?: { [name: string]: mixed }, callback?: express$RenderCallback): this;
   send(body?: mixed): this;
-  sendFile(path: string, options?: express$SendFileOptions, callback?: (err?: ?Error) => mixed): this;
+  sendFile(
+    path: string,
+    options?: express$SendFileOptions,
+    callback?: (err?: ?Error) => mixed
+  ): this;
   sendStatus(statusCode: number): this;
   header(field: string, value?: string): this;
   header(headers: { [name: string]: string }): this;
@@ -105,7 +110,12 @@ declare class express$Response extends http$ServerResponse mixins express$Reques
 declare type express$NextFunction = (err?: ?Error | 'route') => mixed;
 declare type express$Middleware =
   | ((req: $Subtype<express$Request>, res: express$Response, next: express$NextFunction) => mixed)
-  | ((error: Error, req: $Subtype<express$Request>, res: express$Response, next: express$NextFunction) => mixed);
+  | ((
+      error: Error,
+      req: $Subtype<express$Request>,
+      res: express$Response,
+      next: express$NextFunction
+    ) => mixed);
 declare interface express$RouteMethodType<T> {
   (middleware: express$Middleware): T;
   (...middleware: Array<express$Middleware>): T;
@@ -154,7 +164,12 @@ declare class express$Router extends express$Route {
   handle(req: http$IncomingMessage<>, res: http$ServerResponse, next: express$NextFunction): void;
   param(
     param: string,
-    callback: (req: $Subtype<express$Request>, res: express$Response, next: express$NextFunction, id: string) => mixed
+    callback: (
+      req: $Subtype<express$Request>,
+      res: express$Response,
+      next: express$NextFunction,
+      id: string
+    ) => mixed
   ): void;
   (req: http$IncomingMessage<>, res: http$ServerResponse, next?: ?express$NextFunction): void;
 }
@@ -171,7 +186,12 @@ declare class express$Application extends express$Router mixins events$EventEmit
   constructor(): void;
   locals: { [name: string]: mixed };
   mountpath: string;
-  listen(port: number, hostname?: string, backlog?: number, callback?: (err?: ?Error) => mixed): ?http.Server;
+  listen(
+    port: number,
+    hostname?: string,
+    backlog?: number,
+    callback?: (err?: ?Error) => mixed
+  ): ?http.Server;
   listen(port: number, hostname?: string, callback?: (err?: ?Error) => mixed): ?http.Server;
   listen(port: number, callback?: (err?: ?Error) => mixed): ?http.Server;
   listen(path: string, callback?: (err?: ?Error) => mixed): ?http.Server;
@@ -186,7 +206,11 @@ declare class express$Application extends express$Router mixins events$EventEmit
    */
   //   get(name: string): mixed;
   set(name: string, value: mixed): mixed;
-  render(name: string, optionsOrFunction: { [name: string]: mixed }, callback: express$RenderCallback): void;
+  render(
+    name: string,
+    optionsOrFunction: { [name: string]: mixed },
+    callback: express$RenderCallback
+  ): void;
   handle(req: http$IncomingMessage<>, res: http$ServerResponse, next?: ?express$NextFunction): void;
   // callable signature is not inherited
   (req: http$IncomingMessage<>, res: http$ServerResponse, next?: ?express$NextFunction): void;
