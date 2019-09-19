@@ -1,7 +1,7 @@
 {
   "name": "cryptopapers",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend for principal CryptoPapers website",
   "main": "index.js",
   "scripts": {
     "analyze": "ANALYZE=true next build && cp ./.next/analyze/* ./docs/analysis/",
@@ -16,8 +16,12 @@
     "start": "next start -p 8000",
     "storybook": "start-storybook -s ./.storybook/assets"
   },
-  "author": "",
+  "author": "Marek Rewers",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-papers/cryptopapers"
+  },
   "dependencies": {
     "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
