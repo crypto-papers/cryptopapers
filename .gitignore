@@ -2,11 +2,19 @@
 .next/
 out
 
-# Dependencies
+# Dependency Management
+.pnp.*
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
 node_modules/
+package-lock.json
 
 # Environmental variables
 .env
 
 # Testing
 .dccache
+coverage/
