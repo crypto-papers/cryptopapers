@@ -10,7 +10,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer');
 const withMDX = require('@zeit/next-mdx')({
   extension: /\.md|mdx?$/,
 });
-const withSASS = require('@zeit/next-sass');
 
 const analyzerConfig = { enabled: process.env.ANALYZE === 'true' };
 const mdxConfig = {};
@@ -24,10 +23,9 @@ const sassConfig = {
 
 module.exports = compose([
   [withBundleAnalyzer, analyzerConfig],
-  [withSASS, sassConfig],
   [withMDX, mdxConfig],
   {
-    exportPathMap: function() {
+    exportPathMap: function () {
       return {
         '/': { page: '/' },
         '/about': { page: '/about' },
