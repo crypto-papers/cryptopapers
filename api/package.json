@@ -1,0 +1,11 @@
+{
+  "name": "@cryptopapers/api",
+  "version": "0.0.1",
+  "description": "Node.js server for the CryptoPapers GraphQL API",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-papers/cryptopapers",
+    "directory": "api"
+  }
+}
