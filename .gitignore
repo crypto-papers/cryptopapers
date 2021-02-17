@@ -12,9 +12,15 @@ out
 node_modules/
 package-lock.json
 
-# Environmental variables
+# Environmental Variables
 .env
+
+# Log Files
+*.log
 
 # Testing
 .dccache
 coverage/
+
+# Misc
+.vscode/
