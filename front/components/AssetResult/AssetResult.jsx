@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-
 import type { AssetData } from '_types/customTypes';
 
 /**
@@ -9,12 +8,10 @@ import type { AssetData } from '_types/customTypes';
  * @namespace AssetResult
  * @param {AssetData} result - An asset data object
  */
-const AssetResult = ({ asset }: { asset: AssetData }) => {
-  return (
+const AssetResult = ({ asset }: { +asset: AssetData }) => (
     <div>
       <p>{`${asset.name} - ${asset.ticker}`}</p>
     </div>
   );
-};
 
 export default AssetResult;
