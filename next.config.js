@@ -1,11 +1,9 @@
-// @flow
+// Require('dotenv').config();
 
-require('dotenv').config();
-
-const Dotenv = require('dotenv-webpack');
+// const Dotenv = require('dotenv-webpack');
 const path = require('path');
-const compose = require('next-compose');
 
+const compose = require('next-compose');
 const withBundleAnalyzer = require('@next/bundle-analyzer');
 const withMDX = require('@zeit/next-mdx')({
   extension: /\.md|mdx?$/,
@@ -25,7 +23,7 @@ module.exports = compose([
   [withBundleAnalyzer, analyzerConfig],
   [withMDX, mdxConfig],
   {
-    exportPathMap: function () {
+    exportPathMap() {
       return {
         '/': { page: '/' },
         '/about': { page: '/about' },
@@ -34,16 +32,16 @@ module.exports = compose([
         '/resources': { page: '/resources' },
       };
     },
-    webpack: config => {
+    webpack(config) {
       config.plugins = config.plugins || [];
 
-      config.plugins = [
-        ...config.plugins,
-        new Dotenv({
-          path: path.join(__dirname, '.env'),
-          systemvars: true,
-        }),
-      ];
+      // Config.plugins = [
+      //   ...config.plugins,
+      //   new Dotenv({
+      //     path: path.join(__dirname, '.env'),
+      //     systemvars: true,
+      //   }),
+      // ];
 
       return config;
     },

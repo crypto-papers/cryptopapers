@@ -1,7 +1,4 @@
-// @flow
-
 import React from 'react';
-
 import NavList from '_components/navigation/NavList';
 import { navLinks } from '_utils/navLinks';
 
@@ -13,7 +10,7 @@ import css from './TopNav.scss';
  */
 const TopNav = () => (
   <div styleName='top-nav'>
-    <NavList list={navLinks} classes={css.nav_link} />
+    <NavList classes={css.nav_link} list={navLinks} />
   </div>
 );
 

@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 
 import Twitter from '_static/icons/twitter.svg';

@@ -1,5 +1,3 @@
-// @flow
-
 import { configure } from '@storybook/react';
 import 'styles/global.scss';
 

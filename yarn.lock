@@ -4633,13 +4633,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-syntax-flow@npm:^6.18.0":
-  version: 6.18.0
-  resolution: "babel-plugin-syntax-flow@npm:6.18.0"
-  checksum: 7918569bbef8378a8ce03a8897da015d2bae9823af793509c7362659331a63bca3137afe0a4a49cc20fcc43eb0a09a1cbf93c1f7b059daad48fa1196f3a4b675
-  languageName: node
-  linkType: hard
-
 "babel-plugin-syntax-jsx@npm:6.18.0, babel-plugin-syntax-jsx@npm:^6.18.0":
   version: 6.18.0
   resolution: "babel-plugin-syntax-jsx@npm:6.18.0"
@@ -4651,16 +4644,6 @@ __metadata:
   version: 7.0.0-beta.0
   resolution: "babel-plugin-syntax-trailing-function-commas@npm:7.0.0-beta.0"
   checksum: c66215ecdc16da891c7e1bf4b2c39541e7e817c27719d8a83e3f64249aa2607cfe8d47580544e3963dbba36cc5f0693ae8cc42e5f2b1e7fc22b6c0cfc85f5e2b
-  languageName: node
-  linkType: hard
-
-"babel-plugin-transform-flow-strip-types@npm:^6.22.0":
-  version: 6.22.0
-  resolution: "babel-plugin-transform-flow-strip-types@npm:6.22.0"
-  dependencies:
-    babel-plugin-syntax-flow: ^6.18.0
-    babel-runtime: ^6.22.0
-  checksum: 13cbf8f33f9dd371ca1bdc0609436018cd2eeb98aa359042d4ea9ef27d50d01e6e6aba2eeafe7d827d7d0c21122b2fc2cf93d1b713f7a843be7e65087b420b5b
   languageName: node
   linkType: hard
 
@@ -4804,15 +4787,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-flow@npm:^6.23.0":
-  version: 6.23.0
-  resolution: "babel-preset-flow@npm:6.23.0"
-  dependencies:
-    babel-plugin-transform-flow-strip-types: ^6.22.0
-  checksum: ece63b77e920356bd924647bfcfefaae21f6e6d9a813d59c23350b3adb8f57615a5079b21eb75d9d785d734d842921b064ec6c5916005886ef2d70b191a8f932
-  languageName: node
-  linkType: hard
-
 "babel-preset-jest@npm:^26.6.2":
   version: 26.6.2
   resolution: "babel-preset-jest@npm:26.6.2"
@@ -4853,16 +4827,6 @@ __metadata:
     babel-plugin-transform-undefined-to-void: ^6.9.4
     lodash: ^4.17.11
   checksum: 9a753294b8018902c1517b31533ccb57918cc5683d7742bee0693b2e8930b92588d4a411207e14bdfb0316e455ea34a2a93bf369e04b214db825e9af9051b744
-  languageName: node
-  linkType: hard
-
-"babel-runtime@npm:^6.22.0":
-  version: 6.26.0
-  resolution: "babel-runtime@npm:6.26.0"
-  dependencies:
-    core-js: ^2.4.0
-    regenerator-runtime: ^0.11.0
-  checksum: 5010bf1d81e484d9c6a5b4e4c32564a0dc180c2dc5a65f999729c3cb63b9c6e805d3d10c19a4ccc2112bce084e39e51e52daf5c21df0141ce8e6e37727af2e0b
   languageName: node
   linkType: hard
 
@@ -6516,13 +6480,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^2.4.0":
-  version: 2.6.12
-  resolution: "core-js@npm:2.6.12"
-  checksum: b865823ce9cb5bc63336856440f6525e4996bb91af30660081e82bf447d177f36104f0986906a34ea0c9c03cb8b3d960380848a478e2621dac30c9b8198d28da
-  languageName: node
-  linkType: hard
-
 "core-js@npm:^3.0.1, core-js@npm:^3.0.4, core-js@npm:^3.6.5":
   version: 3.8.3
   resolution: "core-js@npm:3.8.3"
@@ -6737,14 +6694,12 @@ __metadata:
     babel-plugin-module-resolver: ^4.1.0
     babel-plugin-react-css-modules: ^5.2.6
     babel-plugin-relay: ^10.1.3
-    babel-plugin-transform-flow-strip-types: ^6.22.0
-    babel-preset-flow: ^6.23.0
     documentation: ^13.1.1
     dotenv-webpack: ^6.0.0
     eslint: ^7.20.0
     eslint-config-prettier: ^7.2.0
+    eslint-import-resolver-node: ^0.3.4
     eslint-plugin-babel: ^5.3.1
-    eslint-plugin-flowtype: ^5.2.0
     eslint-plugin-import: ^2.22.1
     eslint-plugin-jest: ^24.1.4
     eslint-plugin-jsx-a11y: ^6.4.1
@@ -6753,7 +6708,6 @@ __metadata:
     eslint-plugin-react: ^7.22.0
     eslint-plugin-react-hooks: ^4.2.0
     express: ^4.17.1
-    flow-bin: ^0.144.0
     graphql: ^15.5.0
     isomorphic-unfetch: ^3.1.0
     jest: ^26.6.3
@@ -8135,18 +8089,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-flowtype@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "eslint-plugin-flowtype@npm:5.2.0"
-  dependencies:
-    lodash: ^4.17.15
-    string-natural-compare: ^3.0.1
-  peerDependencies:
-    eslint: ^7.1.0
-  checksum: bf70a9bb38b60deb93b1ab14e2516709de912ea02d05ea531e8e1b3e5d56fa58ba893720081e36bffe498055de49868e7052a09468759592ed35ba253e0e40da
-  languageName: node
-  linkType: hard
-
 "eslint-plugin-import@npm:^2.22.1":
   version: 2.22.1
   resolution: "eslint-plugin-import@npm:2.22.1"
@@ -9000,15 +8942,6 @@ __metadata:
   version: 3.1.1
   resolution: "flatted@npm:3.1.1"
   checksum: 1065cd78294ea651b8c1b96c298a3e70893a23da655e2288e40c06d5d9b1ebce4bd977e604678e01065a92580f3de5078d60d9ee4cdcede9a9989859d7eb5057
-  languageName: node
-  linkType: hard
-
-"flow-bin@npm:^0.144.0":
-  version: 0.144.0
-  resolution: "flow-bin@npm:0.144.0"
-  bin:
-    flow: cli.js
-  checksum: c653a0a32669b054cd026e510167ed75010cb08806d0c5a74aedd17fda934dbabefebcf4fb50c873f6a201b2304c9c99208442b7188b02215305c0c3c40f453d
   languageName: node
   linkType: hard
 
@@ -16034,13 +15967,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.11.0":
-  version: 0.11.1
-  resolution: "regenerator-runtime@npm:0.11.1"
-  checksum: d98d44b9f5c9c3c670dcb615c5f5374931f937f3075dc8338126f45231643aa8c47ed2bfdef6ae593e311be54ca02d25d943971ca86a3dc1fa99068c2e1b88b2
-  languageName: node
-  linkType: hard
-
 "regenerator-runtime@npm:^0.13.4, regenerator-runtime@npm:^0.13.7":
   version: 0.13.7
   resolution: "regenerator-runtime@npm:0.13.7"
@@ -17621,13 +17547,6 @@ resolve@1.1.7:
     char-regex: ^1.0.2
     strip-ansi: ^6.0.0
   checksum: afc433824703f1fe3d7e34a980055eb376e9f52ed69b90196c7520819cbc5550b9b1a6abaa22704f4f01c7b40191f22a5e7fe3885a005959b4487d89c7e94b94
-  languageName: node
-  linkType: hard
-
-"string-natural-compare@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "string-natural-compare@npm:3.0.1"
-  checksum: c81b8adc4b91692e01eeb609d85c8fceeba14a41997e65fdc2e01fa9b0a9566663f6326a40436282eaa477ee6997c9096139a995c8220ffca79547c57e1a84e6
   languageName: node
   linkType: hard
 

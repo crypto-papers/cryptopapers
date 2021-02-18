@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';

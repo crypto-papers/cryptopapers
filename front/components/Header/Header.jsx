@@ -1,7 +1,4 @@
-// @flow
-
 import React from 'react';
-
 import Plume from '_static/plume.svg';
 
 import './Header.scss';

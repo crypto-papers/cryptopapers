@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 
 import AssetResult from '_components/AssetResult/AssetResult';

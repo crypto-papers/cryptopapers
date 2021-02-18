@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
@@ -63,7 +61,7 @@ const Homepage = () => (
           return (
             <Fragment>
               <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
-              <ResultsGrid results={papers} type='results' />
+              <ResultsGrid results={papers} type="results" />
             </Fragment>
           );
         }

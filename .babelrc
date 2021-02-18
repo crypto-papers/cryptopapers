@@ -19,7 +19,6 @@
         }
       }
     ],
-    "babel-plugin-transform-flow-strip-types",
     [
       "babel-plugin-react-css-modules",
       {

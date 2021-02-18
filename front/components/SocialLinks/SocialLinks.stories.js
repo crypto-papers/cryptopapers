@@ -1,15 +1,13 @@
-// @flow
-
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { setBackground } from '_storybook/sharedStyles';
 
 import SocialLinks from './SocialLinks';
-import { setBackground } from '_storybook/sharedStyles';
 
 storiesOf('SocialLinks', module)
   .addDecorator(wrapInDiv => <div style={setBackground('dark', 'center')}>{wrapInDiv()}</div>)
-  .add('Light', () => <SocialLinks mode='light' />);
+  .add('Light', () => <SocialLinks mode="light" />);
 
 storiesOf('SocialLinks', module)
   .addDecorator(wrapInDiv => <div style={setBackground('center')}>{wrapInDiv()}</div>)
-  .add('Dark', () => <SocialLinks mode='dark' />);
+  .add('Dark', () => <SocialLinks mode="dark" />);

@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Fragment } from 'react';
 import Link from 'next/link';
 

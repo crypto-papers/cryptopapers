@@ -1,5 +1,3 @@
-// @flow
-
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
@@ -45,7 +43,7 @@ const Assets = () => (
 
         if (props && props.assets) {
           const { assets }: { assets: AssetData } = props;
-          return <ResultsGrid results={assets} type='assets' />;
+          return <ResultsGrid results={assets} type="assets" />;
         }
 
         return <Loader />;

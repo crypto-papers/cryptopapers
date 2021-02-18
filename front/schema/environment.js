@@ -1,9 +1,7 @@
-// @flow
-
 import { Environment, Network, RecordSource, Store } from 'relay-runtime';
 
-const fetchQuery = (operation, variables) => {
-  return fetch('http://localhost:4000/query', {
+const fetchQuery = (operation, variables) =>
+  fetch('http://localhost:4000/query', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -12,10 +10,7 @@ const fetchQuery = (operation, variables) => {
       query: operation.text,
       variables,
     }),
-  }).then(response => {
-    return response.json();
-  });
-};
+  }).then(response => response.json());
 
 const network = Network.create(fetchQuery);
 const store = new Store(new RecordSource());

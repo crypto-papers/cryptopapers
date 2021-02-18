@@ -1,10 +1,8 @@
-// @flow
-
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { setBackground } from '_storybook/sharedStyles';
 
 import ErrorMessage from './ErrorMessage';
-import { setBackground } from '_storybook/sharedStyles';
 
 const customMessage = 'Whoops!';
 
