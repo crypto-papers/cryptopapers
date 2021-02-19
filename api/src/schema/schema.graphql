@@ -1,0 +1,70 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+# List of available queries
+type Query {
+  # Asset queries
+  asset(id: ID!): Asset
+  assetByTicker(ticker: String!): Asset
+  assets: [Asset!]!
+
+  # Author queries
+  author(id: ID!): Author
+  authors(orderBy: AuthorOrdering = name_asc): [Author!]!
+
+  # Feature queries
+  feature(id: ID!): Feature
+  featureLatest: Feature
+  features: [Feature!]
+
+  # File queries
+  file(id: ID!): File
+  files: [File!]!
+
+  # User queries
+  user(id: ID!): User
+  users: [User!]!
+
+  # Paper queries
+  paper(id: ID!): Paper
+  paperByPid(prettyId: Int!): Paper
+  papers(first: Int = 10, offset: Int = 0, orderBy: PaperOrdering = title_asc): [Paper!]!
+}
+
+# List of available mutations
+type Mutation {
+  # Asset mutations
+  createAsset(data: AssetCreateInput!): Asset!
+  deleteAsset(where: AssetWhereUniqueInput!): ID!
+  updateAsset(data: AssetUpdateInput!): Asset!
+
+  # Author mutations
+  createAuthor(data: AuthorCreateInput!): Author!
+  deleteAuthor(where: AuthorWhereUniqueInput!): ID!
+  updateAuthor(data: AuthorUpdateInput!): Author!
+
+  # Feature mutations
+  createFeature(data: FeatureCreateInput!): Feature!
+  deleteFeature(where: FeatureWhereUniqueInput!): ID!
+  updateFeature(data: FeatureUpdateInput!): Feature!
+
+  # File mutations
+  createFile(data: FileCreateInput!): File!
+  deleteFile(where: FileWhereUniqueInput!): ID!
+  updateFile(data: FileUpdateInput!): File!
+
+  # Paper mutations
+  createPaper(data: PaperCreateInput!): Paper!
+  deletePaper(where: PaperWhereUniqueInput!): ID!
+  updatePaper(data: PaperUpdateInput!): Paper!
+
+  # User mutations
+  createUser(data: UserCreateInput!): User!
+  deleteUser(where: UserWhereUniqueInput!): ID!
+  updateUser(data: UserUpdateInput!): User!
+}
+
+# Scalar definitions
+scalar Time

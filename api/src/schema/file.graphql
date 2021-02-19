@@ -1,0 +1,42 @@
+type File {
+  id: ID!
+  coverImage: String
+  filename: String!
+  latest: Boolean
+  pageNum: Int
+  pubDate: Time
+  source: String
+  version: String
+  createAt: Time!
+}
+
+# Inputs for file mutations
+input FileCreateInput {
+  id: ID
+  coverImage: String
+  filename: String!
+  latest: Boolean
+  pageNum: Int
+  pubDate: Time
+  source: String
+  version: String
+}
+
+input FileCreateManyInput {
+  create: [FileCreateInput!]
+  connect: [FileWhereUniqueInput!]
+}
+
+input FileUpdateInput {
+  coverImage: String
+  filename: String
+  latest: Boolean
+  pageNum: Int
+  pubDate: Time
+  source: String
+  version: String
+}
+
+input FileWhereUniqueInput {
+  id: ID!
+}

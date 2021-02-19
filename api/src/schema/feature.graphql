@@ -1,0 +1,25 @@
+type Feature {
+  id: ID!
+  paper: ID!
+  promoted: Boolean!
+  sponsor: String
+  createAt: Time!
+}
+
+# Inputs for feature mutations
+input FeatureCreateInput {
+  id: ID
+  paper: ID!
+  promoted: Boolean!
+  sponsor: String
+}
+
+input FeatureUpdateInput {
+  paper: ID
+  promoted: Boolean
+  sponsor: String
+}
+
+input FeatureWhereUniqueInput {
+  id: ID!
+}

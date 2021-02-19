@@ -1,0 +1,48 @@
+type Paper {
+  id: ID!
+  description: String
+  excerpt: String
+  latestVersion: ID
+  prettyId: Int
+  subTitle: String
+  title: String!
+  createAt: Time!
+}
+
+# Inputs for paper mutations
+input PaperCreateInput {
+  id: ID
+  description: String
+  excerpt: String
+  latestVersion: ID
+  prettyId: Int
+  subTitle: String
+  title: String!
+}
+
+input PaperCreateManyInput {
+  create: [PaperCreateInput!]
+  connect: [PaperWhereUniqueInput!]
+}
+
+input PaperUpdateInput {
+  description: String
+  excerpt: String
+  latestVersion: ID
+  title: String
+}
+
+input PaperWhereInput {
+  id: ID
+  prettyId: Int
+  title: String
+}
+
+input PaperWhereUniqueInput {
+  id: ID!
+}
+
+enum PaperOrdering {
+  title_asc
+  title_desc
+}

@@ -1,0 +1,39 @@
+type Author {
+  id: ID!
+  bio: String
+  name: String
+  photo: String
+  pseudonym: Boolean
+  createAt: Time!
+}
+
+# Inputs for author mutations
+input AuthorCreateInput {
+  id: ID
+  bio: String
+  name: String
+  papers: PaperCreateManyInput
+  photo: String
+  pseudonym: Boolean
+}
+
+input AuthorCreateManyInput {
+  create: [AuthorCreateInput!]
+  connect: [AuthorWhereUniqueInput!]
+}
+
+input AuthorUpdateInput {
+  bio: String
+  name: String
+  photo: String
+  pseudonym: Boolean
+}
+
+input AuthorWhereUniqueInput {
+  id: ID!
+}
+
+enum AuthorOrdering {
+  name_asc
+  name_desc
+}
