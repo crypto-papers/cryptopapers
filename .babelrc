@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "babel-plugin-relay",
     [
       "babel-plugin-module-resolver",
       {
