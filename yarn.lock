@@ -2042,9 +2042,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cryptopapers/eslint-config@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@cryptopapers/eslint-config@npm:2.0.0"
+"@cryptopapers/eslint-config@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@cryptopapers/eslint-config@npm:2.0.1"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^4.15.0
     "@typescript-eslint/parser": ^4.15.0
@@ -2067,7 +2067,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 7c32a391a16a601bab6e59e7b926f995c170b55155d70c4b4e47d8868cccacda31ec80a82fc316c5bfab3323d68fe584692276ab89179bb4ef984220235ffaa6
+  checksum: 2fdf5e2c91be57d1261e1d6586ce278754893b5040cd6a97bfec551dde4a2a8fb50dd0a46dcc8cd95d574764e371805abe1dcf31d8d6bb70208cf59200671905
   languageName: node
   linkType: hard
 
@@ -7930,7 +7930,7 @@ __metadata:
     "@babel/eslint-parser": ^7.12.17
     "@babel/preset-env": ^7.12.17
     "@cryptopapers/commitlint-config": ^1.0.0
-    "@cryptopapers/eslint-config": ^2.0.0
+    "@cryptopapers/eslint-config": ^2.0.1
     "@cryptopapers/prettier-config": ^1.1.0
     "@mdx-js/mdx": ^1.6.22
     "@next/bundle-analyzer": ^10.0.7

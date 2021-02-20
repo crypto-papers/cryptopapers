@@ -49,8 +49,8 @@ const mockPostMissingData = {
   title: 'Ghost Protocol',
 };
 
-const papers = [mockPost, mockPostMissingData, mockPost1, mockPost2];
-
-module.exports = {
-  db: { papers },
+const db = {
+  papers: [mockPost, mockPostMissingData, mockPost1, mockPost2],
 };
+
+export default db;

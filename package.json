@@ -40,7 +40,7 @@
     "@babel/eslint-parser": "^7.12.17",
     "@babel/preset-env": "^7.12.17",
     "@cryptopapers/commitlint-config": "^1.0.0",
-    "@cryptopapers/eslint-config": "^2.0.0",
+    "@cryptopapers/eslint-config": "^2.0.1",
     "@cryptopapers/prettier-config": "^1.1.0",
     "@mdx-js/mdx": "^1.6.22",
     "@next/bundle-analyzer": "^10.0.7",

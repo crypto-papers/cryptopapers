@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server';
 
-import { db } from './mockdata';
+import db from './mockdata';
 import resolvers from './src/resolvers/resolvers';
 import typeDefs from './src/typeDefs';
 
