@@ -1,6 +1,7 @@
 # Builds
 .next/
 out
+*/dist/
 
 # Dependency Management
 .pnp.*

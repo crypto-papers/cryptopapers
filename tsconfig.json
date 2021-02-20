@@ -4,7 +4,7 @@
     "target": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "api/dist",
     "allowJs": true,
     "lib": ["dom", "es6"],
     "strictNullChecks": true

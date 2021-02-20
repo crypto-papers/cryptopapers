@@ -1,8 +1,3 @@
-schema {
-  query: Query
-  mutation: Mutation
-}
-
 # List of available queries
 type Query {
   # Asset queries
@@ -68,3 +63,8 @@ type Mutation {
 
 # Scalar definitions
 scalar Time
+
+schema {
+  query: Query
+  mutation: Mutation
+}
