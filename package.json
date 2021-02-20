@@ -38,6 +38,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
     "@cryptopapers/commitlint-config": "^1.0.0",
     "@cryptopapers/eslint-config": "^2.0.0",
     "@cryptopapers/prettier-config": "^1.1.0",
