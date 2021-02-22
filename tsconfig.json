@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "api/dist",
     "allowJs": true,
     "lib": ["dom", "es6"],
     "strictNullChecks": true
   },
+  "exclude": ["api/dist/*"],
   "include": [
     "api/**/*"
   ]
