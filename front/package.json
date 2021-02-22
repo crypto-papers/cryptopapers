@@ -1,0 +1,20 @@
+{
+  "name": "@cryptopapers/front",
+  "version": "0.0.1",
+  "description": "Frontend for principal CryptoPapers website",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-papers/cryptopapers",
+    "directory": "front"
+  },
+  "dependencies": {
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17"
+  }
+}
