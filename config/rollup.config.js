@@ -12,4 +12,4 @@ const config = {
   plugins: [typescript(), graphql()],
 };
 
-export default config;
+export default config; // eslint-disable-line import/no-unused-modules -- Used in build script
