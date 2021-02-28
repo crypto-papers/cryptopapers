@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 const mockPost = {
   id: '1',
   added: new Date(),
@@ -48,6 +49,7 @@ const mockPostMissingData = {
   downloadUrl: 'https://cryptopapers.info/assets/pdf/verge.pdf',
   title: 'Ghost Protocol',
 };
+/* eslint-enable */
 
 const db = {
   papers: [mockPost, mockPostMissingData, mockPost1, mockPost2],

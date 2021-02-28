@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server';
 
 import db from './mockdata';
-import resolvers from './src/resolvers/resolvers';
+import resolvers from './src/resolvers/_resolvers';
 import typeDefs from './src/typeDefs';
 
 const server = new ApolloServer({ context: { db }, resolvers, typeDefs });
