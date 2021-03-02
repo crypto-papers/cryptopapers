@@ -1,5 +1,3 @@
-@import 'styles/colors.scss';
-
 .content.geo {
   background: var(--backgroundGeometricGrey);
 }
@@ -39,8 +37,4 @@
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-}
-
-footer {
-  flex-shrink: 0;
 }

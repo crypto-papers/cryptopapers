@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import Footer from '_components/Footer/Footer';
-import Header from '_components/Header/Header';
-import Meta from '_components/Meta/Meta';
-import TopNav from '_components/navigation/TopNav/TopNav';
+import Footer from 'components/Footer/Footer';
+import Header from 'components/Header/Header';
+import Meta from 'components/Meta/Meta';
+import TopNav from 'components/navigation/TopNav/TopNav';
 
-import './Layout.scss';
+import style from './Layout.module.scss';
 
 /**
  * Contents of the page passed in to render the view.
@@ -46,10 +46,10 @@ const Layout = ({ background, children, title }: LayoutProps) => {
   return (
     <React.Fragment>
       <Meta title={title} />
-      <div styleName={`content ${bg}`}>
+      <div className={`${style.content} ${style[bg]}`}>
         <TopNav />
         <Header />
-        <div styleName={`layout ${bg}`}>
+        <div className={`${style.layout} ${style[bg]}`}>
           {title && <h2>{title}</h2>}
           {children}
         </div>

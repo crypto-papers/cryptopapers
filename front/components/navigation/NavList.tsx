@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Link from 'next/link';
 
-import type { NavItem } from '_utils/navLinks';
+import type { NavItem } from 'utils/navLinks';
 
 /**
  * List of pages to add to a navigation menu.

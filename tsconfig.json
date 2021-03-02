@@ -9,7 +9,5 @@
     "strictNullChecks": true
   },
   "exclude": ["api/dist/*"],
-  "include": [
-    "api/**/*"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

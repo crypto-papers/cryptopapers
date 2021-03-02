@@ -1,8 +1,7 @@
-@import 'styles/colors.scss';
-
 .footer {
   background: var(--darkBlue);
   background: var(--gradientDarkLightBlue);
+  flex-shrink: 0;
   padding: 1rem 2rem;
 }
 

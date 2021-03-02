@@ -2,80 +2,78 @@
 @import 'styles/normalize.scss';
 @import 'styles/typography.scss';
 
-:global {
-  html,
-  body {
-    height: 100%;
-  }
+html,
+body {
+  height: 100%;
+}
 
-  /*
+/*
    * Used in conjuction with .content and footer values in 
    * components/Layout/Layout.scss to set sticky footer 
    */
-  #__next {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
+#__next {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-  body {
-    font-family: var(--baseFont);
-    font-size: var(--baseFontSize);
-    line-height: 1.4;
-    margin: 0;
-  }
+body {
+  font-family: var(--baseFont);
+  font-size: var(--baseFontSize);
+  line-height: 1.4;
+  margin: 0;
+}
 
-  a {
-    color: var(--midnightBlue);
-    font-weight: 600;
-    text-decoration: none;
-  }
+a {
+  color: var(--midnightBlue);
+  font-weight: 600;
+  text-decoration: none;
+}
 
-  p {
-    color: var(--black);
-  }
+p {
+  color: var(--black);
+}
 
-  h1 {
-    color: var(--black);
-    font-family: var(--primaryHeaderFont);
-    font-size: var(--xLargeFont);
-  }
+h1 {
+  color: var(--black);
+  font-family: var(--primaryHeaderFont);
+  font-size: var(--xLargeFont);
+}
 
-  h2 {
-    color: var(--black);
-    font-family: var(--primaryHeaderFont);
-    font-size: var(--largeFont);
-  }
+h2 {
+  color: var(--black);
+  font-family: var(--primaryHeaderFont);
+  font-size: var(--largeFont);
+}
 
-  h3 {
-    color: var(--black);
-    font-family: var(--secondaryHeaderFont);
-    font-size: var(--mediumLargeFont);
-  }
+h3 {
+  color: var(--black);
+  font-family: var(--secondaryHeaderFont);
+  font-size: var(--mediumLargeFont);
+}
 
-  h4 {
-    color: var(--black);
-    font-family: var(--secondaryHeaderFont);
-    font-size: var(--mediumFont);
-  }
+h4 {
+  color: var(--black);
+  font-family: var(--secondaryHeaderFont);
+  font-size: var(--mediumFont);
+}
 
-  h5 {
-    color: var(--black);
-    font-family: var(--secondaryHeaderFont);
-    font-size: var(--baseFontSize);
-  }
+h5 {
+  color: var(--black);
+  font-family: var(--secondaryHeaderFont);
+  font-size: var(--baseFontSize);
+}
 
-  h6 {
-    color: var(--black);
-    font-family: var(--secondaryHeaderFont);
-    font-size: var(--smallFont);
-  }
+h6 {
+  color: var(--black);
+  font-family: var(--secondaryHeaderFont);
+  font-size: var(--smallFont);
+}
 
-  code,
-  kbd,
-  samp,
-  pre {
-    font-family: var(--codeSnippetFont);
-    font-size: 1rem;
-  }
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--codeSnippetFont);
+  font-size: 1rem;
 }

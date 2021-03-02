@@ -1618,7 +1618,7 @@ __metadata:
     "@cryptopapers/prettier-config": ^1.1.0
     "@rollup/plugin-graphql": ^1.0.0
     "@rollup/plugin-typescript": ^8.2.0
-    "@types/node": ^14.14.28
+    "@types/node": ^14.14.31
     "@types/react": ^17.0.2
     "@typescript-eslint/eslint-plugin": ^4.15.2
     "@typescript-eslint/parser": ^4.15.2
@@ -1677,11 +1677,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cryptopapers/front@workspace:front"
   dependencies:
+    "@types/node": ^14.14.31
     "@types/react": ^17.0.2
-    "@types/react-dom": ^17
+    "@types/react-dom": ^17.0.1
+    "@types/sass": ^1
     next: ^10.0.7
     react: ^17.0.1
     react-dom: ^17.0.1
+    sass: ^1.32.8
+    typescript: 4.1.5
   languageName: unknown
   linkType: soft
 
@@ -2513,10 +2517,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^14.14.28":
-  version: 14.14.28
-  resolution: "@types/node@npm:14.14.28"
-  checksum: e750df4d5e93c639d04100e7d54d9e416ecc649d4d7951ac1d5b82d092c556f6e7775a191995e06d6def65ae7bc25533d188fe122dc660724d119ce3ddae2cea
+"@types/node@npm:^14.14.31":
+  version: 14.14.31
+  resolution: "@types/node@npm:14.14.31"
+  checksum: 635dc8a0898a923621e02ca179e17baa39fdfa44f0096fcc1b7046c9b32317e74a99956a7b45ca0e8069874f51f4e7873a418239a318a4b6e7936f6510ac5992
   languageName: node
   linkType: hard
 
@@ -2562,7 +2566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17":
+"@types/react-dom@npm:^17.0.1":
   version: 17.0.1
   resolution: "@types/react-dom@npm:17.0.1"
   dependencies:
@@ -2578,6 +2582,15 @@ __metadata:
     "@types/prop-types": "*"
     csstype: ^3.0.2
   checksum: de1cd27ce57a961379978f83676d60d88bf729337683d1d4cb22dd8f285ed4200db19f7243052dc67c80133fe6798da1497456fe6f67a5bba5f5e30ce2544bfa
+  languageName: node
+  linkType: hard
+
+"@types/sass@npm:^1":
+  version: 1.16.0
+  resolution: "@types/sass@npm:1.16.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: e95d14da2d05dea49e913db55922857234b01f2b1b513dd8cc556b64ffa6d89fb81ce4c1f21a6b4cd20f39d61455975e623ed681502b3d06b2d24a2ddd03a21e
   languageName: node
   linkType: hard
 
@@ -4094,7 +4107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:3.5.1":
+"chokidar@npm:3.5.1, chokidar@npm:>=2.0.0 <4.0.0":
   version: 3.5.1
   resolution: "chokidar@npm:3.5.1"
   dependencies:
@@ -9877,6 +9890,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sass@npm:^1.32.8":
+  version: 1.32.8
+  resolution: "sass@npm:1.32.8"
+  dependencies:
+    chokidar: ">=2.0.0 <4.0.0"
+  bin:
+    sass: sass.js
+  checksum: d319b3d7459451b6532b492984e3cbb37381e6c6379622f668900b196c0d545f5a2c32819cf02b5405fb2ef79720fe1f8f16b7614a2fef3fb7af8dfec83a6597
+  languageName: node
+  linkType: hard
+
 "saxes@npm:^5.0.0":
   version: 5.0.1
   resolution: "saxes@npm:5.0.1"
@@ -11123,7 +11147,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-typescript@^4.1.5:
+"typescript@4.1.5, typescript@^4.1.5":
   version: 4.1.5
   resolution: "typescript@npm:4.1.5"
   bin:
@@ -11133,7 +11157,7 @@ typescript@^4.1.5:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.1.5#builtin<compat/typescript>":
+"typescript@patch:typescript@4.1.5#builtin<compat/typescript>, typescript@patch:typescript@^4.1.5#builtin<compat/typescript>":
   version: 4.1.5
   resolution: "typescript@patch:typescript@npm%3A4.1.5#builtin<compat/typescript>::version=4.1.5&hash=cc6730"
   bin:

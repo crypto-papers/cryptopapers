@@ -1,10 +1,10 @@
 import React from 'react';
 
-import AssetResult from '_components/AssetResult/AssetResult';
-import Result from '_components/Result/Result';
-import type { AssetData, PaperData } from '_types/customTypes';
+// import AssetResult from 'components/AssetResult/AssetResult';
+import Result from 'components/Result/Result';
+import type { AssetData, PaperData } from 'types/customTypes';
 
-import './ResultsGrid.scss';
+import style from './ResultsGrid.module.scss';
 
 /**
  * An asset data object
@@ -22,9 +22,9 @@ export type ResultsGridProp = Array<PaperData> | Array<AssetData>;
  */
 const ResultsGrid = ({ results, type }: { results: Array<any>, type: string }) => {
   return (
-    <div styleName='results-grid'>
-      {type === 'assets' &&
-        results.map((result: AssetData) => <AssetResult key={result.id} asset={result} />)}
+    <div className={style['results-grid']}>
+      {/* {type === 'assets' &&
+        results.map((result: AssetData) => <AssetResult key={result.id} asset={result} />)} */}
 
       {type === 'results' &&
         results.map((result: PaperData) => <Result key={result.id} result={result} />)}

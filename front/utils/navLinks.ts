@@ -8,7 +8,7 @@
  * @property {string} href - Page url
  * @memberof navLinks
  */
-export type NavItem = {
+type NavItem = {
   title: string,
   href: string,
 };
