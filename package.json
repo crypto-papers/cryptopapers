@@ -24,6 +24,7 @@
     "url": "https://github.com/crypto-papers/cryptopapers"
   },
   "workspaces": [
+    "admin",
     "api",
     "front"
   ],
