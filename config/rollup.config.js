@@ -3,7 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 
 const config = {
   context: 'undefined',
-  input: 'api/index.ts',
+  input: 'api/src/index.ts',
   output: {
     file: 'api/dist/bundle.js',
     format: 'cjs',
