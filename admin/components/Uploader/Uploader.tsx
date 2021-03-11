@@ -9,7 +9,6 @@ const sendUpload = async ( file: File ): Promise<any> => {
   const response = await fetch('http://localhost:4000/upload', {
     body: data,
     method: 'POST',
-    mode: 'no-cors',
   })
 
   const res = response.json();

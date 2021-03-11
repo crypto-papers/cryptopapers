@@ -3,13 +3,12 @@ import type { UploadResponse } from '@google-cloud/storage';
 
 const storage = new GCPStorage({});
 
-const uploadFile = async (
-  file: string,
-  destination: string,
-  bucket: string
-): Promise<UploadResponse> => {
-  const response = await storage.bucket(bucket).upload(file, {
+const bucket = storage.bucket('bucket');
+
+const uploadFile = async (path: string, destination: string): Promise<UploadResponse> => {
+  const response = await bucket.upload(path, {
     destination,
+    public: true,
   });
 
   return response;
