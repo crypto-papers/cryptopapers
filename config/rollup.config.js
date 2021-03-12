@@ -1,5 +1,5 @@
 import graphql from '@rollup/plugin-graphql';
-import typescript from '@rollup/plugin-typescript';
+import typescript from 'rollup-plugin-typescript2';
 
 const config = {
   context: 'undefined',
