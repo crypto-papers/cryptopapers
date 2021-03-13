@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { QueryRenderer } from 'react-relay';
 
-import environment from '_schema/environment';
-import Loader from '_components/Loader/Loader';
-import { isoToLocale } from '_utils/conversions';
-import { fileQuery } from '_lib/queries/file';
-import type { FileData, PaperData } from '_types/customTypes';
+import environment from 'schema/environment';
+import Loader from 'components/Loader/Loader';
+import { isoToLocale } from 'utils/conversions';
+import { fileQuery } from 'lib/queries/file';
+import type { FileData, PaperData } from 'types/customTypes';
 
-import './PaperResult.scss';
+import style from './PaperResult.module.scss';
 
 /**
  * JSX component that renders the data for a specified paper.
@@ -44,11 +44,11 @@ const PaperResult = ({ paper }: { paper: PaperData }) => {
 
           return (
             <div>
-              <div styleName='paper-result-header'>
+              <div className={style['paper-result-header']}>
                 <h2>{title}</h2>
-                <small styleName='paper-result-added'>Added: {isoToLocale(paper.createAt)}</small>
+                <small className={style['paper-result-added']}>Added: {isoToLocale(paper.createAt)}</small>
               </div>
-              {byline && <p styleName='paper-result-byline'>{byline}</p>}
+              {byline && <p className={style['paper-result-byline']}>{byline}</p>}
               {paper.description && (
                 <Fragment>
                   <strong>Description:</strong>
@@ -59,7 +59,7 @@ const PaperResult = ({ paper }: { paper: PaperData }) => {
                 data={url}
                 height='1200'
                 width='100%'
-                styleName='paper-result-viewer'
+                className={style['paper-result-viewer']}
                 type='application/pdf'
               >
                 <p>

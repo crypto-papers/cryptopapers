@@ -1,5 +1,5 @@
 import React from 'react';
-import type { AssetData } from '_types/customTypes';
+import type { AssetData } from 'types/customTypes';
 
 /**
  * JSX component that renders the data for a specified asset.

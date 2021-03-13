@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ErrorMessage.scss';
+import style from './ErrorMessage.module.scss';
 
 /**
  * Information on the nature of the error encountered
@@ -26,8 +26,8 @@ type ErrorMessageProps = {
  * @namespace ErrorMessage
  */
 const ErrorMessage = ({ customMessage, error }: ErrorMessageProps) => (
-  <div styleName='error-container'>
-    {customMessage && <h5 styleName='error-title'>{customMessage}</h5>}
+  <div className={style['error-container']}>
+    {customMessage && <h5 className={style['error-title']}>{customMessage}</h5>}
     <div>
       <strong>{`${error.name}: ` || 'Error: '}</strong>
       {error.message}

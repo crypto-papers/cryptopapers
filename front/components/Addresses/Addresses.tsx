@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Addresses.scss';
+import style from './Addresses.module.scss';
 
 /**
  * JSX component that generates a list of cryptocurrency addresses
@@ -11,7 +11,7 @@ const Addresses = ({ currencies }: { currencies: Array<string> }) => {
   if (!currencies || !Array.isArray(currencies)) return null;
 
   return (
-    <ul styleName='address-list'>
+    <ul className={style['address-list']}>
       {currencies.includes('eth') && (
         <li>
           <strong>ETH:</strong> {process.env.ETH_ADDRESS}

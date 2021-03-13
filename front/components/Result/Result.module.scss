@@ -4,8 +4,6 @@
   border-radius: 3px;
   box-shadow: var(--boxShadowGrey);
   width: 100%;
-  max-width: 30vw;
-  padding: 1rem;
 
   @media screen and (max-width: 900px) {
     max-width: 45vw;
@@ -29,7 +27,7 @@
 }
 
 .result-figure {
-  margin: 0.5rem 0;
+  margin: 1rem 0 0.5rem;
   text-align: center;
 }
 
@@ -47,8 +45,8 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem 1rem;
 }
 
 .result-text {
-  max-width: 85%;
 }

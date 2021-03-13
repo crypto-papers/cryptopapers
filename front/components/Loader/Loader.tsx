@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Loader.scss';
+import style from './Loader.module.scss';
 
 /**
  * JSX component that renders a bouncing ellipse loader item
@@ -11,12 +11,12 @@ const Loader = ({ message, mode }: { message?: string, mode?: 'dark' }) => {
   const variant = mode === 'dark' ? 'dark' : 'light';
 
   return (
-    <div styleName='bouncing-loader-container'>
-      <p styleName={`${variant}-message`}>{message}</p>
-      <div styleName='bouncing-loader'>
-        <div styleName={`bouncing-loader-ellipse ${variant}`} />
-        <div styleName={`bouncing-loader-ellipse ${variant}`} />
-        <div styleName={`bouncing-loader-ellipse ${variant}`} />
+    <div className={style['bouncing-loader-container']}>
+      <p className={style[`${variant}-message`]}>{message}</p>
+      <div className={style['bouncing-loader']}>
+        <div className={style[`bouncing-loader-ellipse ${variant}`]} />
+        <div className={style[`bouncing-loader-ellipse ${variant}`]} />
+        <div className={style[`bouncing-loader-ellipse ${variant}`]} />
       </div>
     </div>
   );

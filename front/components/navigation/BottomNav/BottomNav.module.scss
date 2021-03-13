@@ -1,10 +1,10 @@
 .bottom-nav {
   display: flex;
-  flex-direction: column;
 }
 
 // Underscore required rather than hyphen to import as classes attribute
 .nav_link {
   color: var(--white);
   font-weight: 500;
+  margin-right: 1rem;
 }

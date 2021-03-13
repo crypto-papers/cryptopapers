@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './BlockQuote.scss';
+import style from './BlockQuote.module.scss';
 
 const BlockQuote = ({ quote }: { quote: string }) => (
   <div>
-    <p styleName='blockquote-text'>{quote}</p>
+    <p className={style['blockquote-text']}>{quote}</p>
   </div>
 );
 
