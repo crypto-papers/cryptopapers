@@ -2,27 +2,27 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 
-import environment from '_schema/environment';
-import Layout from '_components/Layout/Layout';
-import { assetsQuery } from '_lib/queries/assets';
-import type { AssetData } from '_types/customTypes';
+import environment from 'schema/environment';
+import Layout from 'components/Layout/Layout';
+import { assetsQuery } from 'lib/queries/assets';
+import type { AssetData } from 'types/customTypes';
 
 const ErrorMessage = dynamic(() =>
   import(
     /* webpackChunkName: "errorMessage" */
-    '_components/ErrorMessage/ErrorMessage'
+    'components/ErrorMessage/ErrorMessage'
   )
 );
 const Loader = dynamic(() =>
   import(
     /* webpackChunkName: "loader" */
-    '_components/Loader/Loader'
+    'components/Loader/Loader'
   )
 );
 const ResultsGrid = dynamic(() =>
   import(
     /* webpackChunkName: "resultsGrid" */
-    '_components/ResultsGrid/ResultsGrid'
+    'components/ResultsGrid/ResultsGrid'
   )
 );
 

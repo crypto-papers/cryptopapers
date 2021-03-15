@@ -1,6 +1,7 @@
 import React from 'react';
-import AboutMdx from '_static/mdx/about.mdx';
-import Layout from '_components/Layout/Layout';
+
+import AboutMdx from 'static/mdx/about.mdx';
+import Layout from 'components/Layout/Layout';
 
 const About = () => (
   <Layout background="herringbone-blue" title="About Us">

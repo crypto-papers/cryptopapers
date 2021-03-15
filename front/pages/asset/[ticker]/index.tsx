@@ -3,22 +3,22 @@ import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 import { useRouter } from 'next/router';
 
-import AssetResult from '_components/AssetResult/AssetResult';
-import environment from '_schema/environment';
-import Layout from '_components/Layout/Layout';
-import { assetByTickerQuery } from '_lib/queries/assetByTicker';
-import type { AssetData } from '_types/customTypes';
+import AssetResult from 'components/AssetResult/AssetResult';
+import environment from 'schema/environment';
+import Layout from 'components/Layout/Layout';
+import { assetByTickerQuery } from 'lib/queries/assetByTicker';
+import type { AssetData } from 'types/customTypes';
 
 const ErrorMessage = dynamic(() =>
   import(
     /* webpackChunkName: "errorMessage" */
-    '_components/ErrorMessage/ErrorMessage'
+    'components/ErrorMessage/ErrorMessage'
   )
 );
 const Loader = dynamic(() =>
   import(
     /* webpackChunkName: "loader" */
-    '_components/Loader/Loader'
+    'components/Loader/Loader'
   )
 );
 
@@ -28,6 +28,7 @@ const Asset = () => {
 
   if (ticker) {
     const allCapsTicker = ticker.toUpperCase();
+
     return (
       <Layout title={allCapsTicker}>
         <QueryRenderer
@@ -46,6 +47,7 @@ const Asset = () => {
 
             if (props && props.assetByTicker) {
               const { assetByTicker }: { assetByTicker: AssetData } = props;
+              
               return <AssetResult asset={assetByTicker} />;
             }
 
