@@ -1,6 +1,7 @@
 import React from 'react';
-import { Meta } from '@storybook/react';
-// import { setBackground } from '_storybook/sharedStyles';
+import type { Meta } from '@storybook/react';
+
+// Import { setBackground } from '_storybook/sharedStyles';
 
 import Header from './Header';
 
@@ -9,6 +10,10 @@ const meta: Meta = {
   title: 'Site header',
 };
 
-export default meta;
+const Primary: React.VFC = () => <Header title="Cryptopapers.info" />;
 
-export const Primary: React.VFC<{}> = () => <Header title="Cryptopapers.info" />;
+export {
+  Primary
+};
+
+export default meta;

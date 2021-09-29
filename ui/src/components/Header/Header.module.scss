@@ -1,0 +1,20 @@
+@import '../../styles/colors.scss';
+
+.header {
+  align-items: center;
+  background: var(--darkBlue);
+  background: var(--gradientDarkLightBlue);
+  display: flex;
+  justify-content: space-between;
+  padding: 3.5rem 2rem 1rem; /* extra top padding to account for sticky top nav */
+}
+
+.title {
+  color: var(--white);
+  font-variant: small-caps;
+}
+
+.plume {
+  width: 150px;
+  padding: 1rem;
+}

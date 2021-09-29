@@ -1,10 +1,11 @@
 import React from 'react';
-// import Plume from 'static/plume.svg';
 
-import './Header.css';
+// Import Plume from 'static/plume.svg';
+
+import style from './Header.module.scss';
 
 interface HeaderProps {
-  title: string
+  readonly title: string
 }
 
 /**
@@ -12,10 +13,12 @@ interface HeaderProps {
  * @namespace Header
  */
 const Header: React.FC<HeaderProps> = ({title}) => (
-  <div className="header">
-    <h1 className="title">{title}</h1>
+  <div className={style.header}>
+    <h1 className={style.title}>{title}</h1>
     {/* <Plume className={style.plume} /> */}
   </div>
 );
+
+Header.displayName = 'Header';
 
 export default Header;
