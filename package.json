@@ -26,7 +26,8 @@
   "workspaces": [
     "admin",
     "api",
-    "front"
+    "front",
+    "ui"
   ],
   "dependencies": {
     "graphql": "^15.5.1",
