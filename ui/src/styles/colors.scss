@@ -1,7 +1,7 @@
 :root {
   // Colors
   --darkBlue: rgba(5, 55, 130, 1); // #053782
-  --deepRed: rgba(162, 18, 18, 18); // #A21212
+  --deepRed: rgba(162, 18, 18, 1); // #A21212
   --lightBlue: rgba(29, 136, 224, 1); // #1d88e0
   --midnightBlue: rgba(17, 1, 59, 1); // #11013b
   --red: rgba(229, 75, 75, 1); // #E54B4B
@@ -21,11 +21,6 @@
     var(--darkBlue) 0%,
     var(--lightBlue) 100%
   ); // darkBlue to lightBlue
-
-  // Background
-  // --backgroundGeometricBlue: url('/static/background/geometric-blue.png') repeat;
-  // --backgroundGeometricGrey: url('/static/background/geometric-grey.png') repeat;
-  // --backgroundHerringboneBlue: url('/static/background/herringbone-blue.png') repeat;
 
   // Borders
   --borderLightGrey: 1px solid var(--lightGrey);

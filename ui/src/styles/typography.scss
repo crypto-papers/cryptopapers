@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind+Vadodara&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rosario:400i,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
+
+:root {
+  // Font families
+  --baseFont: 'Hind Vadodara', sans-serif;
+  --codeSnippetFont: 'Ubuntu Mono', Consolas, monospace;
+  --primaryHeaderFont: 'Cuprum', sans-serif;
+  --secondaryHeaderFont: 'Rosario', serif;
+
+  --baseFontSize: 16px;
+  --xLargeFont: 2.5rem;
+  --largeFont: 2rem;
+  --mediumLargeFont: 1.5rem;
+  --mediumFont: 1.25rem;
+  --smallFont: 0.75rem;
+}
