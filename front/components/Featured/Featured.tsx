@@ -1,9 +1,9 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
+import { BlockQuote, Loader } from '@cryptopapers/ui';
 
 import environment from 'schema/environment';
-import BlockQuote from 'components/BlockQuote/BlockQuote';
 import { isoToLocale } from 'utils/conversions';
 import { fileQuery } from 'lib/queries/file';
 import { paperQuery } from 'lib/queries/paper';
@@ -15,12 +15,6 @@ const ErrorMessage = dynamic(() =>
   import(
     /* webpackChunkName: "errorMessage" */
     'components/ErrorMessage/ErrorMessage'
-  )
-);
-const Loader = dynamic(() =>
-  import(
-    /* webpackChunkName: "loader" */
-    'components/Loader/Loader'
   )
 );
 const Promoted = dynamic(() =>

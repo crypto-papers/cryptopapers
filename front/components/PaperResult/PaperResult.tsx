@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { QueryRenderer } from 'react-relay';
+import { Loader } from '@cryptopapers/ui';
 
 import environment from 'schema/environment';
-import Loader from 'components/Loader/Loader';
 import { isoToLocale } from 'utils/conversions';
 import { fileQuery } from 'lib/queries/file';
 import type { FileData, PaperData } from 'types/customTypes';

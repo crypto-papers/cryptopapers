@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { QueryRenderer } from 'react-relay';
 import { useRouter } from 'next/router';
+import { Loader } from '@cryptopapers/ui';
 
 import environment from 'schema/environment';
 import Layout from 'components/Layout/Layout';
@@ -14,12 +15,6 @@ const ErrorMessage = dynamic(() =>
   import(
     /* webpackChunkName: "errorMessage" */
     'components/ErrorMessage/ErrorMessage'
-  )
-);
-const Loader = dynamic(() =>
-  import(
-    /* webpackChunkName: "loader" */
-    'components/Loader/Loader'
   )
 );
 

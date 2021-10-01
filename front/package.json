@@ -14,6 +14,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@cryptopapers/ui": "workspace:*",
     "next": "^11.1.2",
     "postcss-scss": "^4.0.1",
     "react": "^17.0.2",

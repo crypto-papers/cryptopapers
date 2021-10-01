@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
+import { Loader } from '@cryptopapers/ui';
 
 import environment from 'schema/environment';
 import Layout from 'components/Layout/Layout';
@@ -11,12 +12,6 @@ const ErrorMessage = dynamic(() =>
   import(
     /* webpackChunkName: "errorMessage" */
     'components/ErrorMessage/ErrorMessage'
-  )
-);
-const Loader = dynamic(() =>
-  import(
-    /* webpackChunkName: "loader" */
-    'components/Loader/Loader'
   )
 );
 const ResultsGrid = dynamic(() =>

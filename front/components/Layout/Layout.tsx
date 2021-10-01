@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { Header } from '@cryptopapers/ui';
 
 import Footer from 'components/Footer/Footer';
-import Header from 'components/Header/Header';
 import Meta from 'components/Meta/Meta';
 import TopNav from 'components/navigation/TopNav/TopNav';
 
@@ -18,7 +18,6 @@ import style from './Layout.module.scss';
  */
 type LayoutProps = {
   background?: string,
-  children: React.Node,
   title?: string,
 };
 
@@ -27,7 +26,7 @@ type LayoutProps = {
  * @namespace Layout
  * @param {LayoutProps} props - A post data object
  */
-const Layout = ({ background, children, title }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ background, children, title }) => {
   let bg;
   switch (background) {
     case 'geometric':
@@ -48,7 +47,7 @@ const Layout = ({ background, children, title }: LayoutProps) => {
       <Meta title={title} />
       <div className={`${style.content} ${style[bg]}`}>
         <TopNav />
-        <Header />
+        <Header title="Cryptopapers.info"/>
         <div className={`${style.layout} ${style[bg]}`}>
           {title && <h2>{title}</h2>}
           {children}
