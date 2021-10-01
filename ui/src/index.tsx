@@ -1,5 +1,2 @@
-import Header from './components/Header/Header';
-
-module.exports = {
-  Header
-}
+export { default as Header } from './components/Header/Header';
+export { default as Loader} from './components/Loader/Loader';
