@@ -13,6 +13,12 @@ module.exports = {
         '@typescript-eslint/no-unsafe-call': 'warn',
       },
     },
+    {
+      files: ['**/*.stories.tsx'],
+      rules: {
+        'react/display-name': 'off'
+      }
+    }
   ],
   parser: '@babel/eslint-parser',
 };
