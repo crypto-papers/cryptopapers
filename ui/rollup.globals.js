@@ -2,7 +2,7 @@ const del = require('rollup-plugin-delete');
 const postcss = require('rollup-plugin-postcss');
 
 module.exports = {
-  input: './src/globals.js',
+  input: './src/globals.ts',
   output: {
     file: './dist/globals.js',
   },
