@@ -1,14 +1,15 @@
 import React from 'react';
-import type { FC, ReactElement } from 'react';
+import { Header } from '@cryptopapers/ui/';
 
 import Uploader from '../components/Uploader/Uploader';
 
-const HomePage: FC = (): ReactElement => (
+const HomePage: React.FC = () => (
   <main>
+    <Header title="Cryptopapers Admin" />
     <Uploader />
   </main>
 );
 
-HomePage.displayName = 'HomePage'
+HomePage.displayName = 'HomePage';
 
-export default HomePage
+export default HomePage;
