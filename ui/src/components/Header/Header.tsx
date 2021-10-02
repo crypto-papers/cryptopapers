@@ -5,14 +5,14 @@ import React from 'react';
 import style from './Header.module.scss';
 
 interface HeaderProps {
-  readonly title: string
+  readonly title: string;
 }
 
 /**
  * JSX component that renders the page header.
- * @namespace Header
+ * @param title - The text used to populate the header title.
  */
-const Header: React.FC<HeaderProps> = ({title}) => (
+const Header: React.FC<HeaderProps> = ({ title }) => (
   <div className={style.header}>
     <h1 className={style.title}>{title}</h1>
     {/* <Plume className={style.plume} /> */}
@@ -20,5 +20,7 @@ const Header: React.FC<HeaderProps> = ({title}) => (
 );
 
 Header.displayName = 'Header';
+
+export type { HeaderProps };
 
 export default Header;
