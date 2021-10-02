@@ -15,7 +15,8 @@
     "postinstall": "husky install config/husky",
     "relay": "relay-compiler --src ./ --exclude '**/.next/**' '**/docs/**' '**/__generated__/**' '**/node_modules/**' '**/schema/**' '**/server/**' --schema ./schema/schema.graphql --extensions js jsx",
     "start": "node ./api/dist/bundle.js",
-    "storybook": "start-storybook -s ./.storybook/assets"
+    "storybook": "start-storybook -s ./.storybook/assets",
+    "test": "jest"
   },
   "author": "Marek Rewers",
   "license": "MIT",
@@ -42,7 +43,6 @@
     "@cryptopapers/prettier-config": "^1.1.0",
     "@rollup/plugin-graphql": "^1.0.0",
     "@types/node": "^16.0.0",
-    "@types/react": "^17.0.13",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "commitlint": "^12.1.4",
