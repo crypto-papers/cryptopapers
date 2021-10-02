@@ -17,9 +17,10 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "start": "tsdx watch & yarn globals",
+    "build": "tsdx build && yarn globals",
     "test": "tsdx test --passWithNoTests",
+    "globals": "rollup -c rollup.globals.js",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -62,6 +63,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-is": "^17.0.2",
+    "rollup": "^2.58.0",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-postcss": "^4.0.1",
     "sass-loader": "^10.0.0",
     "size-limit": "^5.0.5",
