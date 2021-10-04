@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: cryptopapers_db
+    image: neo4j:latest
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - neo4j:/data/
+    env_file:
+      - .env
+
+networks:
+  default:
+    name: cryptopapers
+
+volumes:
+  neo4j:
+    driver: local
+    name: cryptopapers_db
