@@ -1,41 +1,69 @@
-import { ApolloServer } from 'apollo-server-koa';
+import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 import Koa from 'koa';
-import koaBody from 'koa-body';
 import Router from '@koa/router';
+import {
+  getGraphQLParameters,
+  processRequest,
+  renderGraphiQL,
+  sendResult,
+  shouldRenderGraphiQL,
+} from 'graphql-helix';
 
 import db from './mockdata';
 import resolvers from './resolvers/_resolvers';
 import typeDefs from './typeDefs';
 import uploadFile from './utils/google-cloud';
 
+const PORT = 4000;
+
 const app = new Koa();
 
-const router = new Router();
+app.use(bodyParser());
 
-const graphQL = new ApolloServer({ context: { db }, resolvers, typeDefs });
+app.use(async ctx => {
+  const request = {
+    body: ctx.request.body,
+    headers: ctx.req.headers,
+    method: ctx.request.method,
+    query: ctx.request.query,
+  };
 
-app.use(koaBody({ formLimit: '10mb', multipart: true }));
+  if (shouldRenderGraphiQL(request)) {
+    ctx.body = renderGraphiQL({});
+  } else {
+    const { operationName, query, variables } = getGraphQLParameters(request);
 
-router.post('/upload', ctx => {
-  const req = <IRequest>ctx.request;
+    const result = await processRequest({
+      operationName,
+      query,
+      variables,
+      request,
+      typeDefs,
+    });
 
-  const file = req.files?.file;
-
-  if (file) {
-    uploadFile(file.path, file.name)
-      .then(() => console.log('Success'))
-      .catch(err => console.error(err));
+    sendResult(result, ctx.res);
   }
 });
 
-app.use(cors());
-app.use(router.routes()).use(graphQL.getMiddleware());
-app.use(router.allowedMethods());
+// Const router = new Router();
 
-app.listen({ port: 4000 }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000${graphQL.graphqlPath}`)
-);
+// router.post('/upload', ctx => {
+//   const req = <IRequest>ctx.request;
+
+//   const file = req.files?.file;
+
+//   if (file) {
+//     uploadFile(file.path, file.name)
+//       .then(() => console.log('Success'))
+//       .catch(err => console.error(err));
+//   }
+// });
+
+// app.use(cors());
+// app.use(router.allowedMethods());
+
+app.listen({ port: PORT }, () => console.log(`🚀 Server ready at ${PORT}`));
 
 interface IFile {
   size: number;
