@@ -6,9 +6,14 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "allowJs": true,
-    "lib": ["dom", "es6"],
+    "lib": [
+      "dom",
+      "es6"
+    ],
     "strictNullChecks": true
   },
-  "exclude": ["api/dist/*"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
