@@ -1,0 +1,260 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Asset {
+  createAt: Time!
+  id: ID!
+  logo: String
+  name: String!
+  ticker: String!
+}
+
+input AssetCreateInput {
+  id: ID
+  logo: String
+  name: String!
+  ticker: String!
+}
+
+input AssetCreateManyInput {
+  connect: [AssetWhereUniqueInput!]
+  create: [AssetCreateInput!]
+}
+
+input AssetUpdateInput {
+  logo: String
+  name: String
+  ticker: String
+}
+
+input AssetWhereInput {
+  id: ID
+  name: String
+  ticker: String
+}
+
+input AssetWhereUniqueInput {
+  id: ID!
+}
+
+type Author {
+  bio: String
+  createAt: Time!
+  id: ID!
+  name: String
+  photo: String
+  pseudonym: Boolean
+}
+
+input AuthorCreateInput {
+  bio: String
+  id: ID
+  name: String
+  papers: PaperCreateManyInput
+  photo: String
+  pseudonym: Boolean
+}
+
+input AuthorCreateManyInput {
+  connect: [AuthorWhereUniqueInput!]
+  create: [AuthorCreateInput!]
+}
+
+enum AuthorOrdering {
+  name_asc
+  name_desc
+}
+
+input AuthorUpdateInput {
+  bio: String
+  name: String
+  photo: String
+  pseudonym: Boolean
+}
+
+input AuthorWhereUniqueInput {
+  id: ID!
+}
+
+type Feature {
+  createAt: Time!
+  id: ID!
+  paper: ID!
+  promoted: Boolean!
+  sponsor: String
+}
+
+input FeatureCreateInput {
+  id: ID
+  paper: ID!
+  promoted: Boolean!
+  sponsor: String
+}
+
+input FeatureUpdateInput {
+  paper: ID
+  promoted: Boolean
+  sponsor: String
+}
+
+input FeatureWhereUniqueInput {
+  id: ID!
+}
+
+type File {
+  coverImage: String
+  createAt: Time!
+  filename: String!
+  id: ID!
+  latest: Boolean
+  pageNum: Int
+  pubDate: Time
+  source: String
+  version: String
+}
+
+input FileCreateInput {
+  coverImage: String
+  filename: String!
+  id: ID
+  latest: Boolean
+  pageNum: Int
+  pubDate: Time
+  source: String
+  version: String
+}
+
+input FileCreateManyInput {
+  connect: [FileWhereUniqueInput!]
+  create: [FileCreateInput!]
+}
+
+input FileUpdateInput {
+  coverImage: String
+  filename: String
+  latest: Boolean
+  pageNum: Int
+  pubDate: Time
+  source: String
+  version: String
+}
+
+input FileWhereUniqueInput {
+  id: ID!
+}
+
+type Mutation {
+  createAsset(data: AssetCreateInput!): Asset!
+  createAuthor(data: AuthorCreateInput!): Author!
+  createFeature(data: FeatureCreateInput!): Feature!
+  createFile(data: FileCreateInput!): File!
+  createPaper(data: PaperCreateInput!): Paper!
+  createUser(data: UserCreateInput!): User!
+  deleteAsset(where: AssetWhereUniqueInput!): ID!
+  deleteAuthor(where: AuthorWhereUniqueInput!): ID!
+  deleteFeature(where: FeatureWhereUniqueInput!): ID!
+  deleteFile(where: FileWhereUniqueInput!): ID!
+  deletePaper(where: PaperWhereUniqueInput!): ID!
+  deleteUser(where: UserWhereUniqueInput!): ID!
+  updateAsset(data: AssetUpdateInput!): Asset!
+  updateAuthor(data: AuthorUpdateInput!): Author!
+  updateFeature(data: FeatureUpdateInput!): Feature!
+  updateFile(data: FileUpdateInput!): File!
+  updatePaper(data: PaperUpdateInput!): Paper!
+  updateUser(data: UserUpdateInput!): User!
+}
+
+type Paper {
+  createAt: Time!
+  description: String
+  excerpt: String
+  id: ID!
+  latestVersion: ID
+  prettyId: Int
+  subTitle: String
+  title: String!
+}
+
+input PaperCreateInput {
+  description: String
+  excerpt: String
+  id: ID
+  latestVersion: ID
+  prettyId: Int
+  subTitle: String
+  title: String!
+}
+
+input PaperCreateManyInput {
+  connect: [PaperWhereUniqueInput!]
+  create: [PaperCreateInput!]
+}
+
+enum PaperOrdering {
+  title_asc
+  title_desc
+}
+
+input PaperUpdateInput {
+  description: String
+  excerpt: String
+  latestVersion: ID
+  title: String
+}
+
+input PaperWhereInput {
+  id: ID
+  prettyId: Int
+  title: String
+}
+
+input PaperWhereUniqueInput {
+  id: ID!
+}
+
+type Query {
+  asset(id: ID!): Asset
+  assetByTicker(ticker: String!): Asset
+  assets: [Asset!]!
+  author(id: ID!): Author
+  authors(orderBy: AuthorOrdering = name_asc): [Author!]!
+  feature(id: ID!): Feature
+  featureLatest: Feature
+  features: [Feature!]
+  file(id: ID!): File
+  files: [File!]!
+  paper(id: ID!): Paper
+  paperByPid(prettyId: Int!): Paper
+  papers(first: Int = 10, offset: Int = 0, orderBy: PaperOrdering = title_asc): [Paper!]!
+  user(id: ID!): User
+  users: [User!]!
+}
+
+scalar Time
+
+type User {
+  createAt: Time!
+  email: String!
+  id: ID!
+  name: String!
+  password: String!
+}
+
+input UserCreateInput {
+  email: String!
+  id: ID
+  name: String!
+  password: String!
+}
+
+input UserUpdateInput {
+  email: String
+  name: String
+  password: String
+}
+
+input UserWhereUniqueInput {
+  id: ID!
+}
