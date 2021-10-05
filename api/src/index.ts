@@ -42,7 +42,7 @@ app.use(async ctx => {
       variables,
     });
 
-    sendResult(result, ctx.res);
+    await sendResult(result, ctx.res);
   }
 });
 

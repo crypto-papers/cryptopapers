@@ -9,11 +9,17 @@ import { loadSchema } from '@graphql-tools/load';
  * @returns {GraphQLSchema}
  */
 const generateSchema = async (): Promise<GraphQLSchema> => {
-  const jsonSchema = await loadSchema(join(__dirname, './generated/graphql.schema.json'), {
-    loaders: [new JsonFileLoader()],
-  });
+  try {
+    const jsonSchema = await loadSchema(join(__dirname, './generated/graphql.schema.json'), {
+      loaders: [new JsonFileLoader()],
+    });
 
-  return jsonSchema;
+    return jsonSchema;
+  } catch (err: unknown) {
+    console.error(err);
+
+    return null;
+  }
 };
 
 export default generateSchema;
