@@ -1,11 +1,19 @@
-import { mergeTypeDefs } from '@graphql-tools/merge';
+import { join } from 'path';
 
-import _schema from './schema/_schema.graphql';
-import asset from './schema/asset.graphql';
-import author from './schema/author.graphql';
-import feature from './schema/feature.graphql';
-import file from './schema/file.graphql';
-import paper from './schema/paper.graphql';
-import user from './schema/user.graphql';
+import type { GraphQLSchema } from 'graphql';
+import { JsonFileLoader } from '@graphql-tools/json-file-loader';
+import { loadSchema } from '@graphql-tools/load';
 
-export default mergeTypeDefs([_schema, asset, author, feature, file, paper, user]);
+/**
+ * Converts the generated introspection schema into an executable GraphQL schema.
+ * @returns {GraphQLSchema}
+ */
+const generateSchema = async (): Promise<GraphQLSchema> => {
+  const jsonSchema = await loadSchema(join(__dirname, './generated/graphql.schema.json'), {
+    loaders: [new JsonFileLoader()],
+  });
+
+  return jsonSchema;
+};
+
+export default generateSchema;

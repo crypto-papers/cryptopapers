@@ -10,9 +10,9 @@ import {
   shouldRenderGraphiQL,
 } from 'graphql-helix';
 
+import generateSchema from './typeDefs';
 import db from './mockdata';
 import resolvers from './resolvers/_resolvers';
-import typeDefs from './typeDefs';
 import uploadFile from './utils/google-cloud';
 
 const PORT = 4000;
@@ -37,9 +37,9 @@ app.use(async ctx => {
     const result = await processRequest({
       operationName,
       query,
-      variables,
       request,
-      typeDefs,
+      schema: await generateSchema(),
+      variables,
     });
 
     sendResult(result, ctx.res);
