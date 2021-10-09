@@ -77,3 +77,8 @@ pre {
   font-family: var(--codeSnippetFont);
   font-size: 1rem;
 }
+
+input {
+  font-family: var(--baseFont);
+  letter-spacing: 0.75px;
+}

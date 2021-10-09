@@ -1,31 +1,51 @@
 :root {
-  // Colors
-  --darkBlue: rgba(5, 55, 130, 1); // #053782
-  --deepRed: rgba(162, 18, 18, 1); // #A21212
-  --lightBlue: rgba(29, 136, 224, 1); // #1d88e0
-  --midnightBlue: rgba(17, 1, 59, 1); // #11013b
-  --red: rgba(229, 75, 75, 1); // #E54B4B
-  --red15: rgba(229, 75, 75, 0.15); // #E54B4B w/ 15% opacity
+  // Colors RGB Components
+  --blackBase: 28, 29, 35; // #1c1d23
+  --blue: 5, 55, 130; // #053782
+  --blueLight: 29, 136, 224; // #1d88e0
+  --blueDark: 17, 1, 59; // #11013b
+  --greyBase: 224, 224, 224; // #e0e0e0
+  --greyMediumBase: 189, 189, 189; // #bdbdbd
+  --red: 229, 75, 75; // #E54B4B
+  --redDeep: 161, 18, 18; // #A21212
+
+  // Palette
+  --primary: rgba(var(--blue), 1);
+  --primaryDark: rgba(var(--blueDark), 1);
+  --primaryLight: rgba(var(--blueLight), 1);
+
+  --error: rgba(var(--red), 1);
+  --errorDark: rgba(var(--redDeep), 1);
 
   // Monochromes
-  --black: rgba(28, 29, 35, 1); // #1c1d23
-  --black25: rgba(28, 29, 35, 0.25); // #1c1d23 w/ 25% opacity
-  --lightGrey: rgba(224, 224, 224, 1); // #e0e0e0
-  --lightGrey50: rgba(224, 224, 224, 0.5); // #e0e0e0 w/ 50% opacity
-  --mediumGrey: rgba(189, 189, 189, 1); // #bdbdbd
+  --black: rgba(var(--blackBase), 1);
+  --greyLight: rgba(var(--greyBase), 1);
+  --greyMedium: rgba(var(--greyMediumBase), 1);
   --white: rgba(255, 255, 255, 1); // #ffffff
 
   // Gradients
-  --gradientDarkLightBlue: linear-gradient(
-    27deg,
-    var(--darkBlue) 0%,
-    var(--lightBlue) 100%
-  ); // darkBlue to lightBlue
+  --gradientPrimary: linear-gradient(27deg, var(--primary) 0%, var(--primaryLight) 100%);
 
   // Borders
-  --borderLightGrey: 1px solid var(--lightGrey);
-  --borderLightBlueThick: 0.4rem solid var(--lightBlue);
-  --borderDeepRed: 1px solid var(--deepRed);
-  --boxShadowGrey: 2px 1px 3px 2px var(--lightGrey50);
-  --boxShadowBlack: 2px 1px 3px 2px var(--black25);
+  --borderLightGrey: 1px solid var(--greyLight);
+  --borderMediumGrey: 1px solid var(--greyMedium);
+  --borderLightBlueThick: 0.4rem solid var(--primaryLight);
+  --borderDeepRed: 1px solid var(--redDeep);
+  --boxShadowGrey: 2px 1px 3px 2px rgba(var(--greyBase), 0.5);
+  --boxShadowBlack: 2px 1px 3px 2px rgba(var(--blackBase), 0.25);
+
+  //Box Shadows
+  --deep: 3px 3px 3px 2px;
+  --inset: inset 0px 0px 10px;
+  --normal: 2px 1px 3px 2px;
+
+  --boxShadowGrey: var(--normal) rgba(var(--greyBase), 0.5);
+  // --boxShadowGreyDark: var(--normal) --greyDark25;
+  // --boxShadowGreyDarkDeep: var(--deep) --greyDark25;
+  --boxShadowBlack: var(--normal) rgba(var(--blackBase), 0.25);
+  --boxShadowInset: var(--inset) rgba(var(--blackBase), 0.1);
+  --boxShadowInsetDark: var(--inset) rgba(--black, 0.4);
+
+  // Focus states
+  --focusShadow: 0 0 5px rgba(var(--blueLight), 0.6);
 }
