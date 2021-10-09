@@ -17,8 +17,8 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch & yarn globals",
     "build": "tsdx build && yarn globals",
+    "dev": "tsdx watch & yarn globals",
     "test": "tsdx test --passWithNoTests",
     "globals": "rollup -c rollup.globals.js",
     "lint": "tsdx lint",
