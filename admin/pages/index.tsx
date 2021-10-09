@@ -5,10 +5,12 @@ import UploadForm from '../components/UploadForm/UploadForm';
 
 const HomePage: React.FC = () => (
   <Fragment>
-    <Header title="Cryptopapers Admin" />
-    <main>
-      <UploadForm />
-    </main>
+    <div className="content">
+      <Header title="Cryptopapers Admin" />
+      <main>
+        <UploadForm />
+      </main>
+    </div>
     <Footer />
   </Fragment>
 );

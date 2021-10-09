@@ -1,0 +1,9 @@
+/*
+ * Used in conjunction with #__next values in 
+ * styles/global.scss to set sticky footer 
+ */
+.content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
