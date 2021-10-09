@@ -1,14 +1,12 @@
 import React from 'react';
-import App from 'next/app';
+import type { AppProps } from 'next/app';
 
+import '@cryptopapers/ui/dist/globals.css';
 import '../styles/global.scss';
 
-class CryptoPapers extends App {
-  render() {
-    const { Component, pageProps } = this.props;
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const App: React.FC<AppProps> = ({ Component, pageProps }) => <Component {...pageProps} />;
 
-    return (<Component {...pageProps} />);
-  }
-}
+App.displayName = 'App';
 
-export default CryptoPapers;
+export default App;
