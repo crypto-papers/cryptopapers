@@ -1809,9 +1809,11 @@ __metadata:
     "@types/node": ^16.0.0
     "@types/react": ^17.0.13
     "@types/react-dom": ^17.0.8
+    "@types/sass": ^1.16.1
     next: ^11.0.1
     react: ^17.0.2
     react-dom: ^17.0.2
+    sass: ^1.42.1
     typescript: 4.3.5
   languageName: unknown
   linkType: soft
@@ -1826,7 +1828,6 @@ __metadata:
     "@graphql-codegen/schema-ast": ^2.2.0
     "@graphql-codegen/typescript": 2.2.2
     "@graphql-codegen/typescript-resolvers": 2.3.0
-    "@graphql-tools/graphql-file-loader": ^7.1.0
     "@graphql-tools/json-file-loader": ^7.2.0
     "@graphql-tools/load": ^7.3.2
     "@graphql-tools/merge": ^8.1.2
@@ -2489,7 +2490,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/graphql-file-loader@npm:^7.0.1, @graphql-tools/graphql-file-loader@npm:^7.0.5, @graphql-tools/graphql-file-loader@npm:^7.1.0":
+"@graphql-tools/graphql-file-loader@npm:^7.0.1, @graphql-tools/graphql-file-loader@npm:^7.0.5":
   version: 7.1.0
   resolution: "@graphql-tools/graphql-file-loader@npm:7.1.0"
   dependencies:

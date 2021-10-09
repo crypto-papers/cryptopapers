@@ -18,12 +18,14 @@
     "@cryptopapers/ui": "workspace:*",
     "next": "^11.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "sass": "^1.42.1"
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
     "@types/react": "^17.0.13",
     "@types/react-dom": "^17.0.8",
+    "@types/sass": "^1.16.1",
     "typescript": "4.3.5"
   },
   "browserslist": "> .5%, not IE 11"
