@@ -1,13 +1,16 @@
-import React from 'react';
-import { Header } from '@cryptopapers/ui/';
+import React, { Fragment } from 'react';
+import { Footer, Header } from '@cryptopapers/ui';
 
-import Uploader from '../components/Uploader/Uploader';
+import UploadForm from '../components/UploadForm/UploadForm';
 
 const HomePage: React.FC = () => (
-  <main>
+  <Fragment>
     <Header title="Cryptopapers Admin" />
-    <Uploader />
-  </main>
+    <main>
+      <UploadForm />
+    </main>
+    <Footer />
+  </Fragment>
 );
 
 HomePage.displayName = 'HomePage';
