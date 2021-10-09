@@ -1,0 +1,12 @@
+.footer {
+  background: var(--primary);
+  background: var(--gradientPrimary);
+  flex-shrink: 0;
+  padding: 1rem 2rem;
+}
+
+.footer-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
