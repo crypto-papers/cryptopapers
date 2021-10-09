@@ -1,0 +1,37 @@
+@mixin input-general {
+  border: var(--borderMediumGrey);
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+
+  > input[type='text'],
+  > textarea {
+    @include input-general;
+
+    &:focus {
+      background-color: rgba(var(--blueLight), 0.05);
+      box-shadow: var(--focusShadow);
+      outline: none;
+    }
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  &::after {
+    content: '* required';
+    color: var(--errorDark);
+    font-size: var(--smallFont);
+    margin-left: 0.25rem;
+  }
+}
