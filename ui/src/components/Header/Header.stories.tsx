@@ -7,13 +7,11 @@ import Header from './Header';
 
 const meta: Meta = {
   component: Header,
-  title: 'Site header',
+  title: 'Layout/Header',
 };
 
-const Primary: React.VFC = () => <Header title="Cryptopapers.info" />;
+const PrimaryHeader: React.VFC = () => <Header title="Cryptopapers.info" />;
 
-export {
-  Primary
-};
+export { PrimaryHeader };
 
 export default meta;
