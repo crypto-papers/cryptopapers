@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Header } from '@cryptopapers/ui';
+import { Footer, Header } from '@cryptopapers/ui';
 
-import Footer from 'components/Footer/Footer';
+import BottomNav from 'components/navigation/BottomNav/BottomNav';
 import Meta from 'components/Meta/Meta';
 import TopNav from 'components/navigation/TopNav/TopNav';
 
@@ -17,8 +17,8 @@ import style from './Layout.module.scss';
  * @memberof Layout
  */
 type LayoutProps = {
-  background?: string,
-  title?: string,
+  background?: string;
+  title?: string;
 };
 
 /**
@@ -47,13 +47,15 @@ const Layout: React.FC<LayoutProps> = ({ background, children, title }) => {
       <Meta title={title} />
       <div className={`${style.content} ${style[bg]}`}>
         <TopNav />
-        <Header title="Cryptopapers.info"/>
+        <Header title="Cryptopapers.info" />
         <div className={`${style.layout} ${style[bg]}`}>
           {title && <h2>{title}</h2>}
           {children}
         </div>
       </div>
-      <Footer />
+      <Footer>
+        <BottomNav />
+      </Footer>
     </React.Fragment>
   );
 };
