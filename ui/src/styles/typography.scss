@@ -6,15 +6,40 @@
 
 :root {
   // Font families
-  --baseFont: 'Hind Vadodara', sans-serif;
-  --codeSnippetFont: 'Ubuntu Mono', Consolas, monospace;
-  --primaryHeaderFont: 'Cuprum', sans-serif;
-  --secondaryHeaderFont: 'Rosario', serif;
+  --fontFamilyBase: 'Hind Vadodara', sans-serif;
+  --fontFamilyCode: 'Ubuntu Mono', Consolas, monospace;
+  --fontFamilyHeadings: 'Cuprum', sans-serif;
+  --fontFamilyHeadingsSecondary: 'Rosario', serif;
 
+  // Font sizes
   --baseFontSize: 16px;
-  --xLargeFont: 2.5rem;
-  --largeFont: 2rem;
-  --mediumLargeFont: 1.5rem;
-  --mediumFont: 1.25rem;
-  --smallFont: 0.75rem;
+  --typeScale: 1.25;
+
+  // Type scale calculations
+  --fontSizeSmall: calc(var(--baseFontSize) / var(--typeScale));
+  --fontSizeNormal: var(--baseFontSize);
+  --fontSizeMediumSmall: calc(var(--baseFontSize) * var(--typeScale));
+  --fontSizeMedium: calc(var(--fontSizeMediumSmall) * var(--typeScale));
+  --fontSizeMediumLarge: calc(var(--fontSizeMedium) * var(--typeScale));
+  --fontSizeLarge: calc(var(--fontSizeMediumLarge) * var(--typeScale));
+  --fontSizeXLarge: calc(var(--fontSizeLarge) * var(--typeScale));
+}
+
+// Font mixins
+@mixin font-base {
+  font-family: var(--fontFamilyBase);
+  font-size: var(--baseFontSize);
+  font-weight: 400;
+}
+
+@mixin heading-style {
+  color: var(--black);
+  font-family: var(--fontFamilyHeadings);
+  font-weight: 600;
+}
+
+@mixin secondary-heading-style {
+  color: var(--black);
+  font-family: var(--fontFamilyHeadings);
+  font-weight: 400;
 }

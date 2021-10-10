@@ -31,7 +31,7 @@
   &::after {
     content: '* required';
     color: var(--errorDark);
-    font-size: var(--smallFont);
+    font-size: var(--fontSizeSmall);
     margin-left: 0.25rem;
   }
 }

@@ -1,13 +1,14 @@
 :root {
   // Colors RGB Components
-  --blackBase: 28, 29, 35; // #1c1d23
+  --blackBase: 28, 29, 35; // #1C1D23
   --blue: 5, 55, 130; // #053782
-  --blueLight: 29, 136, 224; // #1d88e0
-  --blueDark: 17, 1, 59; // #11013b
-  --greyBase: 224, 224, 224; // #e0e0e0
-  --greyMediumBase: 189, 189, 189; // #bdbdbd
+  --blueLight: 29, 136, 224; // #1D88E0
+  --blueDark: 17, 1, 59; // #11013B
+  --greyBase: 224, 224, 224; // #E0E0E0
+  --greyMediumBase: 189, 189, 189; // #BDBDBD
   --red: 229, 75, 75; // #E54B4B
   --redDeep: 161, 18, 18; // #A21212
+  --whiteBase: 255, 255, 255; // #FFFFFF
 
   // Palette
   --primary: rgba(var(--blue), 1);
@@ -21,7 +22,7 @@
   --black: rgba(var(--blackBase), 1);
   --greyLight: rgba(var(--greyBase), 1);
   --greyMedium: rgba(var(--greyMediumBase), 1);
-  --white: rgba(255, 255, 255, 1); // #ffffff
+  --white: rgba(var(--whiteBase), 1);
 
   // Gradients
   --gradientPrimary: linear-gradient(27deg, var(--primary) 0%, var(--primaryLight) 100%);

@@ -8,9 +8,9 @@ body {
 }
 
 /*
-   * Used in conjunction with .content and footer values in 
-   * components/Layout/Layout.scss to set sticky footer 
-   */
+ * Used in conjunction with .content and footer values in 
+ * components/Layout/Layout.scss to set sticky footer 
+ */
 #__next {
   display: flex;
   flex-direction: column;
@@ -18,14 +18,13 @@ body {
 }
 
 body {
-  font-family: var(--baseFont);
-  font-size: var(--baseFontSize);
+  @include font-base;
   line-height: 1.4;
   margin: 0;
 }
 
 a {
-  color: var(--midnightBlue);
+  color: var(--primaryDark);
   font-weight: 600;
   text-decoration: none;
 }
@@ -35,50 +34,44 @@ p {
 }
 
 h1 {
-  color: var(--black);
-  font-family: var(--primaryHeaderFont);
-  font-size: var(--xLargeFont);
+  @include heading-style;
+  font-size: var(--fontSizeXLarge);
 }
 
 h2 {
-  color: var(--black);
-  font-family: var(--primaryHeaderFont);
-  font-size: var(--largeFont);
+  @include heading-style;
+  font-size: var(--fontSizeLarge);
 }
 
 h3 {
-  color: var(--black);
-  font-family: var(--secondaryHeaderFont);
-  font-size: var(--mediumLargeFont);
+  @include secondary-heading-style;
+  font-size: var(--fontSizeMediumLarge);
 }
 
 h4 {
-  color: var(--black);
-  font-family: var(--secondaryHeaderFont);
-  font-size: var(--mediumFont);
+  @include secondary-heading-style;
+  font-size: var(--fontSizeMedium);
 }
 
 h5 {
-  color: var(--black);
-  font-family: var(--secondaryHeaderFont);
-  font-size: var(--baseFontSize);
+  @include secondary-heading-style;
+  font-size: var(--fontSizeMediumSmall);
 }
 
 h6 {
-  color: var(--black);
-  font-family: var(--secondaryHeaderFont);
-  font-size: var(--smallFont);
+  @include secondary-heading-style;
+  font-size: var(--fontSizeNormal);
 }
 
 code,
 kbd,
 samp,
 pre {
-  font-family: var(--codeSnippetFont);
+  font-family: var(--fontFamilyCode);
   font-size: 1rem;
 }
 
 input {
-  font-family: var(--baseFont);
+  font-family: var(--fontFamilyBase);
   letter-spacing: 0.75px;
 }
