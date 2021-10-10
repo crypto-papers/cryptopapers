@@ -1,4 +1,6 @@
+@import './breakpoints.scss';
 @import './colors.scss';
+@import './mixins.scss';
 @import './normalize.scss';
 @import './typography.scss';
 
@@ -74,4 +76,12 @@ pre {
 input {
   font-family: var(--fontFamilyBase);
   letter-spacing: 0.75px;
+}
+
+.page-container {
+  position: relative;
+
+  @include breakpoint('laptop') {
+    @include page-width;
+  }
 }

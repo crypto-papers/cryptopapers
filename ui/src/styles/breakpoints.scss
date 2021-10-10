@@ -1,0 +1,55 @@
+$breakpointMobileOnly: 37.5em;
+$breakpointMobile: 640px;
+$breakpointTablet: 768px;
+$breakpointLaptop: 1024px;
+$breakpointDesktop: 1200px;
+
+:root {
+  --breakpointMobileOnly: 37.5em;
+  --breakpointMobile: 640px;
+  --breakpointTablet: 768px;
+  --breakpointLaptop: 1024px;
+  --breakpointDesktop: 1200px;
+}
+
+$breakpoints: (
+  'mobileonly': (
+    max-width: $breakpointMobileOnly,
+  ),
+  'mobile': (
+    min-width: $breakpointMobile,
+  ),
+  'tablet': (
+    min-width: $breakpointTablet,
+  ),
+  'laptop': (
+    min-width: $breakpointLaptop,
+  ),
+  'desktop': (
+    min-width: $breakpointDesktop,
+  ),
+) !default;
+
+@mixin breakpoint($point) {
+  @if $point == mobileonly {
+    @media screen and (max-width: $breakpointMobileOnly) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media screen and (min-width: $breakpointMobile) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media screen and (min-width: $breakpointTablet) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media screen and (min-width: $breakpointLaptop) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media screen and (min-width: $breakpointDesktop) {
+      @content;
+    }
+  }
+}
