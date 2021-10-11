@@ -15,9 +15,9 @@ interface HeaderProps {
  * @param skip - The element id to be used as the destination for the skp link.
  * @param title - The text used to populate the header title.
  */
-const Header: React.FC<HeaderProps> = ({ skip = null, title }) => (
+const Header: React.FC<HeaderProps> = ({ skip, title }) => (
   <div className={style.header}>
-    {skip !== null && (
+    {Boolean(skip) && (
       <a className={style.skip} href={skip}>
         Skip to main content
       </a>

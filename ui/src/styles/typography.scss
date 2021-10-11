@@ -33,13 +33,11 @@
 }
 
 @mixin heading-style {
-  color: var(--black);
   font-family: var(--fontFamilyHeadings);
   font-weight: 600;
 }
 
 @mixin secondary-heading-style {
-  color: var(--black);
   font-family: var(--fontFamilyHeadings);
   font-weight: 400;
 }

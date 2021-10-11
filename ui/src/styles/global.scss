@@ -21,8 +21,13 @@ body {
 
 body {
   @include font-base;
+  color: var(--black);
   line-height: 1.4;
   margin: 0;
+}
+
+main {
+  margin: 1rem;
 }
 
 a {
@@ -31,8 +36,8 @@ a {
   text-decoration: none;
 }
 
-p {
-  color: var(--black);
+button {
+  cursor: pointer;
 }
 
 h1 {
