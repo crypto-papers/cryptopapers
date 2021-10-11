@@ -30,6 +30,7 @@
   // Borders
   --borderLightGrey: 1px solid var(--greyLight);
   --borderMediumGrey: 1px solid var(--greyMedium);
+  --borderPrimary: 2px solid var(--primary);
   --borderLightBlueThick: 0.4rem solid var(--primaryLight);
   --borderDeepRed: 1px solid var(--redDeep);
   --boxShadowGrey: 2px 1px 3px 2px rgba(var(--greyBase), 0.5);
@@ -49,4 +50,5 @@
 
   // Focus states
   --focusShadow: 0 0 5px rgba(var(--blueLight), 0.6);
+  --focusBackground: rgba(var(--blueLight), 0.05);
 }

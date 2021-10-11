@@ -1,3 +1,4 @@
+@import '../../styles/mixins.scss';
 @import '../../styles/typography.scss';
 
 .header {
@@ -37,7 +38,7 @@
   font-variant: small-caps;
 
   &-link {
-    border: 1px solid transparent;
+    @include ghost-border(1px);
     border-radius: 3px;
     padding: 0.25rem 0.5rem;
 

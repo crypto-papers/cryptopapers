@@ -12,9 +12,10 @@
   > input[type='text'],
   > textarea {
     @include input-general;
+    caret-color: var(--primaryLight);
 
     &:focus {
-      background-color: rgba(var(--blueLight), 0.05);
+      background-color: var(--focusBackground);
       box-shadow: var(--focusShadow);
       outline: none;
     }

@@ -1,0 +1,71 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/mixins.scss';
+
+.container {
+  box-shadow: var(--boxShadowGrey);
+
+  @include breakpoint('tablet') {
+    box-shadow: none;
+  }
+}
+
+.tab {
+  @include button-reset;
+  border: var(--borderPrimary);
+  border-bottom: none;
+  font-weight: bold;
+  overflow: hidden;
+  padding: 0.75rem 1rem;
+
+  @include breakpoint('tablet') {
+    @include ghost-border(2px);
+    border-bottom: none;
+    flex: 0 1 auto;
+  }
+
+  &[aria-selected='true'] {
+    background-color: var(--primary);
+    border: var(--borderPrimary);
+    color: var(--white);
+
+    @include breakpoint('tablet') {
+      box-shadow: var(--boxShadowGrey);
+    }
+  }
+
+  &:focus {
+    box-shadow: var(--focusShadow);
+    outline: none;
+
+    &[aria-selected='false'] {
+      background-color: var(--focusBackground);
+    }
+  }
+}
+
+.tablist {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include breakpoint('tablet') {
+    flex-direction: row;
+  }
+}
+
+.panel {
+  border: var(--borderPrimary);
+  box-shadow: var(--boxShadowGrey);
+  display: none;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint('tablet') {
+    box-shadow: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}

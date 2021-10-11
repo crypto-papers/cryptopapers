@@ -1,3 +1,17 @@
+@mixin button-reset {
+  background-color: transparent;
+  border: none;
+  color: unset;
+  font-family: unset;
+  font-size: unset;
+  font-weight: unset;
+  text-align: unset;
+}
+
+@mixin ghost-border($width) {
+  border: $width solid transparent;
+}
+
 @mixin page-width {
   margin: 0 auto;
   max-width: 1200px;
