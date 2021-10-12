@@ -1,0 +1,27 @@
+@import '../../../styles/mixins.scss';
+
+.button {
+  @include button-reset;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.container {
+  border: var(--borderMediumGrey);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.list {
+  @include reset-ul;
+}
+
+.search {
+  @include input-general;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+}

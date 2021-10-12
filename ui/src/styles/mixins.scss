@@ -12,8 +12,27 @@
   border: $width solid transparent;
 }
 
+@mixin input-general {
+  border: var(--borderMediumGrey);
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  caret-color: var(--primaryLight);
+
+  &:focus {
+    background-color: var(--focusBackground);
+    box-shadow: var(--focusShadow);
+    outline: none;
+  }
+}
+
 @mixin page-width {
   margin: 0 auto;
   max-width: 1200px;
   width: 95vw;
 }
+
+@mixin reset-ul {
+  list-style: none;
+  padding: 0;
+}
+
