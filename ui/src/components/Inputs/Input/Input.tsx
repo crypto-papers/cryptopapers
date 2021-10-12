@@ -11,7 +11,7 @@ interface IInput {
 }
 
 const Input: React.FC<IInput> = ({ fieldName, id, label, required = false, type }) => (
-  <div className={style.field}>
+  <div className={type === 'checkbox' ? `${style.field} ${style.reversed}` : style.field}>
     <label className={required ? `${style.label} ${style.required}` : style.label} htmlFor={id}>
       {label}
     </label>

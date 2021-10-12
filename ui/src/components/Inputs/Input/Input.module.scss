@@ -1,8 +1,4 @@
-@mixin input-general {
-  border: var(--borderMediumGrey);
-  border-radius: 3px;
-  padding: 0.25rem 0.5rem;
-}
+@import '../../../styles/mixins.scss';
 
 .field {
   display: flex;
@@ -12,13 +8,17 @@
   > input[type='text'],
   > textarea {
     @include input-general;
-    caret-color: var(--primaryLight);
+  }
 
-    &:focus {
-      background-color: var(--focusBackground);
-      box-shadow: var(--focusShadow);
-      outline: none;
-    }
+  > input[type='checkbox'] {
+    @include input-general;
+    margin: 0 0.5rem 0.5rem 0;
+  }
+
+  &.reversed {
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
   }
 }
 
