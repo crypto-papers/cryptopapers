@@ -14,7 +14,7 @@ interface ILayout {
  */
 const Layout: React.FC<ILayout> = ({ children, title }) => (
   <Fragment>
-    <div className="content">
+    <div className="next-content">
       <Header skip="#main-content" title="Cryptopapers Admin" />
       <main id="main-content">
         <div className="page-container">
