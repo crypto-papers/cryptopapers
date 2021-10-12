@@ -1,0 +1,19 @@
+.split-panel {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  > form {
+    > div:first-of-type {
+      margin-top: 0;
+    }
+
+    > div:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 3fr;
+  }
+}
