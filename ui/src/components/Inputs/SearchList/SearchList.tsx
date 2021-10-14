@@ -8,7 +8,9 @@ interface ISearchListOpt {
 }
 
 interface ISearchListOptions {
+  readonly group: string;
   readonly opts: ISearchListOpt[];
+  readonly cb: (value: string) => void;
 }
 
 /**
@@ -16,8 +18,19 @@ interface ISearchListOptions {
  * @component
  * @param opts -
  */
-const SearchList: React.FC<ISearchListOptions> = ({ opts }) => {
+const SearchList: React.FC<ISearchListOptions> = ({ group, opts, cb }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selected, setSelected] = useState('');
+
+  const handleSearch = (input: string): void => {
+    setSelected('');
+    setSearchTerm(input);
+  };
+
+  const handleToggle = (id: string): void => {
+    setSelected(id);
+    cb(id);
+  };
 
   const options = opts.filter(opt => opt.label.toLowerCase().includes(searchTerm.toLowerCase()));
 
@@ -27,17 +40,26 @@ const SearchList: React.FC<ISearchListOptions> = ({ opts }) => {
         className={style.search}
         type="search"
         value={searchTerm}
-        onChange={(e): void => setSearchTerm(e.target.value)}
+        onChange={(e): void => handleSearch(e.target.value)}
       />
-      <ul className={style.list}>
+      <div className={style.list}>
         {options.map(opt => (
-          <li key={opt.id} value={opt.id}>
-            <button className={style.button} type="button">
-              {opt.label}
-            </button>
-          </li>
+          <label
+            key={opt.id}
+            className={opt.id === selected ? `${style.label} ${style.selected}` : style.label}
+            htmlFor={opt.id}
+          >
+            <input
+              id={opt.id}
+              name={group}
+              type="radio"
+              value={opt.id}
+              onChange={(e): void => handleToggle(e.target.value)}
+            />
+            <span>{opt.label}</span>
+          </label>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
