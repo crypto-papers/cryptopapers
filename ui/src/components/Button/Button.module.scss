@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+
+.button {
+  @include button-reset;
+  border-radius: 5px;
+  box-shadow: var(--boxShadowGrey);
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.default {
+  background-color: var(--greyLight);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: var(--white);
+}
