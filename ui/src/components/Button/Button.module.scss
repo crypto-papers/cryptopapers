@@ -6,14 +6,54 @@
   box-shadow: var(--boxShadowGrey);
   font-weight: 700;
   letter-spacing: 0.05rem;
+  max-width: 180px;
   padding: 0.5rem 0.75rem;
+  text-align: center;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
 }
 
 .default {
   background-color: var(--greyLight);
+
+  &.outline {
+    background-color: var(--transparent);
+    border: 2px solid var(--black);
+  }
+}
+
+.danger {
+  background-color: var(--errorDark);
+  color: var(--white);
+
+  &.outline {
+    background-color: var(--transparent);
+    color: var(--errorDark);
+    border: 2px solid var(--errorDark);
+  }
 }
 
 .primary {
   background-color: var(--primary);
   color: var(--white);
+
+  &.outline {
+    background-color: var(--transparent);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+  }
+}
+
+.secondary {
+  background-color: var(--primaryLight);
+  color: var(--black);
+
+  &.outline {
+    background-color: var(--transparent);
+    color: var(--primaryLight);
+    border: 2px solid var(--primaryLight);
+  }
 }

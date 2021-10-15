@@ -7,8 +7,10 @@ interface IButton {
   readonly id?: string;
   readonly label: string;
   readonly name?: string;
+  readonly onClick: (e: React.MouseEvent) => void;
+  readonly outline?: boolean;
   readonly type?: 'button' | 'reset' | 'submit';
-  readonly variant?: 'default' | 'primary';
+  readonly variant?: 'danger' | 'default' | 'primary' | 'secondary';
 }
 
 const buttonTypeEnum = ['button', 'reset', 'submit'];
@@ -18,19 +20,26 @@ const Button: React.FC<IButton> = ({
   id,
   label,
   name: btnName,
+  onClick,
+  outline = false,
   type = 'button',
   variant = 'default',
-}) => (
-  <button
-    className={`${style.button} ${style[variant]}`}
-    disabled={disabled}
-    id={id}
-    name={btnName}
-    type={buttonTypeEnum.includes(type) ? type : 'button'} // eslint-disable-line react/button-has-type -- allowed types enumerated
-  >
-    {label}
-  </button>
-);
+}) => {
+  const baseStyle = `${style.button} ${style[variant]}`;
+
+  return (
+    <button
+      className={outline ? `${baseStyle} ${style.outline}` : baseStyle}
+      disabled={disabled}
+      id={id}
+      name={btnName}
+      type={buttonTypeEnum.includes(type) ? type : 'button'} // eslint-disable-line react/button-has-type -- allowed types enumerated above
+      onClick={(e: React.MouseEvent): void => onClick(e)}
+    >
+      {label}
+    </button>
+  );
+};
 
 Button.displayName = 'Button';
 
