@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './Button.module.scss';
 
-interface IButton {
+interface IButtonProps extends Partial<HTMLButtonElement> {
   readonly disabled?: boolean;
   readonly id?: string;
   readonly label: string;
@@ -15,7 +15,19 @@ interface IButton {
 
 const buttonTypeEnum = ['button', 'reset', 'submit'];
 
-const Button: React.FC<IButton> = ({
+/**
+ * A JSX component that provides a styled button element.
+ * @component
+ * @param props
+ * @param props.disabled - Whether or not the user should be able to interact with the button.
+ * @param props.id - A unique identifier that can be used to reference the element.
+ * @param props.label - The button text that describes the button to the user.
+ * @param props.name - A name used to identify the element.
+ * @param props.onClick - A function to be called (with the click event) when the button is clicked.
+ * @param props.outline - Whether to use the outline or solid button style. Defaults to solid.
+ * @param props.variant - Which color scheme to use when styling the button. Defaults to grey.
+ */
+const Button: React.FC<IButtonProps> = ({
   disabled = false,
   id,
   label,
@@ -43,6 +55,6 @@ const Button: React.FC<IButton> = ({
 
 Button.displayName = 'Button';
 
-export type { IButton };
+export type { IButtonProps };
 
 export default Button;

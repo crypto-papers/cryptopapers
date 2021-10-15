@@ -8,9 +8,10 @@ interface LoaderProps {
 }
 
 /**
- * JSX component that renders a bouncing ellipse loader item
- * @param message - Optional message added above the loader
- * @param mode - Optional flag to toggle on the dark version of the loader
+ * A JSX component that renders a bouncing ellipse loader animation.
+ * @param props
+ * @param props.message - Optional message added above the loader.
+ * @param props.mode - Optional flag to toggle on the dark version of the loader.
  */
 const Loader: React.FC<LoaderProps> = ({ message, mode = 'dark' }) => {
   const variant = mode === 'dark' ? style.dark : style.light;

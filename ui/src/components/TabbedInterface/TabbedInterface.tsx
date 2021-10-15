@@ -9,20 +9,21 @@ interface ITabConfig {
   readonly tabLabel: string;
 }
 
-interface ITabs {
+interface ITabbedInterfaceProps {
   readonly tabs: ITabConfig[];
 }
 
 /**
- * JSX component that warps provided content in a tabbed interface.
+ * A JSX component that warps provided content in a tabbed interface.
  * @component
- * @param tabs - The data pertaining to each tab.
+ * @param props
+ * @param props.tabs - The data pertaining to each tab.
  */
-const TabbedInterface: React.FC<ITabs> = ({ tabs }) => {
+const TabbedInterface: React.FC<ITabbedInterfaceProps> = ({ tabs }) => {
   const [active, setActive] = useState(tabs[0].id);
 
   return (
-    <div>
+    <div className={style.container}>
       <div aria-orientation="horizontal" className={style.tablist} role="tablist">
         {tabs.map(tab => (
           <button
@@ -47,7 +48,7 @@ const TabbedInterface: React.FC<ITabs> = ({ tabs }) => {
           id={`${tab.id}-content-panel`}
           role="tabpanel"
         >
-          <h2>{tab.panelLabel}</h2>
+          <h2 className={style['panel-title']}>{tab.panelLabel}</h2>
           {tab.panelContent}
         </div>
       ))}
@@ -57,6 +58,6 @@ const TabbedInterface: React.FC<ITabs> = ({ tabs }) => {
 
 TabbedInterface.displayName = 'Tabbed Interface';
 
-export type { ITabConfig, ITabs };
+export type { ITabConfig, ITabbedInterfaceProps };
 
 export default TabbedInterface;

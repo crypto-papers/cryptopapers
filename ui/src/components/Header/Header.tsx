@@ -4,18 +4,19 @@ import React from 'react';
 
 import style from './Header.module.scss';
 
-interface HeaderProps {
+interface IHeaderProps {
   readonly skip?: string;
   readonly title: string;
 }
 
 /**
- * JSX component that renders the page header.
+ * A JSX component that renders the page header.
  * @component
- * @param skip - The element id to be used as the destination for the skp link.
- * @param title - The text used to populate the header title.
+ * @param props
+ * @param props.skip - The element id to be used as the destination for the skip link.
+ * @param props.title - The text used to populate the header title.
  */
-const Header: React.FC<HeaderProps> = ({ skip, title }) => (
+const Header: React.FC<IHeaderProps> = ({ skip, title }) => (
   <div className={style.header}>
     {Boolean(skip) && (
       <a className={style.skip} href={skip}>
@@ -31,6 +32,6 @@ const Header: React.FC<HeaderProps> = ({ skip, title }) => (
 
 Header.displayName = 'Header';
 
-export type { HeaderProps };
+export type { IHeaderProps };
 
 export default Header;

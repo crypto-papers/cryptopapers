@@ -7,18 +7,23 @@ interface ISearchListOpt {
   readonly label: string;
 }
 
-interface ISearchListOptions {
-  readonly group: string;
+interface ISearchListProps {
+  readonly name: string;
   readonly opts: ISearchListOpt[];
   readonly cb: (value: string) => void;
 }
 
 /**
- *
+ * A JSX component that renders a list of radio buttons that can be filtered by means of
+ * a search input. While the option do not look like standard radio buttons, they maintain
+ * the accessibility properties inherent to this input type.
  * @component
- * @param opts -
+ * @param props
+ * @param props.cb - A function to be executed (with the target value) when an option is toggled.
+ * @param props.name - The grouping to which the radio options pertain.
+ * @param props.opts - A list of options used to populate the radio options.
  */
-const SearchList: React.FC<ISearchListOptions> = ({ group, opts, cb }) => {
+const SearchList: React.FC<ISearchListProps> = ({ cb, name: fieldName, opts }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selected, setSelected] = useState('');
 
@@ -51,7 +56,7 @@ const SearchList: React.FC<ISearchListOptions> = ({ group, opts, cb }) => {
           >
             <input
               id={opt.id}
-              name={group}
+              name={fieldName}
               type="radio"
               value={opt.id}
               onChange={(e): void => handleToggle(e.target.value)}
@@ -65,5 +70,7 @@ const SearchList: React.FC<ISearchListOptions> = ({ group, opts, cb }) => {
 };
 
 SearchList.displayName = 'Search List';
+
+export type { ISearchListOpt, ISearchListProps };
 
 export default SearchList;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './BlockQuote.module.scss';
 
-interface BlockQuoteProps {
+interface IBlockQuoteProps {
   readonly cite?: string;
   readonly quote: string;
   readonly source?: string;
@@ -10,11 +10,15 @@ interface BlockQuoteProps {
 }
 
 /**
- * JSX component that renders a bouncing ellipse loader item
- * @param cite - A URL to point the user to the source of the quotation.
- * @param quote - Text to display in blockquote format.
+ * A JSX component that is used to display extended quotations.
+ * @component
+ * @param props
+ * @param props.cite - A URL to point the user to the source of the quotation.
+ * @param props.quote - The quoted text to display in blockquote format.
+ * @param props.source - The human readable text used to identify the source (cite) of the quote.
+ * @param props.speaker - The person or group the quotation is attributed to.
  */
-const BlockQuote: React.FC<BlockQuoteProps> = ({ cite, quote, source = '', speaker = '' }) => (
+const BlockQuote: React.FC<IBlockQuoteProps> = ({ cite, quote, source = '', speaker = '' }) => (
   <blockquote cite={cite} className={style.blockquote}>
     <p className={style.text}>{quote}</p>
     {(source || speaker) && (
@@ -29,6 +33,6 @@ const BlockQuote: React.FC<BlockQuoteProps> = ({ cite, quote, source = '', speak
 
 BlockQuote.displayName = 'BlockQuote';
 
-export type { BlockQuoteProps };
+export type { IBlockQuoteProps };
 
 export default BlockQuote;

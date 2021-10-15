@@ -2,17 +2,34 @@ import React from 'react';
 
 import Input from '../Input/Input';
 
-interface ITextArea {
-  readonly fieldName: string;
+interface ITextAreaProps extends Partial<HTMLTextAreaElement> {
   readonly id: string;
   readonly label: string;
-  readonly required?: boolean;
+  readonly name: string;
 }
 
-const TextArea: React.FC<ITextArea> = ({ fieldName, id, label, required }) => (
-  <Input fieldName={fieldName} id={id} label={label} required={required} type="textarea" />
+/**
+ * A JSX component that renders a styled textarea.
+ * @component
+ * @param props
+ * @param props.id - A unique identifier that can be used to reference the element.
+ * @param props.label - The text used to describe the purpose of the input field.
+ * @param props.name - A name used to identify the element.
+ * @param props.required - Whether or not the the input is a required field.
+ */
+const TextArea: React.FC<ITextAreaProps> = ({
+  id,
+  label,
+  name: fieldName,
+  required = false,
+  type,
+  ...rest
+}) => (
+  <Input id={id} label={label} name={fieldName} required={required} type="textarea" {...rest} />
 );
 
-TextArea.displayName = 'Text Input';
+TextArea.displayName = 'Text Area';
+
+export type { ITextAreaProps };
 
 export default TextArea;
