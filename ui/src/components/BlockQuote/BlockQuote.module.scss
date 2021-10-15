@@ -1,7 +1,25 @@
-.blockquote-text {
-  border-left: var(--borderLightBlueThick);
-  font-family: var(--fontFamilyHeadingsSecondary);
-  font-size: var(--fontSizeMedium);
+@mixin blockquote-spacing {
   margin: 1rem 1.5rem 1rem 0.5rem;
   padding-left: 0.8rem;
+}
+
+.blockquote {
+  border-left: var(--borderLightBlueThick);
+}
+
+.caption,
+.text {
+  @include blockquote-spacing;
+  font-family: var(--fontFamilyHeadingsSecondary);
+  font-size: var(--fontSizeMedium);
+}
+
+.caption {
+  > span {
+    font-variant: normal;
+
+    &::before {
+      content: '- ';
+    }
+  }
 }
