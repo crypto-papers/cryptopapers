@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react';
 import Footer from './Footer';
 
 const meta: Meta = {
-  component: Footer,
+  component: Footer as React.FC,
   title: 'Layout/Footer',
 };
 

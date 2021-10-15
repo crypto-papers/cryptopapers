@@ -1,12 +1,10 @@
 import React from 'react';
 import type { Meta } from '@storybook/react';
 
-// Import { setBackground } from '_storybook/sharedStyles';
-
 import Header from './Header';
 
 const meta: Meta = {
-  component: Header,
+  component: Header as React.FC,
   title: 'Layout/Header',
 };
 
