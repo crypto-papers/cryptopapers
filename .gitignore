@@ -24,4 +24,5 @@ package-lock.json
 coverage/
 
 # Misc
-.vscode/
+.vscode/*
+!.vscode/cspell.json

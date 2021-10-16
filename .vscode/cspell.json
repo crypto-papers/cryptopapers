@@ -1,0 +1,11 @@
+{
+  "dictionaryDefinitions": [
+    {
+      "name": "CryptoPapers",
+      "path": "../config/dictionaries/cryptopapers-namespacing.txt"
+    }
+  ],
+  "dictionaries": [
+    "CryptoPapers"
+  ]
+}
