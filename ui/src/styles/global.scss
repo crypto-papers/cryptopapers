@@ -75,6 +75,16 @@ input {
 
 /* --- Global classes not to be compiled as modules --- */
 
+.cpui-visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 /*
  * Used in Next.js apps conjunction with .cpui-next-content
  * to set a sticky footer. In order to work correctly,
