@@ -16,10 +16,10 @@ interface ILayoutProps {
  */
 const Layout: React.FC<ILayoutProps> = ({ children, title }) => (
   <Fragment>
-    <div className="next-content">
+    <div className="cpui-next-content">
       <Header skip="#main-content" title="Cryptopapers Admin" />
       <main id="main-content">
-        <div className="page-container">
+        <div className="cpui-page-container">
           <h1 className={style.title}>{title}</h1>
           {children}
         </div>
