@@ -1,63 +1,71 @@
-import * as React from 'react';
-import { Footer, Header } from '@cryptopapers/ui';
-
-import BottomNav from 'components/navigation/BottomNav/BottomNav';
+import React, { Fragment } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { BottomNav, Footer, Header, TopNav } from '@cryptopapers/ui';
+import type { INavItem } from '@cryptopapers/ui';
 import Meta from 'components/Meta/Meta';
-import TopNav from 'components/navigation/TopNav/TopNav';
 
 import style from './Layout.module.scss';
 
 /**
  * Contents of the page passed in to render the view.
- * @typedef LayoutProps
+ * @typedef ILayoutProps
  * @type {Object}
- * @property {string=} background - Optional flag to change the background site
  * @property {Object[]} children - Child elements to be wrapped by the layout
  * @property {string} title - The page title
  * @memberof Layout
  */
-type LayoutProps = {
-  background?: string;
-  title?: string;
+interface ILayoutProps {
+  readonly title: string;
+}
+
+const generateItem = (currentPage: string, href: string, label: string): INavItem => {
+  return {
+    current: currentPage === href,
+    el: <Link href={href}>{label}</Link>,
+    key: href,
+  };
 };
 
 /**
- * JSX component that renders the page content.
+ * A JSX component that wraps pages with a standardized page elements.
+ * @component
  * @namespace Layout
- * @param {LayoutProps} props - A post data object
+ * @param props
+ * @param props.children - A React node(s) that will be wrapped by the layout.
+ * @param props.title - The title to display at the top of the page.
  */
-const Layout: React.FC<LayoutProps> = ({ background, children, title }) => {
-  let bg;
-  switch (background) {
-    case 'geometric':
-      bg = 'geo';
-      break;
-    case 'geometric-blue':
-      bg = 'geo-blue';
-      break;
-    case 'herringbone-blue':
-      bg = 'hbblue';
-      break;
-    default:
-      bg = 'plain';
-  }
+const Layout: React.FC<ILayoutProps> = ({ children, title = '' }) => {
+  const { pathname } = useRouter();
+
+  const navItems = [
+    generateItem(pathname, '/', 'Home'),
+    generateItem(pathname, '/about', 'About'),
+    generateItem(pathname, '/contribute', 'Contribute'),
+  ];
 
   return (
-    <React.Fragment>
+    <Fragment>
       <Meta title={title} />
-      <div className={`${style.content} ${style[bg]}`}>
-        <TopNav />
-        <Header title="Cryptopapers.info" />
-        <div className={`${style.layout} ${style[bg]}`}>
-          {title && <h2>{title}</h2>}
-          {children}
-        </div>
+      <div className="cpui-next-content">
+        <Header skip="#main-content" title="Cryptopapers.info" />
+        <TopNav items={navItems} />
+        <main id="main-content">
+          <div className="cpui-page-container">
+            <h1 className={style.title}>{title}</h1>
+            {children}
+          </div>
+        </main>
       </div>
       <Footer>
-        <BottomNav />
+        <BottomNav items={navItems} />
       </Footer>
-    </React.Fragment>
+    </Fragment>
   );
 };
+
+Layout.displayName = 'Layout';
+
+export type { ILayoutProps };
 
 export default Layout;

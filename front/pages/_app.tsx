@@ -1,11 +1,20 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
 
-import '@cryptopapers/ui/dist/globals.css';
+import '@cryptopapers/ui/dist/cp-ui.css';
 import '../styles/global.scss';
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-const App: React.FC<AppProps> = ({ Component, pageProps }) => <Component {...pageProps} />;
+/**
+ * Custom App component used to initialize Next.js pages.
+ * @param props
+ * @param props.Component - The active page.
+ * @param props.pageProps - The initial page props preloaded by a Next.js data fetching method.
+ * @see {@link https://nextjs.org/docs/advanced-features/custom-app|Next.js Custom App}
+ */
+const App: React.FC<AppProps> = ({
+  Component, // eslint-disable-line @typescript-eslint/naming-convention
+  pageProps,
+}) => <Component {...pageProps} />;
 
 App.displayName = 'App';
 
