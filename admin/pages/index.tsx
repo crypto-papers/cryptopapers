@@ -13,6 +13,6 @@ const HomePage: React.FC = () => (
   </Layout>
 );
 
-HomePage.displayName = 'Home Page';
+HomePage.displayName = 'Page - Home';
 
 export default HomePage;

@@ -30,6 +30,6 @@ const ManagementPage: React.FC = () => (
   </Layout>
 );
 
-ManagementPage.displayName = 'Management Page';
+ManagementPage.displayName = 'Page - Management';
 
 export default ManagementPage;
