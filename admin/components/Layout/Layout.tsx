@@ -3,16 +3,18 @@ import { Footer, Header } from '@cryptopapers/ui';
 
 import style from './Layout.module.scss';
 
-interface ILayout {
+interface ILayoutProps {
   readonly title: string;
 }
 
 /**
- * A JSX component that wraps pages with a standardized elements.
+ * A JSX component that wraps pages with a standardized page elements.
  * @component
- * @param title - The title to display at the top of the page.
+ * @param props
+ * @param props.children - A React node(s) that will be wrapped by the layout.
+ * @param props.title - The title to display at the top of the page.
  */
-const Layout: React.FC<ILayout> = ({ children, title }) => (
+const Layout: React.FC<ILayoutProps> = ({ children, title }) => (
   <Fragment>
     <div className="next-content">
       <Header skip="#main-content" title="Cryptopapers Admin" />
@@ -29,6 +31,6 @@ const Layout: React.FC<ILayout> = ({ children, title }) => (
 
 Layout.displayName = 'Layout';
 
-export type { ILayout };
+export type { ILayoutProps };
 
 export default Layout;

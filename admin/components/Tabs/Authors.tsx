@@ -9,13 +9,17 @@ const opts = [
   { id: '2', label: 'Satoshi Nakamoto' },
 ];
 
+/**
+ * A JSX component that defines the contents of the author management tab.
+ * @component
+ */
 const AuthorsTab: React.FC = () => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState('');
 
   return (
     <div className={style['split-panel']}>
-      <SearchList opts={opts} />
-      <AuthorForm />
+      <SearchList cb={setSelected} name="author" opts={opts} />
+      <AuthorForm selected={selected} />
     </div>
   );
 };

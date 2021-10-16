@@ -1,20 +1,18 @@
-import React, { Fragment } from 'react';
-import { Footer, Header } from '@cryptopapers/ui';
+import React from 'react';
 
-import UploadForm from '../components/UploadForm/UploadForm';
+import Layout from '../components/Layout/Layout';
+import PaperForm from '../components/Forms/PaperForm';
 
+/**
+ * The home page JSX component.
+ * @component
+ */
 const HomePage: React.FC = () => (
-  <Fragment>
-    <div className="content">
-      <Header title="Cryptopapers Admin" />
-      <main>
-        <UploadForm />
-      </main>
-    </div>
-    <Footer />
-  </Fragment>
+  <Layout title="Add Paper">
+    <PaperForm />
+  </Layout>
 );
 
-HomePage.displayName = 'HomePage';
+HomePage.displayName = 'Home Page';
 
 export default HomePage;
