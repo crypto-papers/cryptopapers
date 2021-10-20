@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Import Plume from 'static/plume.svg';
-
+import Plume from '../../static/plume.svg';
 import style from './Header.module.scss';
 
 interface IHeaderProps {
@@ -26,7 +26,9 @@ const Header: React.FC<IHeaderProps> = ({ skip, title }) => (
     <a className={style['title-link']} href="/">
       <span className={style.title}>{title}</span>
     </a>
-    {/* <Plume className={style.plume} /> */}
+    <div className={style.plume}>
+      <Plume />
+    </div>
   </div>
 );
 

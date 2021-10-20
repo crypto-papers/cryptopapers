@@ -4,7 +4,7 @@ import type { Meta } from '@storybook/react';
 import Header from './Header';
 
 const meta: Meta = {
-  component: Header as React.FC,
+  component: Header as React.VFC,
   title: 'Layout/Header',
 };
 
