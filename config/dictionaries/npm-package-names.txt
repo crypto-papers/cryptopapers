@@ -1,0 +1,6 @@
+# Package names that set off the spell checker.
+bodyparser
+codegen
+commitlint
+svgr
+tsdx

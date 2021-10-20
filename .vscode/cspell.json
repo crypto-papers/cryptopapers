@@ -3,9 +3,14 @@
     {
       "name": "CryptoPapers",
       "path": "../config/dictionaries/cryptopapers-namespacing.txt"
+    },
+    {
+      "name": "NPM Packages",
+      "path": "../config/dictionaries/npm-package-names.txt"
     }
   ],
   "dictionaries": [
-    "CryptoPapers"
+    "CryptoPapers",
+    "NPM Packages"
   ]
 }
