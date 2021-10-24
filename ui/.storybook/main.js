@@ -22,8 +22,6 @@ module.exports = {
       use: [require.resolve('@svgr/webpack')],
     });
 
-    console.log(config);
-
     return config;
   },
 };
