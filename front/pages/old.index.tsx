@@ -1,26 +1,20 @@
 import React, { Fragment } from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
-
+import { ErrorMessage } from '@cryptopapers/ui';
 import Featured from 'components/Featured/Featured';
 import Layout from 'components/Layout/Layout';
-
 import environment from 'schema/environment';
 import { featureLatestQuery } from 'lib/queries/featureLatest';
 import { papersQuery } from 'lib/queries/papers';
 import type { FeatureData, PaperData } from 'types/customTypes';
 
-const ErrorMessage = dynamic(() =>
-  import(
-    /* webpackChunkName: "errorMessage" */
-    'components/ErrorMessage/ErrorMessage'
-  )
-);
-const ResultsGrid = dynamic(() =>
-  import(
-    /* webpackChunkName: "resultsGrid" */
-    'components/ResultsGrid/ResultsGrid'
-  )
+const ResultsGrid = dynamic(
+  async () =>
+    await import(
+      /* WebpackChunkName: "resultsGrid" */
+      'components/ResultsGrid/ResultsGrid'
+    )
 );
 
 const Homepage = () => (
@@ -31,6 +25,7 @@ const Homepage = () => (
       render={({ error, props }) => {
         if (props && props.featureLatest) {
           const { featureLatest }: { featureLatest: FeatureData } = props;
+
           return (
             <Fragment>
               <h2>Featured Paper:</h2>
@@ -42,7 +37,7 @@ const Homepage = () => (
         if (error) {
           return (
             <ErrorMessage
-              customMessage={'Apologies, we seem to be having trouble with that request'}
+              customMessage="Apologies, we seem to be having trouble with that request"
               error={error}
             />
           );
@@ -53,11 +48,12 @@ const Homepage = () => (
     />
     <QueryRenderer
       environment={environment}
-      // variables={{ count: 6 }}
+      // Variables={{ count: 6 }}
       query={papersQuery}
       render={({ error, props }) => {
         if (props && props.papers && props.papers.length > 0) {
-          const { papers }: { papers: Array<PaperData> } = props;
+          const { papers }: { papers: PaperData[] } = props;
+
           return (
             <Fragment>
               <h2 style={{ marginBottom: '0' }}>Latest Uploads:</h2>
@@ -69,7 +65,7 @@ const Homepage = () => (
         if (error) {
           return (
             <ErrorMessage
-              customMessage={'Apologies, we seem to be having trouble with that request'}
+              customMessage="Apologies, we seem to be having trouble with that request"
               error={error}
             />
           );

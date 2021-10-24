@@ -3,20 +3,12 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { QueryRenderer } from 'react-relay';
 import { useRouter } from 'next/router';
-import { Loader } from '@cryptopapers/ui';
-
+import { ErrorMessage, Loader } from '@cryptopapers/ui';
 import environment from 'schema/environment';
 import Layout from 'components/Layout/Layout';
 import PaperResult from 'components/PaperResult/PaperResult';
 import { paperByPidQuery } from 'lib/queries/paperByPid';
 import type { PaperData } from 'types/customTypes';
-
-const ErrorMessage = dynamic(() =>
-  import(
-    /* webpackChunkName: "errorMessage" */
-    'components/ErrorMessage/ErrorMessage'
-  )
-);
 
 const Paper = () => {
   const router = useRouter();
@@ -28,12 +20,11 @@ const Paper = () => {
         <QueryRenderer
           environment={environment}
           query={paperByPidQuery}
-          variables={{ prettyId: id }}
           render={({ error, props }) => {
             if (error) {
               return (
                 <ErrorMessage
-                  customMessage={'Apologies, we seem to be having trouble with that request'}
+                  customMessage="Apologies, we seem to be having trouble with that request"
                   error={error}
                 />
               );
@@ -41,6 +32,7 @@ const Paper = () => {
 
             if (props && props.paperByPid) {
               const { paperByPid }: { paperByPid: PaperData } = props;
+
               return (
                 <Fragment>
                   {paperByPid.title && (
@@ -55,10 +47,12 @@ const Paper = () => {
 
             return <div>No such paper</div>;
           }}
+          variables={{ prettyId: id }}
         />
       </Layout>
     );
   }
+
   return <Loader />;
 };
 

@@ -2,20 +2,12 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
 import { useRouter } from 'next/router';
-import { Loader } from '@cryptopapers/ui';
-
+import { ErrorMessage, Loader } from '@cryptopapers/ui';
 import AssetResult from 'components/AssetResult/AssetResult';
 import environment from 'schema/environment';
 import Layout from 'components/Layout/Layout';
 import { assetByTickerQuery } from 'lib/queries/assetByTicker';
 import type { AssetData } from 'types/customTypes';
-
-const ErrorMessage = dynamic(() =>
-  import(
-    /* webpackChunkName: "errorMessage" */
-    'components/ErrorMessage/ErrorMessage'
-  )
-);
 
 const Asset = () => {
   const router = useRouter();
@@ -29,12 +21,11 @@ const Asset = () => {
         <QueryRenderer
           environment={environment}
           query={assetByTickerQuery}
-          variables={{ ticker: allCapsTicker }}
           render={({ error, props }) => {
             if (error) {
               return (
                 <ErrorMessage
-                  customMessage={'Apologies, we seem to be having trouble with that request'}
+                  customMessage="Apologies, we seem to be having trouble with that request"
                   error={error}
                 />
               );
@@ -42,16 +33,18 @@ const Asset = () => {
 
             if (props && props.assetByTicker) {
               const { assetByTicker }: { assetByTicker: AssetData } = props;
-              
+
               return <AssetResult asset={assetByTicker} />;
             }
 
             return <div>No such asset</div>;
           }}
+          variables={{ ticker: allCapsTicker }}
         />
       </Layout>
     );
   }
+
   return <Loader />;
 };
 

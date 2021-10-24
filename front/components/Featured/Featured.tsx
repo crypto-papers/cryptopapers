@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { QueryRenderer } from 'react-relay';
-import { BlockQuote, Loader, Promoted } from '@cryptopapers/ui';
+import { BlockQuote, ErrorMessage, Loader, Promoted } from '@cryptopapers/ui';
 import environment from 'schema/environment';
 import { isoToLocale } from 'utils/conversions';
 import { fileQuery } from 'lib/queries/file';
@@ -9,14 +9,6 @@ import { paperQuery } from 'lib/queries/paper';
 import type { FileData, PaperData } from 'types/customTypes';
 
 import style from './Featured.module.scss';
-
-const ErrorMessage = dynamic(
-  async () =>
-    await import(
-      /* WebpackChunkName: "errorMessage" */
-      'components/ErrorMessage/ErrorMessage'
-    )
-);
 
 /**
  * JSX component that renders information from a featured paper.
