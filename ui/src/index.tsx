@@ -2,6 +2,7 @@ import './styles/global.scss';
 
 export { default as BlockQuote } from './components/BlockQuote/BlockQuote';
 export { default as Button } from './components/Button/Button';
+export { default as ErrorMessage } from './components/ErrorMessage/ErrorMessage';
 export { default as Loader } from './components/Loader/Loader';
 export { default as Promoted } from './components/Promoted/Promoted';
 export { default as Uploader } from './components/Uploader/Uploader';

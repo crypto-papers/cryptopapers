@@ -1,0 +1,16 @@
+.container {
+  align-items: center;
+  background-color: rgba(var(--redDeep), 0.15);
+  border: var(--borderError);
+  border-radius: 3px;
+  box-shadow: var(--boxShadowGrey);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto 0;
+  padding: 2rem;
+  width: max-content;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+}
