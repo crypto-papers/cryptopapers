@@ -36,7 +36,7 @@ const Layout: React.FC<ILayoutProps> = ({ children, title }) => {
   return (
     <Fragment>
       <div className="cpui-next-content">
-        <Header skip="#main-content" title="Cryptopapers Admin" />
+        <Header nav skip="#main-content" title="Cryptopapers Admin" />
         <TopNav items={navItems} />
         <main id="main-content">
           <div className="cpui-page-container">
